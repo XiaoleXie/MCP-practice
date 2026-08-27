@@ -3,26 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lithium-Ion Battery Industry News</title>
+  <title>Cell Dispatch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <div class="hero__text">
-        <h1 id="site-title">Lithium-Ion Battery Industry News</h1>
-        <p id="site-subtitle">Tracking gigafactories, policy, and supply chains around the world</p>
+  <div class="wrap">
+    <header class="masthead">
+      <div>
+        <p class="masthead__eyebrow">Global supply-chain wire · 全球供应链快讯</p>
+        <h1 class="masthead__title">CELL DISPATCH<span class="masthead__title-zh">电芯快讯</span></h1>
+        <p class="masthead__sub">Tracking gigafactories, policy, and supply chains around the world<span class="masthead__sub-zh zh">追踪全球超级工厂、产业政策与供应链动态</span></p>
       </div>
-      <button id="lang-toggle" type="button">中文</button>
+      <div class="masthead__controls">
+        <button id="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle theme">◐</button>
+      </div>
     </header>
 
-    <nav class="chips" id="country-chips" aria-label="Filter by country"></nav>
+    <nav class="filter-strip" aria-label="Filter by country">
+      <p class="filter-label">Filter by country · 按国家筛选</p>
+      <div class="chips" id="country-chips"></div>
+    </nav>
     <p class="result-count" id="result-count"></p>
 
     <main class="grid" id="news-grid"></main>
 
     <footer class="site-footer">
-      <p>Curated summaries with links to original reporting. Not exhaustive — check each source for full details.</p>
+      <p>Curated summaries with links to original reporting. Not exhaustive — check each source for full details.<br><span class="zh">内容为原始报道摘要并附来源链接,并非完整信息,详情请查阅各来源。</span></p>
     </footer>
   </div>
 
