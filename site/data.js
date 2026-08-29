@@ -1,6 +1,6 @@
 // Updated each week from chat — change FEATURED_CATEGORY to the category
 // requested for this Saturday. Set to null between requests.
-var FEATURED_CATEGORY = null; // e.g. "Burgers"
+var FEATURED_CATEGORY = "Korean BBQ";
 
 // Restaurants within a few miles of 500 Battery Plant Rd, Smyrna, TN 37167
 // rated 4.5 stars or better on public listings (Google/Yelp/TripAdvisor).
@@ -77,5 +77,23 @@ var RESTAURANTS = [
     distance: 4.6,
     address: "1890 Almaville Rd #100, Smyrna, TN 37167",
     blurb: "Curries, pad thai, and sushi rolls in generous portions — the farthest drive on this list, but reviewers say it's worth it."
+  },
+  {
+    name: "Arisu Korean BBQ & Tofu",
+    category: "Korean BBQ",
+    rating: 4.8,
+    reviews: 610,
+    distance: 10.5,
+    address: "1855 Medical Center Pkwy Suite A, Murfreesboro, TN 37129",
+    blurb: "Tabletop Korean BBQ and soon tofu done right — Smyrna itself doesn't have a 4.5+ Korean spot, so this is the nearest one that clears the bar."
+  },
+  {
+    name: "KPOT Korean BBQ & Hot Pot",
+    category: "Korean BBQ",
+    rating: 4.7,
+    reviews: 51,
+    distance: 12.5,
+    address: "1720 Old Fort Pkwy Unit L325, Murfreesboro, TN 37129",
+    blurb: "All-you-can-eat BBQ and hot pot with a build-your-own broth bar — a bit further out, but a different format if Arisu doesn't fit the craving."
   }
 ];
