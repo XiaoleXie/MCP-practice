@@ -11,6 +11,14 @@ function mapsUrl(address) {
   return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(address);
 }
 
+// Real dish photos aren't embedded here — they'd mean copying copyrighted
+// Yelp/Google/restaurant images without a license, and the artifact host's
+// content policy blocks hotlinking external images anyway. This links out
+// to a live image search instead, so one click shows the actual plate.
+function dishPhotoSearchUrl(restaurantName, dishName) {
+  return "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(restaurantName + " " + dishName);
+}
+
 var SPICE_LABELS = ["No spice", "Mild", "Medium", "Hot"];
 
 function spiceGlyph(level) {
@@ -57,7 +65,7 @@ function dishIconSvg(key) {
   return '<svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true">' + inner + '</svg>';
 }
 
-function dishRow(dish) {
+function dishRow(dish, restaurantName) {
   return (
     '<div class="dish-row">' +
       '<div class="dish-icon">' + dishIconSvg(dish.icon) + '</div>' +
@@ -66,6 +74,7 @@ function dishRow(dish) {
         '<div class="dish-meta">' +
           '<span class="rating"><span class="stars">' + starString(dish.stars) + '</span><span class="num">' + dish.stars.toFixed(1) + '</span><span class="count">(' + dish.reviews + ')</span></span>' +
           spiceGlyph(dish.spice) +
+          '<a class="photo-link" href="' + dishPhotoSearchUrl(restaurantName, dish.name) + '" target="_blank" rel="noopener">📷 Photos</a>' +
         '</div>' +
       '</div>' +
     '</div>'
@@ -116,7 +125,7 @@ function render() {
         '<div class="meta"><span>' + r.address + '</span><a href="' + mapsUrl(r.address) + '" target="_blank" rel="noopener">Directions →</a></div>' +
         '<div class="dishes-panel" hidden>' +
           '<p class="dishes-note">Ranked by reviewer favorite, highest first</p>' +
-          dishesSorted.map(dishRow).join("") +
+          dishesSorted.map(function (d) { return dishRow(d, r.name); }).join("") +
         '</div>' +
       '</div>';
 
