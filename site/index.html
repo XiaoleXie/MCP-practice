@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Battery Plant Road Eats</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Overpass+Mono:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
+<style>
+  html{color-scheme:light dark;}
+  img{max-width:100%;}
+  [hidden]{display:none !important;}
+
+  :root{
+    --paper:#f1e6cf;
+    --paper-raised:#faf3e3;
+    --ink:#26221c;
+    --ink-soft:#5a5041;
+    --line:rgba(38,34,28,0.16);
+    --hwy:#1f5c3f;
+    --hwy-ink:#eef6f0;
+    --amber:#b8710f;
+    --amber-soft:#f6e6c8;
+    --brick:#a83f2e;
+    --brick-ink:#fdece8;
+    --shadow:rgba(38,34,28,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1a170f;
+      --paper-raised:#242018;
+      --ink:#efe6d4;
+      --ink-soft:#b7ab90;
+      --line:rgba(239,230,212,0.16);
+      --hwy:#3f9c6c;
+      --hwy-ink:#0d1a12;
+      --amber:#e8a33f;
+      --amber-soft:#3a2f18;
+      --brick:#d1614a;
+      --brick-ink:#2c1712;
+      --shadow:rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1a170f;
+    --paper-raised:#242018;
+    --ink:#efe6d4;
+    --ink-soft:#b7ab90;
+    --line:rgba(239,230,212,0.16);
+    --hwy:#3f9c6c;
+    --hwy-ink:#0d1a12;
+    --amber:#e8a33f;
+    --amber-soft:#3a2f18;
+    --brick:#d1614a;
+    --brick-ink:#2c1712;
+    --shadow:rgba(0,0,0,0.4);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Overpass", system-ui, sans-serif;
+    margin:0;
+  }
+  .wrap{
+    max-width:840px;
+    margin:0 auto;
+    padding:0 20px 64px;
+  }
+
+  /* ---- Highway sign hero ---- */
+  .sign{
+    margin:24px 0 28px;
+    background:var(--hwy);
+    color:var(--hwy-ink);
+    border-radius:10px;
+    padding:22px 24px 20px;
+    box-shadow:0 10px 24px var(--shadow);
+    border:3px solid var(--hwy-ink);
+    outline:6px solid var(--hwy);
+    outline-offset:-9px;
+  }
+  .sign .eyebrow{
+    font-family:"Overpass Mono", monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    opacity:.85;
+    margin:0 0 6px;
+  }
+  .sign h1{
+    font-family:"Overpass", sans-serif;
+    font-weight:800;
+    font-size:clamp(26px,5vw,38px);
+    line-height:1.08;
+    margin:0 0 10px;
+    text-wrap:balance;
+    text-transform:uppercase;
+    letter-spacing:.01em;
+  }
+  .sign .origin{
+    font-family:"Overpass Mono", monospace;
+    font-size:14px;
+    opacity:.92;
+  }
+
+  .pick-band{
+    margin:0 0 28px;
+    padding:16px 18px;
+    border-radius:8px;
+    background:var(--amber-soft);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .pick-band .label{
+    font-family:"Overpass Mono", monospace;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--amber);
+    font-weight:600;
+  }
+  .pick-band .value{
+    font-family:"Source Serif 4", serif;
+    font-size:17px;
+    font-weight:600;
+  }
+  .pick-band .hint{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-left:auto;
+  }
+
+  /* ---- Filters ---- */
+  .filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 24px;
+  }
+  .filters button{
+    font-family:"Overpass", sans-serif;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.02em;
+    padding:8px 14px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:var(--paper-raised);
+    color:var(--ink);
+    cursor:pointer;
+  }
+  .filters button:hover{ border-color:var(--hwy); }
+  .filters button:focus-visible{ outline:2px solid var(--hwy); outline-offset:2px; }
+  .filters button.active{
+    background:var(--hwy);
+    border-color:var(--hwy);
+    color:var(--hwy-ink);
+  }
+
+  /* ---- List ---- */
+  .list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .card{
+    display:grid;
+    grid-template-columns:78px 1fr;
+    gap:16px;
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px;
+    box-shadow:0 4px 10px var(--shadow);
+  }
+  .marker{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    border-right:1px dashed var(--line);
+    padding-right:14px;
+  }
+  .marker .mi{
+    font-family:"Overpass Mono", monospace;
+    font-weight:600;
+    font-size:22px;
+    line-height:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .marker .unit{
+    font-family:"Overpass Mono", monospace;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:3px;
+  }
+  .card-body{ min-width:0; }
+  .card-top{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .card h3{
+    font-family:"Overpass", sans-serif;
+    font-weight:700;
+    font-size:19px;
+    margin:0 0 4px;
+  }
+  .tag{
+    display:inline-block;
+    font-family:"Overpass Mono", monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .rating{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    white-space:nowrap;
+  }
+  .stars{ color:var(--amber); letter-spacing:1px; font-size:14px; }
+  .rating .num{
+    font-family:"Overpass Mono", monospace;
+    font-weight:600;
+    font-size:14px;
+  }
+  .rating .count{
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .blurb{
+    font-family:"Source Serif 4", serif;
+    font-size:15px;
+    line-height:1.5;
+    color:var(--ink);
+    margin:8px 0 10px;
+  }
+  .meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 16px;
+    align-items:center;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .meta a{
+    color:var(--hwy);
+    text-decoration:none;
+    font-weight:600;
+    border-bottom:1px solid currentColor;
+  }
+  .featured-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:"Overpass Mono", monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--brick-ink);
+    background:var(--brick);
+    padding:3px 9px;
+    border-radius:999px;
+    margin-bottom:6px;
+  }
+
+  footer{
+    margin-top:32px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    font-size:12.5px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+
+  @media (max-width:480px){
+    .card{ grid-template-columns:60px 1fr; padding:14px; }
+    .marker .mi{ font-size:18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="sign">
+    <p class="eyebrow">Rating 4.5★ and up · nearest first</p>
+    <h1>Battery Plant Road Eats</h1>
+    <p class="origin">FROM &nbsp;500 Battery Plant Rd, Smyrna, TN 37167</p>
+  </div>
+
+  <div class="pick-band" id="pickBand">
+    <span class="label">This Saturday</span>
+    <span class="value" id="pickValue">No craving on the books yet</span>
+    <span class="hint">Send a message with a category any Saturday to pin it here</span>
+  </div>
+
+  <div class="filters" id="filters"></div>
+  <div class="list" id="list"></div>
+
+  <footer>
+    Ratings, review counts, and addresses pulled from public listings (Google, Yelp, TripAdvisor) as of late August 2026 and may drift as reviews come in.
+    Distances are straight-line estimates from 500 Battery Plant Rd — check your maps app for exact drive time. Only spots at 4.5★ or better made the cut.
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
