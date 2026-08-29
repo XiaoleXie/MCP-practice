@@ -42,7 +42,14 @@ var DISH_ICONS = {
   bbq: '<rect x="9" y="22" width="30" height="12" rx="3" class="ln fill-a" fill="none"/><ellipse cx="18" cy="28" rx="5" ry="3.5" class="ln fill-b"/><ellipse cx="30" cy="28" rx="5" ry="3.5" class="ln fill-b"/><line x1="9" y1="17" x2="39" y2="17" class="ln thin"/>',
   bibimbap: '<path d="M9 24a15 9 0 0 0 30 0z" class="ln fill-a"/><circle cx="19" cy="23" r="2.2" class="fill-b"/><circle cx="24" cy="26" r="2.2" class="fill-c"/><circle cx="29" cy="23" r="2.2" class="fill-b"/>',
   hotpot: '<rect x="10" y="20" width="28" height="14" rx="3" class="ln fill-a"/><line x1="24" y1="20" x2="24" y2="34" class="ln thin"/><rect x="8" y="17" width="32" height="4" rx="2" class="ln"/><path d="M17 13c1-2-1-3 0-5M31 13c1-2-1-3 0-5" class="ln thin"/>',
-  sauce: '<rect x="19" y="18" width="10" height="18" rx="2" class="ln fill-a"/><rect x="21" y="12" width="6" height="6" rx="1" class="ln"/><circle cx="14" cy="30" r="1.6" class="fill-c"/><circle cx="34" cy="26" r="1.6" class="fill-c"/>'
+  sauce: '<rect x="19" y="18" width="10" height="18" rx="2" class="ln fill-a"/><rect x="21" y="12" width="6" height="6" rx="1" class="ln"/><circle cx="14" cy="30" r="1.6" class="fill-c"/><circle cx="34" cy="26" r="1.6" class="fill-c"/>',
+  friedchicken: '<path d="M10 30c4-10 12-14 16-10-2 6-10 8-16 10z" class="ln fill-a"/><path d="M38 30c-4-10-12-14-16-10 2 6 10 8 16 10z" class="ln fill-a"/><circle cx="16" cy="24" r="1.2" class="fill-b"/><circle cx="32" cy="24" r="1.2" class="fill-b"/>',
+  comfort: '<path d="M9 24a15 9 0 0 0 30 0z" class="ln fill-a"/><path d="M19 20c1 3-1 4 0 7M24 18c1 3-1 4 0 7M29 20c1 3-1 4 0 7" class="ln thin"/>',
+  dessert: '<path d="M15 20h18l-2 14a2 2 0 0 1-2 2H19a2 2 0 0 1-2-2z" class="ln fill-a"/><path d="M17 20c2-4 12-4 14 0" class="ln thin" fill="none"/><circle cx="24" cy="14" r="2" class="fill-c"/>',
+  boil: '<path d="M14 20c0-4 4-6 10-6s10 2 10 6l-2 14a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z" class="ln fill-a"/><line x1="16" y1="16" x2="32" y2="16" class="ln thin"/><circle cx="20" cy="26" r="1.6" class="fill-c"/><circle cx="28" cy="29" r="1.6" class="fill-c"/>',
+  fish: '<path d="M10 24c6-6 18-6 24 0-6 6-18 6-24 0z" class="ln fill-a"/><path d="M34 24l6-5v10z" class="ln fill-b"/><circle cx="16" cy="22" r="1.2" class="fill-c"/>',
+  pupusa: '<ellipse cx="24" cy="26" rx="13" ry="6" class="ln fill-a"/><path d="M14 26h20" class="ln thin"/><circle cx="20" cy="24" r="1.4" class="fill-b"/><circle cx="28" cy="25" r="1.4" class="fill-b"/>',
+  waffle: '<rect x="10" y="12" width="28" height="20" rx="3" class="ln fill-a"/><line x1="17" y1="12" x2="17" y2="32" class="ln thin"/><line x1="24" y1="12" x2="24" y2="32" class="ln thin"/><line x1="31" y1="12" x2="31" y2="32" class="ln thin"/><line x1="10" y1="19" x2="38" y2="19" class="ln thin"/><line x1="10" y1="25" x2="38" y2="25" class="ln thin"/><circle cx="30" cy="16" r="1.4" class="fill-c"/>'
 };
 
 function dishIconSvg(key) {
@@ -65,14 +72,27 @@ function dishRow(dish) {
   );
 }
 
-function render(activeCategory) {
+var state = {
+  category: "All",
+  minStars: 0
+};
+
+function render() {
   var list = RESTAURANTS.slice().sort(function (a, b) { return a.distance - b.distance; });
-  if (activeCategory && activeCategory !== "All") {
-    list = list.filter(function (r) { return r.category === activeCategory; });
+  if (state.category !== "All") {
+    list = list.filter(function (r) { return r.category === state.category; });
+  }
+  if (state.minStars > 0) {
+    list = list.filter(function (r) { return r.rating >= state.minStars; });
   }
 
   var listEl = document.getElementById("list");
   listEl.innerHTML = "";
+
+  if (list.length === 0) {
+    listEl.innerHTML = '<p class="empty">No restaurants match that filter — try lowering the minimum rating.</p>';
+    return;
+  }
 
   list.forEach(function (r) {
     var card = document.createElement("div");
@@ -128,14 +148,42 @@ function renderFilters() {
   cats.forEach(function (cat) {
     var btn = document.createElement("button");
     btn.textContent = cat;
-    if (cat === "All") btn.classList.add("active");
+    if (cat === state.category) btn.classList.add("active");
     btn.addEventListener("click", function () {
+      state.category = cat;
       Array.prototype.forEach.call(filtersEl.children, function (b) { b.classList.remove("active"); });
       btn.classList.add("active");
-      render(cat);
+      render();
     });
     filtersEl.appendChild(btn);
   });
+}
+
+function renderStarFilter() {
+  var starsEl = document.getElementById("starFilter");
+  starsEl.innerHTML = "";
+
+  for (var n = 0; n <= 5; n++) {
+    (function (n) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "star-btn";
+      if (n === state.minStars) btn.classList.add("active");
+      btn.innerHTML = n === 0 ? "Any" : n + "★+";
+      btn.setAttribute("aria-pressed", n === state.minStars ? "true" : "false");
+      btn.addEventListener("click", function () {
+        state.minStars = n;
+        Array.prototype.forEach.call(starsEl.children, function (b) {
+          b.classList.remove("active");
+          b.setAttribute("aria-pressed", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-pressed", "true");
+        render();
+      });
+      starsEl.appendChild(btn);
+    })(n);
+  }
 }
 
 function renderPickBand() {
@@ -148,5 +196,6 @@ function renderPickBand() {
 }
 
 renderFilters();
+renderStarFilter();
 renderPickBand();
-render("All");
+render();

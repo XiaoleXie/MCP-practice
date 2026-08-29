@@ -2,8 +2,9 @@
 // requested for this Saturday. Set to null between requests.
 var FEATURED_CATEGORY = "Korean BBQ";
 
-// Restaurants within a few miles of 500 Battery Plant Rd, Smyrna, TN 37167
-// rated 4.5 stars or better on public listings (Google/Yelp/TripAdvisor).
+// Every restaurant on the list is within roughly a dozen miles of
+// 500 Battery Plant Rd, Smyrna, TN 37167, spanning the full rating range —
+// use the star filter on the page to narrow it down instead of a fixed cutoff.
 // distance = approximate straight-line miles from the origin address.
 //
 // Each dish's `stars`/`reviews` are a best-effort read of how often and how
@@ -12,6 +13,20 @@ var FEATURED_CATEGORY = "Korean BBQ";
 // not a verified score. `spice` is 0-3 (0 none, 1 mild, 2 medium, 3 hot).
 // `icon` selects a small illustrated glyph — not a real photo of the plate.
 var RESTAURANTS = [
+  {
+    name: "Chicago Express",
+    category: "Chicago-Style American",
+    rating: 4.4,
+    reviews: 194,
+    distance: 1.2,
+    address: "568 Nissan Dr, Smyrna, TN 37167",
+    blurb: "Chicago transplants slinging Italian beef, gyros, and burgers a stone's throw from the Nissan campus — closest thing on this list to a walk-over lunch.",
+    dishes: [
+      { name: "Italian Beef Sandwich", price: "$9.99", spice: 1, stars: 4.6, reviews: 52, icon: "burger" },
+      { name: "Chicago-Style Gyro", price: "$8.99", spice: 1, stars: 4.5, reviews: 44, icon: "wrap" },
+      { name: "Cheeseburger", price: "$7.99", spice: 0, stars: 4.2, reviews: 31, icon: "burger" }
+    ]
+  },
   {
     name: "Tokyo Japanese Steak House",
     category: "Japanese Hibachi & Sushi",
@@ -38,6 +53,20 @@ var RESTAURANTS = [
       { name: "Lomo Saltado", price: "$25.00", spice: 1, stars: 4.9, reviews: 61, icon: "stirfry" },
       { name: "Leche de Tigre Clásico Ceviche", price: "$21.00", spice: 2, stars: 4.8, reviews: 48, icon: "ceviche" },
       { name: "Pollada (Rotisserie Chicken)", price: "$19.50", spice: 0, stars: 4.6, reviews: 33, icon: "roast" }
+    ]
+  },
+  {
+    name: "Bonchon Smyrna",
+    category: "Korean Fried Chicken",
+    rating: 4.3,
+    reviews: 104,
+    distance: 1.9,
+    address: "578 Sam Ridley Pkwy W, Smyrna, TN 37167",
+    blurb: "Double-fried Korean chicken with the brand's soy-garlic and spicy glazes — a national chain, but the closest Korean flavor to Battery Plant Rd.",
+    dishes: [
+      { name: "Soy Garlic Fried Chicken", price: "$14.99", spice: 0, stars: 4.6, reviews: 41, icon: "friedchicken" },
+      { name: "Original Crispy Fried Chicken", price: "$14.99", spice: 0, stars: 4.4, reviews: 33, icon: "friedchicken" },
+      { name: "Spicy Fried Chicken", price: "$14.99", spice: 3, stars: 4.3, reviews: 27, icon: "friedchicken" }
     ]
   },
   {
@@ -69,6 +98,20 @@ var RESTAURANTS = [
     ]
   },
   {
+    name: "Champy's",
+    category: "Southern & Fried Chicken",
+    rating: 4.1,
+    reviews: 75,
+    distance: 2.6,
+    address: "835 Isabella Ln, Smyrna, TN 37167",
+    blurb: "The Chattanooga fried-chicken chain's Smyrna outpost — handmade sides and dessert alongside the famous bird.",
+    dishes: [
+      { name: "Champy's Famous Fried Chicken (2pc)", price: "$13.49", spice: 1, stars: 4.3, reviews: 34, icon: "friedchicken" },
+      { name: "Banana Pudding", price: "$5.49", spice: 0, stars: 4.4, reviews: 26, icon: "dessert" },
+      { name: "Mac & Cheese", price: "$3.99", spice: 0, stars: 4.2, reviews: 21, icon: "comfort" }
+    ]
+  },
+  {
     name: "Magic Way Steak & Gyro",
     category: "Mediterranean & Steak",
     rating: 4.8,
@@ -80,6 +123,20 @@ var RESTAURANTS = [
       { name: "Crazy 5 Way Shawarma", price: "$21.99", spice: 2, stars: 4.8, reviews: 77, icon: "wrap" },
       { name: "Lamb Gyro Plate", price: "$14.99", spice: 1, stars: 4.7, reviews: 64, icon: "wrap" },
       { name: "Chicken Pita", price: "$10.99", spice: 1, stars: 4.6, reviews: 41, icon: "wrap" }
+    ]
+  },
+  {
+    name: "Southern Spoon",
+    category: "Southern Comfort",
+    rating: 4.6,
+    reviews: 69,
+    distance: 3.2,
+    address: "1303 Plaza Dr, Smyrna, TN 37167",
+    blurb: "A meat-and-three-turned-storefront from a local catering crew — Nashville hot chicken and creative coffee in the same room.",
+    dishes: [
+      { name: "Nashville Hot Chicken", price: "$14.00", spice: 3, stars: 4.8, reviews: 29, icon: "friedchicken" },
+      { name: "Chicken & Waffles", price: "$13.00", spice: 0, stars: 4.7, reviews: 24, icon: "waffle" },
+      { name: "Fried Pickled Okra", price: "$5.00", spice: 0, stars: 4.5, reviews: 18, icon: "fries" }
     ]
   },
   {
@@ -97,6 +154,20 @@ var RESTAURANTS = [
     ]
   },
   {
+    name: "Juicy Seafood",
+    category: "Cajun Seafood",
+    rating: 4.4,
+    reviews: 240,
+    distance: 3.7,
+    address: "267 N Lowry St, Smyrna, TN 37167",
+    blurb: "Cajun-style seafood boils in a bag, shaken table-side — reviewers also swear by the chicken tenders if shellfish isn't the mood.",
+    dishes: [
+      { name: "The Juicy Combo Boil", price: "$24.99/lb", spice: 2, stars: 4.6, reviews: 61, icon: "boil" },
+      { name: "Chicken Tenders", price: "$9.99", spice: 0, stars: 4.5, reviews: 38, icon: "tenders" },
+      { name: "Fried Catfish", price: "$14.99", spice: 0, stars: 4.4, reviews: 29, icon: "fish" }
+    ]
+  },
+  {
     name: "Front Street Pub",
     category: "American Pub",
     rating: 4.8,
@@ -111,17 +182,59 @@ var RESTAURANTS = [
     ]
   },
   {
+    name: "La Nueva Jerusalem",
+    category: "Salvadoran",
+    rating: 4.4,
+    reviews: 83,
+    distance: 3.9,
+    address: "409 Smyrna Square Dr, Smyrna, TN 37167",
+    blurb: "A pupuseria tucked into a downtown strip — handmade pupusas and tamales from a family-run kitchen.",
+    dishes: [
+      { name: "Pupusas Revueltas", price: "$3.25 each", spice: 0, stars: 4.6, reviews: 32, icon: "pupusa" },
+      { name: "Tamales", price: "$3.50", spice: 0, stars: 4.4, reviews: 21, icon: "wrap" },
+      { name: "Yuca Frita", price: "$8.99", spice: 0, stars: 4.3, reviews: 17, icon: "fries" }
+    ]
+  },
+  {
     name: "Honey's Bie Thai & Sushi",
     category: "Thai & Sushi",
     rating: 4.7,
     reviews: 126,
     distance: 4.6,
     address: "1890 Almaville Rd #100, Smyrna, TN 37167",
-    blurb: "Curries, pad thai, and sushi rolls in generous portions — the farthest drive on this list, but reviewers say it's worth it.",
+    blurb: "Curries, pad thai, and sushi rolls in generous portions — the farthest Smyrna drive on this list, but reviewers say it's worth it.",
     dishes: [
       { name: "Pad Kee Mao (Drunken Noodles)", price: "$16.95", spice: 3, stars: 4.9, reviews: 54, icon: "noodles" },
       { name: "Panang Curry", price: "$17.95", spice: 2, stars: 4.8, reviews: 47, icon: "curry" },
       { name: "Massaman Curry", price: "$19.95", spice: 1, stars: 4.6, reviews: 39, icon: "curry" }
+    ]
+  },
+  {
+    name: "Two Brothers Pizzeria & Restaurant",
+    category: "Italian & Salvadoran",
+    rating: 3.9,
+    reviews: 129,
+    distance: 4.4,
+    address: "291 Sam Ridley Pkwy E, Smyrna, TN 37167",
+    blurb: "A pizza counter and a Salvadoran kitchen sharing one menu — a genuinely unusual pairing, with reviews landing all over the map.",
+    dishes: [
+      { name: "Pupusas", price: "$3.50 each", spice: 0, stars: 4.3, reviews: 22, icon: "pupusa" },
+      { name: "Salvadoran Carne Asada Plate", price: "$12.99", spice: 1, stars: 4.0, reviews: 15, icon: "roast" },
+      { name: "Cheese Pizza (Large)", price: "$14.99", spice: 0, stars: 3.8, reviews: 19, icon: "pizza" }
+    ]
+  },
+  {
+    name: "Cracker Barrel",
+    category: "Southern Chain",
+    rating: 4.2,
+    reviews: 4833,
+    distance: 5.8,
+    address: "2697 Highwood Blvd, Smyrna, TN 37167",
+    blurb: "The interstate-exit country-store chain — a reliable fallback for biscuits and a rocking chair, if not the most exciting pick on this list.",
+    dishes: [
+      { name: "Hashbrown Casserole (side)", price: "$3.49", spice: 0, stars: 4.4, reviews: 210, icon: "comfort" },
+      { name: "Chicken & Dumplins", price: "$11.99", spice: 0, stars: 4.1, reviews: 165, icon: "soup" },
+      { name: "Country Fried Steak", price: "$14.99", spice: 0, stars: 4.0, reviews: 122, icon: "bbq" }
     ]
   },
   {
@@ -131,7 +244,7 @@ var RESTAURANTS = [
     reviews: 610,
     distance: 10.5,
     address: "1855 Medical Center Pkwy Suite A, Murfreesboro, TN 37129",
-    blurb: "Tabletop Korean BBQ and soon tofu done right — Smyrna itself doesn't have a 4.5+ Korean spot, so this is the nearest one that clears the bar.",
+    blurb: "Tabletop Korean BBQ and soondubu done right — Smyrna itself doesn't have a strong Korean sit-down option, so this is the nearest one worth the drive.",
     dishes: [
       { name: "Soondubu (Spicy Tofu Soup)", price: "$23.16 (for 2)", spice: 2, stars: 4.9, reviews: 188, icon: "soup" },
       { name: "Marinated Beef Bulgogi", price: "$36.30", spice: 0, stars: 4.7, reviews: 152, icon: "bbq" },

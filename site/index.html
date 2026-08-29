@@ -135,11 +135,20 @@
   }
 
   /* ---- Filters ---- */
+  .filter-group{ margin:0 0 16px; }
+  .filter-label{
+    display:block;
+    font-family:"Overpass Mono", monospace;
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 8px;
+  }
   .filters{
     display:flex;
     flex-wrap:wrap;
     gap:8px;
-    margin:0 0 24px;
   }
   .filters button{
     font-family:"Overpass", sans-serif;
@@ -159,6 +168,25 @@
     background:var(--hwy);
     border-color:var(--hwy);
     color:var(--hwy-ink);
+  }
+  .star-filter .star-btn{
+    font-family:"Overpass Mono", monospace;
+    font-variant-numeric:tabular-nums;
+  }
+  .star-filter .star-btn.active{
+    background:var(--amber);
+    border-color:var(--amber);
+    color:var(--hwy-ink);
+  }
+  .empty{
+    font-family:"Source Serif 4", serif;
+    font-size:15px;
+    color:var(--ink-soft);
+    background:var(--paper-raised);
+    border:1px dashed var(--line);
+    border-radius:10px;
+    padding:20px;
+    text-align:center;
   }
 
   /* ---- List ---- */
@@ -393,7 +421,7 @@
 
 <div class="wrap">
   <div class="sign">
-    <p class="eyebrow">Rating 4.5★ and up · nearest first</p>
+    <p class="eyebrow">Every restaurant nearby · nearest first</p>
     <h1>Battery Plant Road Eats</h1>
     <p class="origin">FROM &nbsp;500 Battery Plant Rd, Smyrna, TN 37167</p>
   </div>
@@ -404,12 +432,19 @@
     <span class="hint">Send a message with a category any Saturday to pin it here</span>
   </div>
 
-  <div class="filters" id="filters"></div>
+  <div class="filter-group">
+    <span class="filter-label">Category</span>
+    <div class="filters" id="filters"></div>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">Minimum rating</span>
+    <div class="filters star-filter" id="starFilter"></div>
+  </div>
   <div class="list" id="list"></div>
 
   <footer>
     Ratings, review counts, and addresses pulled from public listings (Google, Yelp, TripAdvisor) as of late August 2026 and may drift as reviews come in.
-    Distances are straight-line estimates from 500 Battery Plant Rd — check your maps app for exact drive time. Only spots at 4.5★ or better made the cut.
+    Distances are straight-line estimates from 500 Battery Plant Rd — check your maps app for exact drive time. This list spans the full rating range; use the minimum-rating filter above to narrow it down instead of a fixed cutoff.
     Tap a restaurant for its top dishes: prices are the menu's own, but per-dish stars and spice levels are read off what reviewers praise most — platforms don't publish official per-dish ratings — and each dish gets a small illustrated icon rather than a real photo.
   </footer>
 </div>
