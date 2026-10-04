@@ -9,6 +9,8 @@
   --accent-ink: #ffffff;
   --accent-2: #2b5d84;
   --chip-bg: #eee3cd;
+  --good: #2f7a4f;
+  --soon: #8a6d1b;
   --shadow: 0 1px 2px rgba(40, 30, 10, 0.06);
 }
 
@@ -24,6 +26,8 @@
     --accent-ink: #1a1006;
     --accent-2: #7bacd6;
     --chip-bg: #2a2013;
+    --good: #5fbd82;
+    --soon: #d9b23c;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   }
 }
@@ -39,6 +43,8 @@
   --accent-ink: #1a1006;
   --accent-2: #7bacd6;
   --chip-bg: #2a2013;
+  --good: #5fbd82;
+  --soon: #d9b23c;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
@@ -342,6 +348,293 @@ button {
   grid-column: 1 / -1;
   text-align: center;
   padding: 48px 0;
+}
+
+/* ---------- US battery factory map ---------- */
+.usmap-section {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 3px solid var(--text);
+}
+
+.usmap-note {
+  color: var(--text-dim);
+  font-size: 0.86rem;
+  line-height: 1.6;
+  max-width: 68ch;
+  margin: 0 0 20px;
+}
+
+.usmap-note .zh {
+  display: block;
+  margin-top: 2px;
+}
+
+.usmap-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.usmap-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: 0.82rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-item .zh {
+  color: var(--text-dim);
+  margin-left: 2px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.dot--hiring { background: var(--good); }
+.dot--soon { background: var(--soon); }
+.dot--unclear { background: var(--text-dim); }
+
+.usmap-figure {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 14px;
+}
+
+.usmap-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.usmap-figure figcaption {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 10px;
+}
+
+.usmap-figure figcaption .zh {
+  margin-left: 4px;
+}
+
+/* -- real state geometry, labels, callouts, insets -- */
+.state {
+  fill: var(--surface-2);
+  stroke: var(--border);
+  stroke-width: 1;
+  transition: fill 0.15s ease;
+}
+
+.state:hover {
+  fill: var(--chip-bg);
+}
+
+.state-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8.5px;
+  fill: var(--text);
+  pointer-events: none;
+}
+
+.state-label-zh {
+  font-size: 7.3px;
+  fill: var(--text-dim);
+  pointer-events: none;
+}
+
+.leader {
+  stroke: var(--text-dim);
+  stroke-width: 0.6;
+  fill: none;
+}
+
+.leader-dot {
+  fill: var(--text-dim);
+}
+
+.callout-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  fill: var(--text);
+}
+
+.callout-label .zh {
+  font-family: "Noto Sans SC", sans-serif;
+  fill: var(--text-dim);
+}
+
+.inset-box {
+  fill: none;
+  stroke: var(--text-dim);
+  stroke-width: 1;
+}
+
+.inset-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  fill: var(--text);
+}
+
+.inset-label .zh {
+  font-family: "Noto Sans SC", sans-serif;
+  fill: var(--text-dim);
+}
+
+.pin {
+  cursor: pointer;
+}
+
+.pin circle {
+  stroke: var(--surface);
+  stroke-width: 1.5;
+  transition: r 0.1s ease;
+}
+
+.pin:hover circle,
+.pin:focus circle {
+  r: 8.5;
+}
+
+.pin text {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 7px;
+  font-weight: 500;
+  fill: var(--accent-ink);
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+
+.pin--hiring circle { fill: var(--good); }
+.pin--soon circle { fill: var(--soon); }
+.pin--unclear circle { fill: var(--text-dim); }
+.pin--unclear text { fill: var(--surface); }
+
+.usmap-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 20px;
+}
+
+.usmap-card {
+  background: var(--surface);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-margin-top: 20px;
+  transition: background 0.4s ease;
+}
+
+.usmap-card--flash {
+  background: var(--chip-bg);
+}
+
+.usmap-card__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.usmap-pin-badge {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+
+.usmap-card__company {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1.2;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.usmap-card__company .zh {
+  font-weight: 500;
+  color: var(--text-dim);
+  font-size: 0.78em;
+  margin-left: 4px;
+}
+
+.usmap-card__site {
+  margin: 2px 0 0;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.usmap-card__city {
+  color: var(--text-dim);
+  font-size: 0.76rem;
+  margin: 0;
+}
+
+.usmap-card__status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.usmap-card__note {
+  color: var(--text-dim);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.usmap-card__note .zh {
+  display: block;
+  margin-top: 4px;
+}
+
+.usmap-card__link {
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.78rem;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+  margin-top: 2px;
+}
+
+.usmap-card__link .zh {
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.usmap-card__link:hover {
+  text-decoration: underline;
 }
 
 footer.site-footer {

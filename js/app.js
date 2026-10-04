@@ -101,4 +101,72 @@
   } catch (e) {}
 
   render();
+
+  // ---------- US battery factory map ----------
+  const STATUS_LABEL = {
+    hiring: { en: "Hiring now", zh: "正在招聘" },
+    soon: { en: "Hiring soon / limited", zh: "即将招聘·规模有限" },
+    unclear: { en: "Status unclear", zh: "招聘状态不明" }
+  };
+
+  const pinsEl = document.getElementById("usmap-pins");
+  const usListEl = document.getElementById("usmap-list");
+  const svgNS = "http://www.w3.org/2000/svg";
+
+  FACTORIES.forEach((f) => {
+    const g = document.createElementNS(svgNS, "g");
+    g.setAttribute("class", `pin pin--${f.status}`);
+    g.setAttribute("transform", `translate(${f.x},${f.y})`);
+    g.setAttribute("tabindex", "0");
+    g.setAttribute("role", "button");
+
+    const title = document.createElementNS(svgNS, "title");
+    title.textContent = `${f.id}. ${f.company_en} — ${f.site_en} — ${f.city_en}`;
+    g.appendChild(title);
+
+    const circle = document.createElementNS(svgNS, "circle");
+    circle.setAttribute("r", "6.5");
+    g.appendChild(circle);
+
+    const text = document.createElementNS(svgNS, "text");
+    text.setAttribute("y", "0.5");
+    text.textContent = String(f.id);
+    g.appendChild(text);
+
+    const jump = () => {
+      const card = document.getElementById(`usmap-item-${f.id}`);
+      if (!card) return;
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      card.classList.add("usmap-card--flash");
+      setTimeout(() => card.classList.remove("usmap-card--flash"), 900);
+    };
+    g.addEventListener("click", jump);
+    g.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        jump();
+      }
+    });
+
+    pinsEl.appendChild(g);
+  });
+
+  usListEl.innerHTML = FACTORIES.map((f) => {
+    const s = STATUS_LABEL[f.status];
+    return `
+      <article class="usmap-card" id="usmap-item-${f.id}">
+        <div class="usmap-card__head">
+          <span class="usmap-pin-badge dot--${f.status}">${f.id}</span>
+          <div>
+            <h3 class="usmap-card__company">${f.company_en}<span class="zh">${f.company_zh}</span></h3>
+            <p class="usmap-card__site">${f.site_en}<span class="zh"> · ${f.site_zh}</span></p>
+          </div>
+        </div>
+        <p class="usmap-card__city mono">${f.city_en}<span class="zh"> / ${f.city_zh}</span></p>
+        <p class="usmap-card__status"><i class="dot dot--${f.status}"></i><span>${s.en} <span class="zh">${s.zh}</span></span></p>
+        <p class="usmap-card__note">${f.note_en}<span class="zh">${f.note_zh}</span></p>
+        <a class="usmap-card__link" href="${f.url}" target="_blank" rel="noopener noreferrer">Company site / careers <span class="zh">公司官网/招聘</span> ↗</a>
+      </article>
+    `;
+  }).join("");
 })();
