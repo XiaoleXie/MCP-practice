@@ -151,8 +151,15 @@
     pinsEl.appendChild(g);
   });
 
+  const TECH_LABEL = {
+    yes: { en: "Tech/IT roles", zh: "技术/IT岗位" },
+    unclear: { en: "Tech/IT roles", zh: "技术/IT岗位" }
+  };
+
   usListEl.innerHTML = FACTORIES.map((f) => {
     const s = STATUS_LABEL[f.status];
+    const t = TECH_LABEL[f.tech] || TECH_LABEL.unclear;
+    const techBadgeText = f.tech === "yes" ? "Yes" : "Unclear";
     return `
       <article class="usmap-card" id="usmap-item-${f.id}">
         <div class="usmap-card__head">
@@ -164,6 +171,7 @@
         </div>
         <p class="usmap-card__city mono">${f.city_en}<span class="zh"> / ${f.city_zh}</span></p>
         <p class="usmap-card__status"><i class="dot dot--${f.status}"></i><span>${s.en} <span class="zh">${s.zh}</span></span></p>
+        <p class="usmap-card__tech"><span class="tech-badge tech-badge--${f.tech}">${techBadgeText}</span><span>${t.en}: ${f.tech_en}<span class="zh">${t.zh}:${f.tech_zh}</span></span></p>
         <p class="usmap-card__note">${f.note_en}<span class="zh">${f.note_zh}</span></p>
         <a class="usmap-card__link" href="${f.url}" target="_blank" rel="noopener noreferrer">Company site / careers <span class="zh">公司官网/招聘</span> ↗</a>
       </article>
