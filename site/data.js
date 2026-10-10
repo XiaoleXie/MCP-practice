@@ -264,5 +264,33 @@ var RESTAURANTS = [
       { name: "Build-Your-Own Hot Pot Broth", price: "$28.99 pp (AYCE)", spice: 2, stars: 4.6, reviews: 27, icon: "hotpot" },
       { name: "Sauce Bar Sampler", price: "Included", spice: 1, stars: 4.5, reviews: 19, icon: "sauce" }
     ]
+  },
+  {
+    name: "Song Da",
+    category: "Chinese Food",
+    rating: 4.2,
+    reviews: 46,
+    distance: 3.8,
+    address: "11461 Old Nashville Hwy, Smyrna, TN 37167",
+    blurb: "A Chinese takeout spot one Yelp reviewer called out by name as \"very very good authentic Chinese\" — General Tso's and Szechuan dishes both show up on customer-favorite lists.",
+    dishes: [
+      { name: "General Tso's Chicken", price: "$8.25", spice: 2, stars: 4.8, reviews: 41, icon: "friedchicken" },
+      { name: "Szechuan Chicken", price: "$6.75", spice: 3, stars: 4.6, reviews: 27, icon: "stirfry" },
+      { name: "Crab Rangoon", price: "~$6", spice: 0, stars: 4.7, reviews: 19, icon: "dumpling" }
+    ]
+  },
+  {
+    name: "Happy Fast Food",
+    category: "Chinese Food",
+    rating: 4.7,
+    reviews: 61,
+    distance: 4.0,
+    address: "575 Almaville Rd, Smyrna, TN 37167",
+    blurb: "The highest-rated Chinese spot in Smyrna on Yelp — a no-frills takeout counter with a full Szechuan section for when General Tso's isn't spicy enough.",
+    dishes: [
+      { name: "Szechuan Beef", price: "$10.00", spice: 3, stars: 4.7, reviews: 22, icon: "stirfry" },
+      { name: "Szechuan Shrimp", price: "$13.50", spice: 3, stars: 4.6, reviews: 18, icon: "stirfry" },
+      { name: "Kung Pao Shrimp", price: "$13.50", spice: 2, stars: 4.5, reviews: 15, icon: "stirfry" }
+    ]
   }
 ];

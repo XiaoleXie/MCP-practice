@@ -57,7 +57,8 @@ var DISH_ICONS = {
   boil: '<path d="M14 20c0-4 4-6 10-6s10 2 10 6l-2 14a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z" class="ln fill-a"/><line x1="16" y1="16" x2="32" y2="16" class="ln thin"/><circle cx="20" cy="26" r="1.6" class="fill-c"/><circle cx="28" cy="29" r="1.6" class="fill-c"/>',
   fish: '<path d="M10 24c6-6 18-6 24 0-6 6-18 6-24 0z" class="ln fill-a"/><path d="M34 24l6-5v10z" class="ln fill-b"/><circle cx="16" cy="22" r="1.2" class="fill-c"/>',
   pupusa: '<ellipse cx="24" cy="26" rx="13" ry="6" class="ln fill-a"/><path d="M14 26h20" class="ln thin"/><circle cx="20" cy="24" r="1.4" class="fill-b"/><circle cx="28" cy="25" r="1.4" class="fill-b"/>',
-  waffle: '<rect x="10" y="12" width="28" height="20" rx="3" class="ln fill-a"/><line x1="17" y1="12" x2="17" y2="32" class="ln thin"/><line x1="24" y1="12" x2="24" y2="32" class="ln thin"/><line x1="31" y1="12" x2="31" y2="32" class="ln thin"/><line x1="10" y1="19" x2="38" y2="19" class="ln thin"/><line x1="10" y1="25" x2="38" y2="25" class="ln thin"/><circle cx="30" cy="16" r="1.4" class="fill-c"/>'
+  waffle: '<rect x="10" y="12" width="28" height="20" rx="3" class="ln fill-a"/><line x1="17" y1="12" x2="17" y2="32" class="ln thin"/><line x1="24" y1="12" x2="24" y2="32" class="ln thin"/><line x1="31" y1="12" x2="31" y2="32" class="ln thin"/><line x1="10" y1="19" x2="38" y2="19" class="ln thin"/><line x1="10" y1="25" x2="38" y2="25" class="ln thin"/><circle cx="30" cy="16" r="1.4" class="fill-c"/>',
+  dumpling: '<path d="M24 14c9 0 13 7 13 14a13 10 0 0 1-26 0c0-7 4-14 13-14z" class="ln fill-a"/><path d="M24 14v24" class="ln thin"/><path d="M15 22c3-1 3-3 6-3M27 22c3-1 3-3 6-3" class="ln thin"/>'
 };
 
 function dishIconSvg(key) {
