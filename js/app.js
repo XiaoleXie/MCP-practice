@@ -125,7 +125,7 @@
     g.appendChild(title);
 
     const circle = document.createElementNS(svgNS, "circle");
-    circle.setAttribute("r", "6.5");
+    circle.setAttribute("r", "8");
     g.appendChild(circle);
 
     const text = document.createElementNS(svgNS, "text");
@@ -172,6 +172,7 @@
         <p class="usmap-card__city mono">${f.city_en}<span class="zh"> / ${f.city_zh}</span></p>
         <p class="usmap-card__status"><i class="dot dot--${f.status}"></i><span>${s.en} <span class="zh">${s.zh}</span></span></p>
         <p class="usmap-card__tech"><span class="tech-badge tech-badge--${f.tech}">${techBadgeText}</span><span>${t.en}: ${f.tech_en}<span class="zh">${t.zh}:${f.tech_zh}</span></span></p>
+        <p class="usmap-card__updated">Info checked: ${f.updated} <span class="zh">· 信息核对日期:${f.updated}</span></p>
         <p class="usmap-card__note">${f.note_en}<span class="zh">${f.note_zh}</span></p>
         <a class="usmap-card__link" href="${f.url}" target="_blank" rel="noopener noreferrer">Company site / careers <span class="zh">公司官网/招聘</span> ↗</a>
       </article>

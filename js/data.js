@@ -3,6 +3,127 @@
 const NEWS_DATA = [
   {
     id: 1,
+    country: "IN",
+    date: "2026-10-12",
+    title_en: "NTPC Green Energy Invites EPC Bids for 3,300 MWh Battery Storage at Gujarat's Khavda Solar Plant",
+    title_zh: "NTPC Green Energy就古吉拉特邦卡瓦达光伏电站3,300兆瓦时储能项目发出EPC招标",
+    desc_en: "NTPC Green Energy Ltd has invited bids for the EPC package for a 3,300 MWh battery energy storage system at the NTPC REL Khavda solar plant in Gujarat, adding another utility-scale storage tender to India's growing pipeline.",
+    desc_zh: "NTPC Green Energy公司已就位于古吉拉特邦的NTPC REL卡瓦达光伏电站配套的3,300兆瓦时电池储能系统EPC总包发出招标,为印度不断扩大的大型储能招标项目再添一例。",
+    source_name: "ESS News",
+    source_url: "https://www.ess-news.com/2026/10/12/ntpc-tenders-3-3-gwh-of-battery-storage-in-india/"
+  },
+  {
+    id: 2,
+    country: "CL",
+    date: "2026-10-12",
+    title_en: "Grenergy Secures $457 Million Financing for Chilean Solar-Plus-1.8 GWh Battery Portfolio",
+    title_zh: "Grenergy为智利光伏加1.8吉瓦时储能项目组合获得4.57亿美元融资",
+    desc_en: "Grenergy has obtained $457 million in non-recourse senior financing for a Chilean portfolio comprising 446 MW of solar capacity and approximately 1.8 GWh of battery energy storage.",
+    desc_zh: "Grenergy已为其智利项目组合获得4.57亿美元无追索权优先级融资,该组合包含446兆瓦光伏装机及约1.8吉瓦时的电池储能。",
+    source_name: "ESS News",
+    source_url: "https://ess-news.com/2026/10/12/grenergy-secures-457-million-for-1-8-gwh-chile-battery-portfolio"
+  },
+  {
+    id: 3,
+    country: "CN",
+    date: "2026-10-10",
+    title_en: "CATL Overtakes LG Energy Solution as Top Holder of Battery Patents",
+    title_zh: "宁德时代超越LG新能源,成为全球电池专利持有量第一",
+    desc_en: "PatSnap data covering October 2016 to September 2026 puts CATL at 26,574 battery patent families against 22,597 for LG Energy Solution. Panasonic has dropped out of the global top ten.",
+    desc_zh: "PatSnap覆盖2016年10月至2026年9月的数据显示,宁德时代拥有26,574个电池专利族,LG新能源为22,597个。松下已跌出全球前十。",
+    source_name: "CnEVPost / CarNewsChina",
+    source_url: "https://carnewschina.com/2026/10/10/catl-surpasses-lg-energy-solution-to-claim-top-spot-in-global-battery-patents/"
+  },
+  {
+    id: 4,
+    country: "CN",
+    date: "2026-10-09",
+    title_en: "Chinese Spot Lithium Carbonate Slips 2% After National Day Holiday to 122,350 Yuan a Tonne",
+    title_zh: "国庆节后中国现货碳酸锂下跌约2%,报12.235万元/吨",
+    desc_en: "Shanghai Metals Market data cited by the Rio Times put Chinese spot lithium carbonate at 122,350 yuan per tonne on October 9, down 2.08% as buyers stayed cautious after the holiday. The price is down about 15% over the past month but still roughly 66% above a year earlier.",
+    desc_zh: "据里约时报引用的上海有色网(SMM)数据,10月9日中国现货碳酸锂报12.235万元/吨,下跌2.08%,节后买家仍然谨慎。该价格较一个月前下跌约15%,但仍比一年前高出约66%。",
+    source_name: "The Rio Times",
+    source_url: "https://riotimesonline.com/lithium-markets-latam-friday-october-9-2026"
+  },
+  {
+    id: 5,
+    country: "CA",
+    date: "2026-10-08",
+    title_en: "LG Energy Solution Secures 240,000 Tonnes of Spodumene From Elevra's Quebec Mine",
+    title_zh: "LG新能源锁定Elevra魁北克矿山24万吨锂辉石精矿",
+    desc_en: "Elevra and LG Energy Solution signed a binding multi-year offtake for 240,000 dry metric tonnes of spodumene concentrate from the North American Lithium mine in Quebec, with market-linked pricing and first shipments expected in 2026. Elevra's filing describes a three-year term, while LGES's release cites four years.",
+    desc_zh: "Elevra与LG新能源签署具约束力的多年期包销协议,从魁北克北美锂业(North American Lithium)矿山供应24万干公吨锂辉石精矿,采用与市场挂钩的定价,预计2026年开始首批发运。Elevra的公告称期限为三年,而LG新能源的新闻稿称为四年。",
+    source_name: "Newswire (LG Energy Solution)",
+    source_url: "https://www.newswire.ca/news-releases/lg-energy-solution-secures-multi-year-supply-of-canadian-spodumene-concentrate-from-elevra-861221199.html"
+  },
+  {
+    id: 6,
+    country: "PL",
+    date: "2026-10-07",
+    title_en: "Actis Buys 244 MW / 1,141 MWh of Battery Storage in Poland From DTEK's DRI",
+    title_zh: "Actis从DTEK旗下DRI收购波兰244兆瓦/1,141兆瓦时储能项目",
+    desc_en: "Actis is acquiring two Polish battery projects from DRI, the EU renewables arm of Ukraine's DTEK. Both carry 17-year capacity market contracts and are expected to be among Poland's first utility-scale BESS to reach commercial operation.",
+    desc_zh: "Actis将从乌克兰DTEK旗下欧洲可再生能源业务DRI手中收购波兰两个储能项目,合计244兆瓦/1,141兆瓦时。两个项目均持有17年容量市场合同,预计将成为波兰首批投入商业运营的大型储能项目。",
+    source_name: "Energy-Storage.news",
+    source_url: "https://www.energy-storage.news/actis-buys-1-14gwh-of-bess-in-poland-from-dteks-dri/"
+  },
+  {
+    id: 7,
+    country: "ZA",
+    date: "2026-10-07",
+    title_en: "South Africa Opens Procurement for 4.6 GW of Battery Storage in New Determination",
+    title_zh: "南非新公告启动4.6吉瓦电池储能采购",
+    desc_en: "Electricity Minister Kgosientsho Ramokgopa issued a Section 34 determination prioritising 9.6 GW of new capacity: 4.6 GW of battery storage and 5 GW of gas-to-power, with no new wind or solar for now. It is the first determination under the 2025 IRP and is aimed at curtailment; the battery allocation is almost nine times the 513 MW procured in the first storage round.",
+    desc_zh: "南非电力与能源部长拉莫科戈帕(Kgosientsho Ramokgopa)依据《电力监管法》第34条发布公告,优先采购9.6吉瓦新增容量,其中电池储能4.6吉瓦、燃气发电5吉瓦,暂不含新增风电和光伏。这是2025年综合资源规划(IRP)下的首份公告,旨在缓解弃电问题;储能额度接近首轮采购513兆瓦的九倍。",
+    source_name: "Engineering News",
+    source_url: "https://engineeringnews.co.za/article/new-determination-opens-way-for-public-procurement-of-large-scale-battery-storage-and-gas-to-power-2026-10-07"
+  },
+  {
+    id: 8,
+    country: "FR",
+    date: "2026-10-07",
+    title_en: "TagEnergy Inaugurates France's Largest Battery Storage Site Near Reims",
+    title_zh: "TagEnergy在兰斯附近启用法国最大电池储能站",
+    desc_en: "TagEnergy and Banque des Territoires inaugurated the 240 MW / 480 MWh battery at Cernay-lès-Reims, in commercial operation since May 2026. The site uses Tesla equipment in 140 containers and had fed 70.5 GWh back into the grid after four months; TagEnergy's CEO said the 'largest' title is likely temporary, with other projects coming.",
+    desc_zh: "TagEnergy与法国存托银行(Banque des Territoires)在兰斯附近的塞尔奈莱兰斯(Cernay-lès-Reims)为240兆瓦/480兆瓦时的电池储能站举行落成典礼,该站自2026年5月起已投入商业运行。站内使用特斯拉设备,共140个储能集装箱;投运四个月已向电网回送70.5吉瓦时电量。TagEnergy首席执行官表示,“最大”这一称号很可能只是暂时的,后续还有其他项目。",
+    source_name: "pv magazine",
+    source_url: "https://pv-magazine.com/2026/10/07/frances-largest-battery-goes-online"
+  },
+  {
+    id: 9,
+    country: "RU",
+    date: "2026-10-06",
+    title_en: "Putin Joins Launch of Rosatom-Backed Battery Cluster of Two Gigafactories Near Moscow",
+    title_zh: "普京视频连线出席莫斯科附近俄原子能公司参与的双超级工厂电池产业集群启动仪式",
+    desc_en: "Vladimir Putin took part by videoconference in the opening of a battery manufacturing cluster comprising two gigafactories. Rosatom's Alexei Likhachev called it the largest such cluster in Russia, and the traction-battery plant built jointly with Rosatom was described as ready for commercial operation.",
+    desc_zh: "普京以视频连线方式出席电池制造产业集群的启动仪式,该集群包含两座超级工厂。俄原子能公司负责人利哈乔夫称其为俄罗斯规模最大的同类集群,与俄原子能公司合建的动力电池工厂已具备商业运营条件。",
+    source_name: "President of Russia (Kremlin)",
+    source_url: "http://en.kremlin.ru/events/president/news/80936"
+  },
+  {
+    id: 10,
+    country: "US",
+    date: "2026-10-05",
+    title_en: "Toyota Opens $50 Million Battery Center of North America in Michigan",
+    title_zh: "丰田在密歇根州启用耗资约5000万美元的北美电池中心",
+    desc_en: "Toyota has opened the Toyota Battery Center of North America in Saline, Michigan, a roughly 30,000-square-foot hub for battery testing and evaluation across hybrid, plug-in hybrid, hydrogen and battery-electric vehicles, with an estimated investment of about $50 million. The centre will support Toyota Battery Manufacturing North Carolina and the automaker's North American plants, and research access will be opened up through the University of Michigan Electric Vehicle Center.",
+    desc_zh: "丰田在密歇根州塞林(Saline)启用北美电池中心,这座约3万平方英尺的设施将负责混合动力、插电混动、氢能及纯电动车电池的测试与评估,预计投资约5000万美元。该中心将为丰田北卡罗来纳电池制造工厂及其北美整车工厂提供支持,并通过密歇根大学电动车中心向外部研究合作方开放。",
+    source_name: "electrive",
+    source_url: "https://www.electrive.com/2026/10/05/toyota-battery-center-in-north-america-opens-in-michigan/"
+  },
+  {
+    id: 11,
+    country: "NO",
+    date: "2026-10-05",
+    title_en: "CATL Opens Its Largest NING Service Centre Outside Asia in Oslo",
+    title_zh: "宁德时代在奥斯陆开设亚洲以外最大的“宁服务”中心",
+    desc_en: "CATL has opened its largest NING Service centre outside Asia in Oslo, a roughly 8,000 square metre site serving Norway and the wider Nordic region. It will offer battery testing, maintenance, repair, second-life applications and recycling, and act as the Nordic training hub for technicians. CATL cites Norway's 98.7% battery-electric share of new passenger car registrations in August.",
+    desc_zh: "宁德时代在奥斯陆开设了其亚洲以外最大的“宁服务”(NING SERVICE)中心,占地约8000平方米,服务挪威及整个北欧地区。该中心提供电池检测、维护、维修、梯次利用和回收服务,并将成为北欧地区技术人员的培训枢纽。宁德时代指出,挪威8月纯电动车占新乘用车注册量的比例达98.7%。",
+    source_name: "electrive",
+    source_url: "https://www.electrive.com/2026/10/05/catl-opens-largest-ning-service-centre-outside-asia-in-oslo/"
+  },
+  {
+    id: 12,
     country: "KR",
     date: "2026-10-03",
     title_en: "LG Energy Solution to Supply 46-Series Round Cells for Mercedes-Benz's Next-Gen EVs",
@@ -13,7 +134,18 @@ const NEWS_DATA = [
     source_url: "https://www.electrive.com/2026/10/03/lg-energy-solution-to-supply-46100-round-cells-to-mercedes/"
   },
   {
-    id: 2,
+    id: 13,
+    country: "AU",
+    date: "2026-10-02",
+    title_en: "Atmos Renewables Reaches Financial Close on 400 MW / 1.6 GWh Teebar Battery in Queensland",
+    title_zh: "Atmos Renewables完成昆士兰Teebar 400兆瓦/1.6吉瓦时电池项目融资交割",
+    desc_en: "Atmos Renewables closed financing on the Teebar battery next to Powerlink's Teebar Creek substation in Queensland's Fraser Coast region, a four-hour system backed by the federal Capacity Investment Scheme. With the earlier Merredin battery, Atmos has now taken 970 MW of CIS-backed capacity through financial close.",
+    desc_zh: "Atmos Renewables完成昆士兰弗雷泽海岸地区Teebar电池项目的融资交割,项目毗邻Powerlink的Teebar Creek变电站,为4小时储能系统,获联邦容量投资计划(CIS)支持。连同此前的Merredin电池,Atmos已有970兆瓦CIS支持容量完成融资交割。",
+    source_name: "Energy-Storage.News",
+    source_url: "https://www.energy-storage.news/atmos-renewables-closes-financing-on-1-6gwh-capacity-investment-scheme-backed-battery-storage-system-in-australia/"
+  },
+  {
+    id: 14,
     country: "DE",
     date: "2026-10-02",
     title_en: "BMW Opens Irlbach-Straßkirchen Plant and Starts Series Production of Gen6 Batteries",
@@ -24,18 +156,18 @@ const NEWS_DATA = [
     source_url: "https://www.electrive.com/2026/10/02/bmw-begins-gen6-battery-production-in-irlbach-straskirchen/"
   },
   {
-    id: 3,
-    country: "CN",
-    date: "2026-10-02",
-    title_en: "CATL Extends Lead in Global EV Battery Installations Through August as BYD Holds Second at 15.1%",
-    title_zh: "1-8月全球动力电池装机量:宁德时代领先优势扩大,比亚迪以15.1%份额居次席",
-    desc_en: "CnEVPost's tally of global EV battery installations for January-August 2026 shows CATL at 333.0 GWh, up 25.2% year on year, lifting its global share to 39.4% from 37.7% a year earlier. BYD ranked second with a 15.1% share (127.9 GWh), followed by LG Energy Solution at 8.1% (68.3 GWh) and CALB at 5.3% (44.4 GWh), while SK On held 2.9% with 24.9 GWh. Total global EV battery usage reached 844.2 GWh over the eight months, up 19.7% year on year.",
-    desc_zh: "CnEVPost统计的2026年1-8月全球动力电池装机数据显示,宁德时代装机量达333.0吉瓦时,同比增长25.2%,全球份额由去年同期的37.7%升至39.4%。比亚迪以15.1%的份额(127.9吉瓦时)位列第二,其后是LG新能源(8.1%,68.3吉瓦时)和中创新航(5.3%,44.4吉瓦时),SK On份额为2.9%,装机24.9吉瓦时。前八个月全球动力电池总装机量为844.2吉瓦时,同比增长19.7%。",
-    source_name: "CnEVPost",
-    source_url: "https://cnevpost.com/2026/10/02/global-ev-battery-market-share-jan-aug-2026/"
+    id: 15,
+    country: "SE",
+    date: "2026-10-01",
+    title_en: "Refinyx Acquires Northvolt's Battery Recycling Technology and 134 Patents",
+    title_zh: "Refinyx收购Northvolt电池回收技术及134项专利",
+    desc_en: "New Swedish company Refinyx, founded by former Northvolt Revolt executives, has bought Northvolt's recycling technology, 134 patents and a roughly 1,200 m² pilot and lab facility in Västerås. The platform recovers nickel, cobalt and lithium from end-of-life batteries and production waste; financial terms were not disclosed.",
+    desc_zh: "由前Northvolt Revolt高管创立的瑞典新公司Refinyx收购了Northvolt的回收技术、134项专利,以及位于韦斯特罗斯(Västerås)、面积约1200平方米的中试与实验设施。该平台可从报废电池和生产废料中回收镍、钴和锂;交易财务条款未披露。",
+    source_name: "Battery-News",
+    source_url: "https://battery-news.de/en/2026/10/01/refinyx-acquires-battery-recycling-technology-from-northvolt/"
   },
   {
-    id: 4,
+    id: 16,
     country: "FI",
     date: "2026-10-01",
     title_en: "Wärtsilä and RCT Solutions Close Storage JV, Launch Utility-Scale Integrator Valo",
@@ -46,7 +178,7 @@ const NEWS_DATA = [
     source_url: "https://www.ess-news.com/2026/10/01/wartsila-and-rct-solutions-launch-storage-integrator-valo/"
   },
   {
-    id: 5,
+    id: 17,
     country: "EU",
     date: "2026-10-01",
     title_en: "T&E: EU Will Have Enough 'Made in EU' Battery Cells by 2030, Contradicting Carmakers",
@@ -57,62 +189,7 @@ const NEWS_DATA = [
     source_url: "https://www.electrive.com/2026/10/01/te-analysis-sufficient-european-battery-cells-by-2030/"
   },
   {
-    id: 6,
-    country: "IN",
-    date: "2026-10-01",
-    title_en: "Adani Green Lifts Operational Battery Storage at Khavda to 6.63 GWh",
-    title_zh: "阿达尼绿色能源将卡瓦达运营中的电池储能容量提升至6.63吉瓦时",
-    desc_en: "Adani Green Energy has expanded its operational battery energy storage capacity at Khavda, Gujarat, to 6.63 GWh from 3.55 GWh in June 2026, reaching the mark within 14 months of starting on-site BESS construction. The company says this consolidates Khavda as the world's largest operational battery installation at a single location, and that it now accounts for more than 50% of India's roughly 12.6 GWh of operational BESS. Adani Green says it is on track to add over 10 GWh in FY2026-27 and targets 50 GWh of storage over the next five years.",
-    desc_zh: "阿达尼绿色能源(Adani Green Energy)已将其位于古吉拉特邦卡瓦达(Khavda)的运营电池储能容量提升至6.63吉瓦时,而2026年6月时为3.55吉瓦时,从现场储能施工启动到达成这一规模仅用了14个月。公司称,这巩固了卡瓦达作为全球单一地点最大运营电池储能装置的地位,并占印度约12.6吉瓦时运营储能总量的50%以上。阿达尼绿色能源表示,2026-27财年有望新增逾10吉瓦时,并计划在未来五年内实现50吉瓦时储能容量。",
-    source_name: "Oneindia",
-    source_url: "https://www.oneindia.com/india/adani-green-energy-khavda-bess-6-63-gwh-012-8221401.html"
-  },
-  {
-    id: 7,
-    country: "AU",
-    date: "2026-10-01",
-    title_en: "Liontown Approves A$389 Million Kathleen Valley Expansion to Lift Spodumene Output Over 50%",
-    title_zh: "Liontown批准3.89亿澳元Kathleen Valley扩建项目,锂精矿产量将提升逾50%",
-    desc_en: "Liontown Resources took a final investment decision on October 1 to expand its Kathleen Valley lithium operation in Western Australia at a cost of A$389 million, lifting processing capacity from about 2.8 million to 4.2 million tonnes a year with a new ball mill and plant upgrades. The company targets average output of about 780,000 dry tonnes a year of 5.4% Li2O spodumene concentrate over the first five years from FY30, an increase of more than 50%. First additional production is expected in FY28 with construction complete by the end of the first half of FY29; the project is to be funded from existing cash and operating cash flow and is expected to create 210 construction and 185 ongoing jobs.",
-    desc_zh: "Liontown Resources 10月1日做出最终投资决定,将投入3.89亿澳元扩建其位于西澳大利亚的Kathleen Valley锂矿,通过新增球磨机及设备升级,把年处理能力从约280万吨提高到420万吨。公司目标是自2030财年起的前五年,年均产出约78万干吨、氧化锂品位5.4%的锂辉石精矿,增幅超过50%。预计2028财年开始产生新增产量,2029财年上半年末完成建设;项目资金来自现有现金和经营现金流,预计创造210个建设岗位和185个长期运营岗位。",
-    source_name: "Mining.com.au",
-    source_url: "https://mining.com.au/liontown-approves-389-million-kathleen-valley-expansion/"
-  },
-  {
-    id: 8,
-    country: "FR",
-    date: "2026-09-30",
-    title_en: "Battery Shortage: Stellantis to Pause EV Production at Sochaux and Rennes in France",
-    title_zh: "电池短缺:Stellantis将暂停法国索肖和雷恩工厂的电动车生产",
-    desc_en: "Stellantis is temporarily halting production at its Sochaux and Rennes plants in France because of a shortage of batteries from ACC, the battery joint venture whose cell output has struggled to ramp up. French reports say the pauses are planned for late October and cite insufficient ACC supply for long-range versions of its electric models, including the Peugeot 3008 and 5008 built at Sochaux and the Citroën C5 Aircross built at Rennes, while demand remains strong.",
-    desc_zh: "由于电池合资企业ACC供应不足,Stellantis将暂时停产其位于法国的索肖(Sochaux)和雷恩(Rennes)工厂,ACC的电芯产能爬坡一直不顺。法国媒体报道称,停产计划安排在10月下旬,原因是ACC为长续航版电动车型提供的电池不足,涉及索肖工厂生产的标致3008、5008以及雷恩工厂生产的雪铁龙C5 Aircross,而这些车型的市场需求依然强劲。",
-    source_name: "electrive",
-    source_url: "https://www.electrive.com/2026/09/30/battery-shortage-stellantis-pauses-ev-production-in-france/"
-  },
-  {
-    id: 9,
-    country: "US",
-    date: "2026-09-30",
-    title_en: "GM and LG's Ultium Cells to Convert Tennessee Plant for Prismatic LMR Cell Production by 2028",
-    title_zh: "通用与LG合资的Ultium Cells将改造田纳西工厂,2028年量产棱柱形LMR电芯",
-    desc_en: "Ultium Cells, the joint venture of General Motors and LG Energy Solution, said it will produce prismatic lithium manganese-rich (LMR) cells at its Spring Hill, Tennessee plant, with conversion work starting late this year and production preparations complete in 2028. The companies say LMR can match the cost of lower-cost LFP cells while offering about 33% higher energy density, aimed first at electric pickups and large SUVs. The roughly $1 billion project is expected to add about 500 jobs at a site that employs around 1,200 people, and could make Spring Hill the first plant to mass-produce prismatic LMR cells.",
-    desc_zh: "通用汽车与LG新能源的合资企业Ultium Cells表示,将在田纳西州斯普林希尔(Spring Hill)工厂生产棱柱形锰基富锂(LMR)电芯,改造工程将于今年晚些时候启动,2028年完成量产准备。双方称,LMR电芯成本可与低成本的磷酸铁锂电芯相当,能量密度却高出约33%,将优先用于电动皮卡和大型SUV。该项目投资约10亿美元,预计在目前约有1200名员工的工厂新增约500个岗位,斯普林希尔有望成为全球首个量产棱柱形LMR电芯的工厂。",
-    source_name: "electrive",
-    source_url: "https://www.electrive.com/2026/09/30/ultium-cells-retrofits-tennessee-plant-for-lmr-cell-production/"
-  },
-  {
-    id: 10,
-    country: "CN",
-    date: "2026-09-30",
-    title_en: "China Lithium Carbonate Futures Fall About 25% in September as Demand Fears and a Mine Licence Loss Weigh",
-    title_zh: "9月中国碳酸锂期货下跌约25%,需求担忧与矿山失去许可证双重施压",
-    desc_en: "Lithium carbonate futures on the Guangzhou exchange fell below 120,000 yuan ($17,900) per ton by the end of September from above 160,000 yuan at the start of the month, a drop of roughly a quarter, while spot prices settled around 117,700-120,500 yuan per ton. Reports link the slide to fears over battery demand growth and to CATL's Jianxiawo mine, China's largest lithium mine, losing its licence and returning to care and maintenance. Producers meanwhile reported strong first-half profits, with Tianqi's profit up 49-fold and Zijin's lithium output up 496% year on year.",
-    desc_zh: "截至9月底,广州期货交易所碳酸锂期货价格跌破12万元/吨,而月初曾高于16万元/吨,单月跌幅约四分之一;现货价格则在11.77万至12.05万元/吨区间。报道将此轮下跌归因于市场对电池需求增长的担忧,以及宁德时代枧下窝矿(中国最大锂矿)失去许可证并转入停产维护。与此同时,锂生产商公布了强劲的上半年业绩:天齐锂业利润增长49倍,紫金矿业锂产量同比增长496%。",
-    source_name: "Bloomberg",
-    source_url: "https://www.bloomberg.com/news/articles/2026-09-30/lithium-plunges-25-in-china-on-fears-over-battery-demand-growth"
-  },
-  {
-    id: 11,
+    id: 18,
     country: "IT",
     date: "2026-09-30",
     title_en: "ZE Energy Acquires 200 MW/1 GWh-Plus 'Elena' Battery Project in Apulia, Italy",
@@ -123,18 +200,7 @@ const NEWS_DATA = [
     source_url: "https://www.ess-news.com/2026/09/30/ze-energy-acquires-1-gwh-plus-bess-project-in-italy/"
   },
   {
-    id: 12,
-    country: "AU",
-    date: "2026-09-28",
-    title_en: "Gamuda Wins A$790 Million EPC Deal for First Stage of Mortlake Energy Hub, With 1,449 MWh Battery",
-    title_zh: "Gamuda获7.9亿澳元EPC合同,承建Mortlake能源枢纽一期及1449兆瓦时储能系统",
-    desc_en: "Malaysia's Gamuda signed an A$790 million engineering, procurement and construction contract for the first stage of the Mortlake Energy Hub in Victoria, comprising a 435 MWp solar farm and a 1,449 MWh battery energy storage system connecting to the 500 kV network at Mortlake Terminal Station. Energization is expected in April 2028, with completion targeted for January 2029 and operations starting in the first quarter of 2029. A separate A$45 million operation and maintenance contract is expected to follow within a month.",
-    desc_zh: "马来西亚Gamuda公司签署了维多利亚州Mortlake能源枢纽一期的7.9亿澳元EPC(设计、采购、施工)合同,项目包括435兆瓦峰值光伏电站和1449兆瓦时电池储能系统,并通过Mortlake终端变电站接入500千伏电网。项目预计2028年4月通电,目标2029年1月竣工,2029年第一季度投入运营。另有一份4500万澳元的运维合同预计将在一个月内签订。",
-    source_name: "ESS News",
-    source_url: "https://www.ess-news.com/2026/09/28/first-stage-bess-at-mortlake-energy-hub-grows-to-1449-mwh-as-epc-deal-signed/"
-  },
-  {
-    id: 13,
+    id: 19,
     country: "UA",
     date: "2026-09-28",
     title_en: "Ukraine Adds Up to 1.9 GWh of Battery Storage in First Half of 2026, Industry Group Says",
@@ -145,7 +211,7 @@ const NEWS_DATA = [
     source_url: "https://www.ess-news.com/2026/09/28/ukraine-adds-between-1-6-1-9-gwh-of-energy-storage-in-h1-2026/"
   },
   {
-    id: 14,
+    id: 20,
     country: "ES",
     date: "2026-09-28",
     title_en: "Gotion and Volkswagen's PowerCo Plan €3.22 Billion Battery Ventures in Spain, Slovakia and Morocco",
@@ -156,7 +222,7 @@ const NEWS_DATA = [
     source_url: "https://cnevpost.com/2026/09/28/gotion-vw-plan-investment-european-battery-chain"
   },
   {
-    id: 15,
+    id: 21,
     country: "SK",
     date: "2026-09-25",
     title_en: "InoBat's Nasdaq Filing Shows 2025 Loss and 20% Stake in Gotion Slovakia Gigafactory",
@@ -167,18 +233,7 @@ const NEWS_DATA = [
     source_url: "https://www.ess-news.com/2026/09/25/inobats-nasdaq-filing-shows-2025-loss-20-stake-in-gotion-gigafactory/"
   },
   {
-    id: 16,
-    country: "PL",
-    date: "2026-09-25",
-    title_en: "Greenvolt Starts Building 600 MW/2.4 GWh Siedlce BESS in Poland, One of Europe's Largest",
-    title_zh: "Greenvolt在波兰启动600兆瓦/2.4吉瓦时Siedlce储能项目建设,规模居欧洲前列",
-    desc_en: "Portuguese-founded independent power producer Greenvolt Power began construction around September 24-25 on its 600 MW/2.4 GWh Siedlce battery energy storage project in eastern Poland, which will be one of Europe's largest BESS facilities once complete. BYD Energy Storage will supply the project's batteries using its Haohan storage system under a supply agreement, extending a partnership that already covers Greenvolt's smaller Turośń Kościelna and Nowa Wieś Ełcka projects (200 MW/800 MWh each) in Poland. Commercial operation is targeted for late 2027, as CEE battery storage construction accelerates alongside similar builds now underway in Estonia and Lithuania.",
-    desc_zh: "独立电力生产商Greenvolt Power约9月24日至25日在波兰东部启动其600兆瓦/2.4吉瓦时Siedlce电池储能项目的建设,该项目建成后将跻身欧洲规模最大的储能设施之列。根据供应协议,比亚迪储能(BYD Energy Storage)将采用其“浩瀚”储能系统为项目供货,这是双方合作的延续——此前已为Greenvolt在波兰的Turośń Kościelna及Nowa Wieś Ełcka两个较小项目(各200兆瓦/800兆瓦时)供货。项目商业运营目标定于2027年底,与此同时中东欧地区电池储能建设正加速推进,爱沙尼亚与立陶宛也有类似项目在建。",
-    source_name: "Energy-Storage.News",
-    source_url: "https://www.ess-news.com/2026/09/25/greenvolt-begins-building-600-mw-2-4-gwh-bess-in-poland/"
-  },
-  {
-    id: 17,
+    id: 22,
     country: "BE",
     date: "2026-09-25",
     title_en: "Giga Storage Breaks Ground on 700 MW/2.8 GWh 'Green Turtle' BESS, Belgium's Largest",
@@ -189,7 +244,7 @@ const NEWS_DATA = [
     source_url: "https://www.ess-news.com/2026/09/25/giga-storage-starts-construction-on-2-8-gwh-belgian-bess/"
   },
   {
-    id: 18,
+    id: 23,
     country: "BR",
     date: "2026-09-25",
     title_en: "Minas Gerais Suspends Five More Environmental Licenses at Sigma Lithium's Mine",
@@ -200,7 +255,7 @@ const NEWS_DATA = [
     source_url: "https://www.prnewswire.com/news-releases/brazilian-congresswoman-applauds-suspension-of-sigma-lithiums-environmental-permits-302890396.html"
   },
   {
-    id: 19,
+    id: 24,
     country: "TW",
     date: "2026-09-24",
     title_en: "Mercedes-Benz Secures Priority Access to ProLogium's Gen4 Solid-State Battery Cells",
@@ -211,7 +266,7 @@ const NEWS_DATA = [
     source_url: "https://www.globenewswire.com/news-release/2026/09/24/3368567/0/en/mercedes-benz-and-prologium-have-entered-into-a-joint-testing-agreement-including-a-preliminary-technology-evaluation-of-prologium-s-latest-gen4-superfluidized-all-inorganic-solid-.html"
   },
   {
-    id: 20,
+    id: 25,
     country: "PT",
     date: "2026-09-23",
     title_en: "Portugal Postpones 1,050 MVA Battery Storage Auction to Refine Tender Terms",
@@ -222,29 +277,7 @@ const NEWS_DATA = [
     source_url: "https://www.ess-news.com/2026/09/23/portugal-delays-1050-mva-battery-storage-auction/"
   },
   {
-    id: 21,
-    country: "CA",
-    date: "2026-09-22",
-    title_en: "Rock Tech Lithium Taps Siemens Canada to Build Digital Twin of Ontario Lithium Converter",
-    title_zh: "Rock Tech Lithium携手西门子加拿大,为安大略锂转化厂打造数字孪生系统",
-    desc_en: "Rock Tech Lithium and Siemens Canada signed agreements around September 22 to build a physics-based digital twin of Rock Tech's planned Red Rock lithium converter in northwestern Ontario, the first implementation step under a strategic memorandum of understanding the companies signed in March. The digital twin will model the plant's processes, energy flows, and material streams so Rock Tech can test and validate design, efficiency, and emissions choices before committing major capital, with Siemens also supporting process-control and automation architecture for the converter's feasibility study, which began in June and is due by mid-December. The companies plan to extend the digital twin across the project's full lifecycle, from engineering through construction and operations.",
-    desc_zh: "Rock Tech Lithium与西门子加拿大约9月22日签署协议,将为公司计划在安大略省西北部建设的Red Rock锂转化厂打造基于物理模型的数字孪生系统,这是双方今年3月签署战略谅解备忘录后的首个落地实施步骤。该数字孪生系统将模拟工厂的工艺流程、能量与物料流动,使Rock Tech能够在投入大量资本前对设计方案、能效与排放选择进行测试和验证;西门子还将为该转化厂正在进行的可行性研究提供过程控制与自动化架构支持,该研究于6月启动,预计12月中旬完成。双方计划将数字孪生技术延伸至项目全生命周期,涵盖工程设计、建设施工直至运营阶段。",
-    source_name: "PR Newswire",
-    source_url: "https://www.prnewswire.com/news-releases/rock-tech-lithium-and-siemens-canada-sign-agreements-to-bring-advanced-german-engineering-to-ontario-lithium-converter-project-302885415.html"
-  },
-  {
-    id: 22,
-    country: "CL",
-    date: "2026-09-22",
-    title_en: "Chile Runs First Grid-Forming Tests at Engie's 48 MW/275 MWh Los Loros Battery",
-    title_zh: "智利在Engie公司48兆瓦/275兆瓦时Los Loros储能电站开展首次电网构建型技术测试",
-    desc_en: "Chile's National Electricity Coordinator carried out the country's first field tests of grid-forming battery technology around September 22 at Engie's Los Loros battery storage system in the Atacama region, working alongside Engie Chile and Huawei. One power block of the 48 MW/275 MWh system — co-located with the Los Loros solar plant and in commercial operation since late August — ran in grid-forming mode and helped form an isolated electrical island while holding stable voltage and frequency. The results will feed into verification criteria for integrating grid-forming batteries into Chile's national grid, which is adding storage rapidly to firm its fast-growing solar and wind fleet.",
-    desc_zh: "智利国家电力协调中心约9月22日与Engie智利公司及华为合作,在Engie位于阿塔卡马地区的Los Loros储能电站开展该国首次电网构建型(grid-forming)电池技术现场测试。测试期间,这座与Los Loros光伏电站合建、8月底投入商业运营的48兆瓦/275兆瓦时储能系统其中一个功率单元以电网构建模式运行,协助形成孤岛电网并保持电压与频率稳定。测试结果将为电网构建型电池并入智利国家电网的验证标准提供依据,该国正加速部署储能以稳定快速增长的光伏与风电装机。",
-    source_name: "Energy-Storage.News",
-    source_url: "https://www.ess-news.com/2026/09/22/chile-tests-grid-forming-tech-at-48-mw-275-mwh-bess/"
-  },
-  {
-    id: 23,
+    id: 26,
     country: "HU",
     date: "2026-09-22",
     title_en: "CATL Starts Trial Cell Production at €7.34 Billion Debrecen Plant in Hungary",
@@ -255,7 +288,7 @@ const NEWS_DATA = [
     source_url: "https://www.prnewswire.com/news-releases/catl-kicks-off-trial-production-of-battery-cells-in-hungary-302886109.html"
   },
   {
-    id: 24,
+    id: 27,
     country: "NL",
     date: "2026-09-21",
     title_en: "RWE Takes Final Investment Decision on 400 MW/1.1 GWh Battery at Moerdijk, Netherlands",
@@ -266,7 +299,7 @@ const NEWS_DATA = [
     source_url: "https://www.rwe.com/en/press/rwe-generation/2026-09-21-rwe-to-build-400-mw-battery-to-ease-grid-congestion-in-noord-brabant/"
   },
   {
-    id: 25,
+    id: 28,
     country: "JP",
     date: "2026-09-16",
     title_en: "Panasonic Energy Opens 'Energy Innovation Square' Battery R&D Hub in Osaka",
@@ -277,7 +310,7 @@ const NEWS_DATA = [
     source_url: "https://news.panasonic.com/global/press/en260916-3"
   },
   {
-    id: 26,
+    id: 29,
     country: "EG",
     date: "2026-09-16",
     title_en: "CATL Licenses Battery Pack Technology to Egypt's BME for First Local Pack Plant",
@@ -288,7 +321,7 @@ const NEWS_DATA = [
     source_url: "https://cnevpost.com/2026/09/16/catl-deal-egypt-bme-battery-pack-production/"
   },
   {
-    id: 27,
+    id: 30,
     country: "MA",
     date: "2026-09-16",
     title_en: "Morocco's OCP Switches On the Country's First Large-Scale Battery Storage System",
@@ -299,7 +332,7 @@ const NEWS_DATA = [
     source_url: "https://www.ess-news.com/2026/09/16/ocp-deploys-25-mw-125-mwh-lfp-battery-at-moroccan-phosphate-mine/"
   },
   {
-    id: 28,
+    id: 31,
     country: "SA",
     date: "2026-09-15",
     title_en: "Gotion High-Tech Wins 6 GWh Battery Storage Order for Three Saudi Arabia Sites",
@@ -310,7 +343,7 @@ const NEWS_DATA = [
     source_url: "https://battery-news.de/en/2026/09/16/gotion-high-tech-to-supply-6-gwh-of-battery-storage-in-saudi-arabia/"
   },
   {
-    id: 29,
+    id: 32,
     country: "GB",
     date: "2026-09-15",
     title_en: "UK's Palmer Energy and Slovakia's InoBat Sign Pan-European Battery Storage Supply Pact",
@@ -321,7 +354,7 @@ const NEWS_DATA = [
     source_url: "https://www.politics.co.uk/opinion-former/press-release/2026/09/15/uk-battery-firm-palmer-energy-signs-european-supply-deal-as-government-chases-27gw-storage-target/"
   },
   {
-    id: 30,
+    id: 33,
     country: "RO",
     date: "2026-09-15",
     title_en: "Romania Finalizes Rules for RON 400 Million Home Battery Storage Subsidy",
@@ -332,7 +365,7 @@ const NEWS_DATA = [
     source_url: "https://www.ess-news.com/2026/09/15/romania-finalizes-rules-for-national-battery-storage-subsidy-program/"
   },
   {
-    id: 31,
+    id: 34,
     country: "AR",
     date: "2026-09-15",
     title_en: "Lithium Argentina Closes $180 Million Convertible Note Investment From Ganfeng",
@@ -344,7 +377,7 @@ const NEWS_DATA = [
   }
 ];
 
-// Country metadata: flag emoji + bilingual names, in a sensible display order.
+
 const COUNTRIES = [
   { code: "CN", flag: "🇨🇳", name_en: "China", name_zh: "中国" },
   { code: "US", flag: "🇺🇸", name_en: "United States", name_zh: "美国" },
@@ -353,6 +386,7 @@ const COUNTRIES = [
   { code: "TW", flag: "🇹🇼", name_en: "Taiwan", name_zh: "台湾" },
   { code: "DE", flag: "🇩🇪", name_en: "Germany", name_zh: "德国" },
   { code: "CH", flag: "🇨🇭", name_en: "Switzerland", name_zh: "瑞士" },
+  { code: "RU", flag: "🇷🇺", name_en: "Russia", name_zh: "俄罗斯" },
   { code: "SE", flag: "🇸🇪", name_en: "Sweden", name_zh: "瑞典" },
   { code: "NO", flag: "🇳🇴", name_en: "Norway", name_zh: "挪威" },
   { code: "FI", flag: "🇫🇮", name_en: "Finland", name_zh: "芬兰" },
@@ -381,6 +415,7 @@ const COUNTRIES = [
   { code: "MA", flag: "🇲🇦", name_en: "Morocco", name_zh: "摩洛哥" },
   { code: "AR", flag: "🇦🇷", name_en: "Argentina", name_zh: "阿根廷" },
   { code: "ZW", flag: "🇿🇼", name_en: "Zimbabwe", name_zh: "津巴布韦" },
+  { code: "ZA", flag: "🇿🇦", name_en: "South Africa", name_zh: "南非" },
   { code: "SA", flag: "🇸🇦", name_en: "Saudi Arabia", name_zh: "沙特阿拉伯" },
   { code: "EG", flag: "🇪🇬", name_en: "Egypt", name_zh: "埃及" },
   { code: "CI", flag: "🇨🇮", name_en: "Côte d'Ivoire", name_zh: "科特迪瓦" }
@@ -390,32 +425,31 @@ const COUNTRIES = [
 // state economic-development announcements. x/y are schematic map coordinates,
 // not precise lat/long.
 const FACTORIES = [
-  { id: 1, x: 97.1, y: 246.8, status: "hiring", tech: "yes", company_en: "Tesla", company_zh: "特斯拉", site_en: "Gigafactory Nevada (battery cells)", site_zh: "内华达超级工厂(电芯)", city_en: "Sparks, NV", city_zh: "斯帕克斯,内华达州", note_en: "Hiring ~2,000-3,000 roles with Panasonic for Semi/Cybertruck battery ramp-up.", note_zh: "为配合Semi与Cybertruck电池产能爬坡,正与松下共同招聘约2000-3000个岗位。", tech_en: "Application Support Engineer (Factory Software), Site Reliability Engineer", tech_zh: "应用支持工程师(工厂软件系统)、站点可靠性工程师", url: "https://www.tesla.com/careers/search/?region=United+States" },
-  { id: 2, x: 102.2, y: 248.2, status: "hiring", tech: "yes", company_en: "Redwood Materials", company_zh: "Redwood Materials", site_en: "Battery materials & recycling campus", site_zh: "电池材料与回收园区", city_en: "McCarran, NV", city_zh: "麦卡伦,内华达州", note_en: "120+ open roles across engineering, operations, and manufacturing.", note_zh: "工程、运营、生产等岗位在招超120个。", tech_en: "IT/OT Support Specialist, MES process support", tech_zh: "IT/OT支持专员、MES流程支持", url: "https://job-boards.greenhouse.io/redwoodmaterials" },
-  { id: 3, x: 470.4, y: 509.5, status: "hiring", tech: "yes", company_en: "Tesla", company_zh: "特斯拉", site_en: "Gigafactory Texas (cell & pack production)", site_zh: "德克萨斯超级工厂(电芯与电池包)", city_en: "Austin, TX", city_zh: "奥斯汀,德克萨斯州", note_en: "Actively hiring battery cell production and engineering roles.", note_zh: "正在招聘电芯生产及工程相关岗位。", tech_en: "Application Support Engineer (Factory Software)", tech_zh: "应用支持工程师(工厂软件系统)", url: "https://www.tesla.com/careers/search/?region=United+States" },
-  { id: 4, x: 219.8, y: 442.8, status: "soon", tech: "unclear", company_en: "American Battery Factory (ABF)", company_zh: "美国电池工厂(ABF)", site_en: "LFP cell gigafactory", site_zh: "磷酸铁锂电芯超级工厂", city_en: "Tucson, AZ", city_zh: "图森,亚利桑那州", note_en: "Early-stage hiring (~60 staff now), scaling toward 1,000 as construction phases complete.", note_zh: "处于早期招聘阶段(目前约60人),随建设推进将扩大至约1000人。", tech_en: "No IT/MES-specific listings found yet", tech_zh: "目前未见明确的IT/MES岗位", url: "https://americanbatteryfactory.com/careers/" },
-  { id: 5, x: 211.2, y: 417.7, status: "hiring", tech: "yes", company_en: "LG Energy Solution", company_zh: "LG新能源", site_en: "Standalone cylindrical & LFP ESS battery complex", site_zh: "独立圆柱电芯与磷酸铁锂储能电池综合体", city_en: "Queen Creek, AZ", city_zh: "皇后溪,亚利桑那州", note_en: "Hiring underway ahead of 2026 mass production.", note_zh: "为2026年量产招聘正在进行。", tech_en: "Engineer, MES Process Innovation; Engineer II, IT Planning", tech_zh: "MES流程创新工程师、IT规划工程师II", url: "https://www.lgensol.com/en/careers" },
-  { id: 6, x: 522.5, y: 310.6, status: "hiring", tech: "yes", company_en: "Panasonic Energy", company_zh: "松下能源", site_en: "EV battery gigafactory", site_zh: "电动车电池超级工厂", city_en: "De Soto, KS", city_zh: "迪索托,堪萨斯州", note_en: "~1,400 employed; hosting hiring events for several hundred more entry-level machine technicians.", note_zh: "现有员工约1400人;正举办招聘活动,计划再招募数百名入门级机械技术员。", tech_en: "Systems Engineer I, Software Engineer III", tech_zh: "系统工程师I、软件工程师III", url: "https://careers.na.panasonic.com/energy" },
-  { id: 7, x: 668.0, y: 215.0, status: "hiring", tech: "yes", company_en: "LG Energy Solution", company_zh: "LG新能源", site_en: "LFP / ESS battery plant", site_zh: "磷酸铁锂储能电池工厂", city_en: "Holland, MI", city_zh: "霍兰,密歇根州", note_en: "Hiring engineering technicians, electricians, and production supervisors.", note_zh: "正招聘工程技术员、电工及生产主管等岗位。", tech_en: "Sr. Specialist, IT Process", tech_zh: "IT流程高级专员", url: "https://www.lgensol.com/en/careers" },
-  { id: 8, x: 691.5, y: 213.7, status: "hiring", tech: "yes", company_en: "Ultium Cells (GM / LG Energy Solution JV)", company_zh: "Ultium Cells(通用汽车与LG新能源合资)", site_en: "EV battery cell plant", site_zh: "电动车电芯工厂", city_en: "Delta Township (Lansing), MI", city_zh: "兰辛(特尔塔镇),密歇根州", note_en: "Part of 50+ open roles across Ultium's three US plants.", note_zh: "Ultium美国三座工厂合计在招岗位超50个。", tech_en: "Smart Factory Engineer (Lansing)", tech_zh: "智能工厂工程师(兰辛)", url: "https://ev.careers/companies/ultium-cells-llc-1618317" },
-  { id: 9, x: 713.0, y: 222.7, status: "hiring", tech: "yes", company_en: "Our Next Energy (ONE)", company_zh: "Our Next Energy(ONE)", site_en: "ONE Circle LFP battery campus", site_zh: "ONE Circle磷酸铁锂电池园区", city_en: "Van Buren Township, MI", city_zh: "范布伦镇,密歇根州", note_en: "Hiring toward 2,112 jobs as the plant ramps to 20 GWh by late 2027.", note_zh: "工厂计划2027年底前产能提升至20吉瓦时,招聘岗位最终将达2112个。", tech_en: "Manufacturing Controls Engineer (MES support)", tech_zh: "制造控制工程师(支持MES系统)", url: "https://recruiting.ultipro.com/OUR1002ONXE/JobBoard/5c7eeefc-e61c-417a-8468-f976a704a34d/?q=&o=postedDateDesc&w=&wc=&we=&wpst=" },
-  { id: 10, x: 760.4, y: 238.5, status: "hiring", tech: "yes", company_en: "Ultium Cells (GM / LG Energy Solution JV)", company_zh: "Ultium Cells(通用汽车与LG新能源合资)", site_en: "EV battery cell plant", site_zh: "电动车电芯工厂", city_en: "Warren, OH", city_zh: "沃伦,俄亥俄州", note_en: "Part of 50+ open roles across Ultium's three US plants.", note_zh: "Ultium美国三座工厂合计在招岗位超50个。", tech_en: "IT Engineer, Smart Factory Engineer (Warren)", tech_zh: "IT工程师、智能工厂工程师(沃伦)", url: "https://ev.careers/companies/ultium-cells-llc-1618317" },
-  { id: 11, x: 767.3, y: 256.3, status: "hiring", tech: "yes", company_en: "Form Energy", company_zh: "Form Energy", site_en: "Iron-air battery factory (Form Factory 1)", site_zh: "铁空气电池工厂(Form Factory 1)", city_en: "Weirton, WV", city_zh: "韦尔顿,西弗吉尼亚州", note_en: "199 open roles company-wide; scaling toward 750+ jobs as the former steel-mill site converts to multi-day storage cell production.", note_zh: "公司全线在招岗位199个;原钢厂旧址正改造为多日储能电芯生产基地,招聘将扩大至750人以上。", tech_en: "Senior Software Engineer MES, MES Technician", tech_zh: "MES高级软件工程师、MES技术员", url: "https://formenergy.com/careers/" },
-  { id: 12, x: 669.8, y: 376.7, status: "hiring", tech: "yes", company_en: "Ultium Cells (GM / LG Energy Solution JV)", company_zh: "Ultium Cells(通用汽车与LG新能源合资)", site_en: "EV battery plant, converting to prismatic LMR cells by 2028", site_zh: "电动车电芯工厂,2028年前改造为棱柱形LMR电芯产线", city_en: "Spring Hill, TN", city_zh: "斯普林希尔,田纳西州", note_en: "~$1B LMR-cell conversion expected to add ~500 jobs to the ~1,200-person site.", note_zh: "约10亿美元的LMR电芯改造项目预计为现有约1200人的工厂新增约500个岗位。", tech_en: "Part of Ultium's IT Engineer / Smart Factory Engineer roles", tech_zh: "属于Ultium公司IT工程师/智能工厂工程师岗位体系", url: "https://ev.careers/companies/ultium-cells-llc-1618317" },
-  { id: 13, x: 625.6, y: 386.8, status: "soon", tech: "yes", company_en: "BlueOval SK (Ford / SK On JV)", company_zh: "BlueOval SK(福特与SK On合资)", site_en: "EV battery plant at BlueOval City", site_zh: "BlueOval City电动车电池工厂", city_en: "Stanton, TN", city_zh: "斯坦顿,田纳西州", note_en: "Commercial production targeted for 2026; hiring ramps ahead of startup.", note_zh: "商业化生产目标为2026年,招聘正随投产临近逐步展开。", tech_en: "MES Process Design Engineer, ERP Systems Specialist", tech_zh: "MES流程设计工程师、ERP系统专员", url: "https://www.blueovalsk.com/careers" },
-  { id: 14, x: 683.8, y: 332.7, status: "soon", tech: "yes", company_en: "Ford Motor Company", company_zh: "福特汽车", site_en: "BlueOval Battery Park (former BlueOval SK plant, pivoting to storage)", site_zh: "BlueOval电池园区(原BlueOval SK工厂,转型储能生产)", city_en: "Glendale, KY", city_zh: "格伦代尔,肯塔基州", note_en: "Original JV plant paused; Ford hiring salaried staff from early 2026, hourly operators from 2027.", note_zh: "原合资工厂已暂停;福特将于2026年初招聘受薪员工,2027年起招聘时薪操作员。", tech_en: "IT Engineer (BlueOval City)", tech_zh: "IT工程师(BlueOval City)", url: "https://www.careers.ford.com/search-jobs/United%20States?orgIds=48560&alp=6252001&alt=2" },
-  { id: 15, x: 675.2, y: 348.2, status: "hiring", tech: "yes", company_en: "Envision AESC", company_zh: "远景AESC", site_en: "EV battery gigafactory", site_zh: "电动车电池超级工厂", city_en: "Bowling Green, KY", city_zh: "鲍灵格林,肯塔基州", note_en: "Building toward ~2,000 jobs; $2B gigafactory under construction.", note_zh: "20亿美元超级工厂建设中,目标创造约2000个就业岗位。", tech_en: "IT Support (multi-site), Systems Engineer", tech_zh: "IT支持(多厂区)、系统工程师", url: "https://ev.careers/companies/aesc-1755150" },
-  { id: 16, x: 663.9, y: 240.3, status: "unclear", tech: "yes", company_en: "Samsung SDI", company_zh: "三星SDI", site_en: "EV battery cell plant (formerly a GM joint venture)", site_zh: "电动车电芯工厂(原通用汽车合资项目)", city_en: "New Carlisle, IN", city_zh: "新卡莱尔,印第安纳州", note_en: "Construction ahead of schedule after Samsung SDI took full ownership from GM; public hiring timeline not yet detailed.", note_zh: "三星SDI已从通用汽车手中接管全部股权,建设进度提前;具体招聘时间表尚未公开。", tech_en: "IT Support Specialist (Kokomo)", tech_zh: "IT支持专员(科科莫)", url: "https://www.samsungcareers.com/" },
-  { id: 17, x: 673.0, y: 267.4, status: "hiring", tech: "yes", company_en: "Samsung SDI / Stellantis JV (StarPlus Energy)", company_zh: "三星SDI与Stellantis合资(StarPlus Energy)", site_en: "Two EV / LFP battery plants", site_zh: "两座电动车及磷酸铁锂电池工厂", city_en: "Kokomo, IN", city_zh: "科科莫,印第安纳州", note_en: "LFP line starts September 2026; second plant ramps toward 2027.", note_zh: "磷酸铁锂产线将于2026年9月投产,第二座工厂预计2027年逐步达产。", tech_en: "MES Systems Engineer", tech_zh: "MES系统工程师", url: "https://starplusenergyus.com/careers" },
-  { id: 18, x: 737.3, y: 404.6, status: "hiring", tech: "yes", company_en: "SK On (SK Battery America)", company_zh: "SK On(SK电池美国)", site_en: "EV battery plant", site_zh: "电动车电池工厂", city_en: "Commerce, GA", city_zh: "康默斯,佐治亚州", note_en: "Still hiring production, quality, and logistics roles despite 2026 layoffs amid EV demand slowdown.", note_zh: "尽管2026年因电动车需求放缓而裁员,仍在招聘生产、质量及物流等岗位。", tech_en: "SK Battery America IT hub in Roswell (MES dev/ops, data analysts)", tech_zh: "SK电池美国罗斯威尔IT中心(MES开发运维、数据分析师)", url: "https://www.skbatteryamerica.com/" },
-  { id: 19, x: 780.8, y: 446.4, status: "hiring", tech: "unclear", company_en: "Hyundai Motor Group / LG Energy Solution JV (HL-GA)", company_zh: "现代汽车集团与LG新能源合资(HL-GA)", site_en: "EV battery plant", site_zh: "电动车电池工厂", city_en: "Bryan County, GA", city_zh: "布莱恩县,佐治亚州", note_en: "Production started early 2026; hiring continues toward 8,500 jobs over 8 years.", note_zh: "已于2026年初投产,招聘将持续推进,未来8年目标创造8500个岗位。", tech_en: "No IT/MES-specific listings found yet", tech_zh: "目前未见明确的IT/MES岗位", url: "https://www.lgensol.com/en/careers" },
-  { id: 20, x: 802.5, y: 356.6, status: "hiring", tech: "yes", company_en: "Toyota", company_zh: "丰田", site_en: "Toyota Battery Manufacturing, North Carolina (TBMNC)", site_zh: "丰田电池制造北卡罗来纳工厂(TBMNC)", city_en: "Liberty, NC", city_zh: "利伯蒂,北卡罗来纳州", note_en: "900+ employed already; hundreds more hired yearly toward 5,100 jobs.", note_zh: "现有员工已超900人,未来每年还将新增数百个岗位,目标达5100人。", tech_en: "MES Principal Engineer, OpCenter Engineer, Systems Engineer", tech_zh: "MES首席工程师、OpCenter工程师、系统工程师", url: "https://careers.toyota.com/us/en/toyota-nc-operations-program" },
-  { id: 21, x: 815.9, y: 354.7, status: "hiring", tech: "yes", company_en: "Forge Nano / Forge Battery", company_zh: "Forge Nano / Forge Battery", site_en: "\"America's Battery Gigafactory\" expansion", site_zh: "“美国电池超级工厂”扩建项目", city_en: "Morrisville, NC", city_zh: "莫里斯维尔,北卡罗来纳州", note_en: "$100M DOE-backed expansion broke ground August 2026; Samsung SDI signed as an offtake customer.", note_zh: "获美国能源部1亿美元资助的扩建项目已于2026年8月动工;三星SDI已签约成为采购客户。", tech_en: "Systems Engineer, Controls Engineer (mainly HQ, Thornton CO)", tech_zh: "系统工程师、控制工程师(主要在科罗拉多州桑顿总部)", url: "https://forge-nano.breezy.hr/" },
-  { id: 22, x: 834.0, y: 349.2, status: "hiring", tech: "yes", company_en: "Natron Energy", company_zh: "Natron Energy", site_en: "Sodium-ion battery gigafactory", site_zh: "钠离子电池超级工厂", city_en: "Edgecombe County, NC", city_zh: "埃奇科姆县,北卡罗来纳州", note_en: "First US sodium-ion gigafactory; scaling toward 1,000+ jobs at full capacity.", note_zh: "美国首座钠离子电池超级工厂,满产后招聘规模将超1000人。", tech_en: "IT and MES professionals planned for the Edgecombe site", tech_zh: "埃奇科姆县工厂计划招聘IT及MES专业人员", url: "https://natron.energy/careers/" },
-  { id: 23, x: 805.5, y: 394.4, status: "hiring", tech: "yes", company_en: "Envision AESC", company_zh: "远景AESC", site_en: "EV battery cell plant (BMW supplier)", site_zh: "电动车电芯工厂(宝马供应商)", city_en: "Florence, SC", city_zh: "弗洛伦斯,南卡罗来纳州", note_en: "Building toward 1,620 jobs as 2026 production start approaches.", note_zh: "随着2026年投产临近,招聘将扩大至1620个岗位。", tech_en: "MES Engineer 2 (Florence)", tech_zh: "MES工程师2级(弗洛伦斯)", url: "https://ev.careers/companies/aesc-1755150" },
-  { id: 24, x: 799.6, y: 421.0, status: "soon", tech: "yes", company_en: "Redwood Materials", company_zh: "Redwood Materials", site_en: "Cathode & anode materials campus", site_zh: "正极与负极材料园区", city_en: "Ridgeville, SC", city_zh: "里奇维尔,南卡罗来纳州", note_en: "Future-roles hiring underway ahead of ~1,500 planned jobs.", note_zh: "面向约1500个规划岗位的“未来职位”招聘已启动。", tech_en: "Company-wide IT/OT Support team", tech_zh: "公司级IT/OT支持团队", url: "https://job-boards.greenhouse.io/redwoodmaterials" },
-  { id: 25, x: 676.8, y: 370.8, status: "hiring", tech: "unclear", company_en: "FIXX Energy", company_zh: "FIXX Energy", site_en: "Battery plant (former Nissan/AESC site), pivoting to energy storage", site_zh: "电池工厂(原日产/AESC工厂),转型生产储能电池", city_en: "Smyrna, TN", city_zh: "士麦那,田纳西州", note_en: "Acquired from AESC in April 2026; hiring process engineers, QA technologists, and manufacturing technicians at the former Nissan Leaf battery plant.", note_zh: "2026年4月从AESC收购;正在原日产聆风电池工厂招聘工艺工程师、质量检测技术员及生产技术员等岗位。", tech_en: "No IT/MES-specific listings found yet", tech_zh: "目前未见明确的IT/MES岗位", url: "https://fixxenergy.com/" },
-  { id: 26, x: 642.5, y: 252.8, status: "hiring", tech: "yes", company_en: "Gotion", company_zh: "国轩高科", site_en: "Battery & energy storage system plant (five production lines)", site_zh: "电池及储能系统工厂(五条产线)", city_en: "Manteno, IL", city_zh: "曼特诺,伊利诺伊州", note_en: "Ramping from ~300 to 450 employees by end of 2025, targeting 1,400 in 2026 and up to 2,600 long term.", note_zh: "员工数量将从约300人增至2025年底的450人,2026年目标达1400人,长期规划最高2600人。", tech_en: "MES Engineer, Systems Engineer (MES & Data)", tech_zh: "MES工程师、系统工程师(MES与数据)", url: "https://job-boards.greenhouse.io/gotion?offices%5B%5D=4057589002" },
-  { id: 27, x: 83.2, y: 106.5, status: "hiring", tech: "unclear", company_en: "ESS Inc", company_zh: "ESS Inc", site_en: "Iron flow battery factory (headquarters)", site_zh: "铁液流电池工厂(总部)", city_en: "Wilsonville, OR", city_zh: "威尔逊维尔,俄勒冈州", note_en: "Tripling production capacity with US Export-Import Bank backing; hiring engineering technicians and production roles.", note_zh: "在美国进出口银行支持下将产能提升至三倍;正在招聘工程技术员及生产相关岗位。", tech_en: "Engineering roles found, no IT/MES-specific listing yet", tech_zh: "已有工程岗位,但未见明确IT/MES岗位", url: "https://essinc.com/careers/" },
-  { id: 28, x: 780.3, y: 254.7, status: "hiring", tech: "yes", company_en: "Eos Energy Enterprises", company_zh: "Eos Energy Enterprises", site_en: "Znyth zinc battery factory", site_zh: "Znyth锌电池工厂", city_en: "Turtle Creek, PA", city_zh: "特特尔克里克,宾夕法尼亚州", note_en: "Hiring manufacturing engineers, electrical technicians, and machine operators for zinc battery energy storage production.", note_zh: "正在为锌电池储能生产招聘制造工程师、电气技术员及设备操作员等岗位。", tech_en: "IT Specialist, Project Systems Engineer", tech_zh: "IT专员、项目系统工程师", url: "https://eose.com/careers/" }
+  { id: 1, x: 97.1, y: 246.8, status: "hiring", tech: "yes", company_en: "Tesla", company_zh: "特斯拉", site_en: "Gigafactory Nevada (battery cells)", site_zh: "内华达超级工厂(电芯)", city_en: "Sparks, NV", city_zh: "斯帕克斯,内华达州", note_en: "Hiring ~2,000-3,000 roles with Panasonic for Semi/Cybertruck battery ramp-up.", note_zh: "为配合Semi与Cybertruck电池产能爬坡,正与松下共同招聘约2000-3000个岗位。", tech_en: "Application Support Engineer (Factory Software), Site Reliability Engineer", tech_zh: "应用支持工程师(工厂软件系统)、站点可靠性工程师", updated: "2026-10-11", url: "https://www.tesla.com/careers/search/?region=United+States" },
+  { id: 2, x: 102.2, y: 248.2, status: "hiring", tech: "yes", company_en: "Redwood Materials", company_zh: "Redwood Materials", site_en: "Battery materials & recycling campus", site_zh: "电池材料与回收园区", city_en: "McCarran, NV", city_zh: "麦卡伦,内华达州", note_en: "120+ open roles across engineering, operations, and manufacturing.", note_zh: "工程、运营、生产等岗位在招超120个。", tech_en: "IT/OT Support Specialist, MES process support", tech_zh: "IT/OT支持专员、MES流程支持", updated: "2026-10-11", url: "https://job-boards.greenhouse.io/redwoodmaterials" },
+  { id: 3, x: 470.4, y: 509.5, status: "hiring", tech: "yes", company_en: "Tesla", company_zh: "特斯拉", site_en: "Gigafactory Texas (cell & pack production)", site_zh: "德克萨斯超级工厂(电芯与电池包)", city_en: "Austin, TX", city_zh: "奥斯汀,德克萨斯州", note_en: "Actively hiring battery cell production and engineering roles.", note_zh: "正在招聘电芯生产及工程相关岗位。", tech_en: "Application Support Engineer (Factory Software)", tech_zh: "应用支持工程师(工厂软件系统)", updated: "2026-10-11", url: "https://www.tesla.com/careers/search/?region=United+States" },
+  { id: 4, x: 219.8, y: 442.8, status: "soon", tech: "unclear", company_en: "American Battery Factory (ABF)", company_zh: "美国电池工厂(ABF)", site_en: "LFP cell gigafactory", site_zh: "磷酸铁锂电芯超级工厂", city_en: "Tucson, AZ", city_zh: "图森,亚利桑那州", note_en: "Early-stage hiring (~60 staff now), scaling toward 1,000 as construction phases complete.", note_zh: "处于早期招聘阶段(目前约60人),随建设推进将扩大至约1000人。", tech_en: "No IT/MES-specific listings found yet", tech_zh: "目前未见明确的IT/MES岗位", updated: "2026-10-11", url: "https://americanbatteryfactory.com/careers/" },
+  { id: 5, x: 211.2, y: 417.7, status: "hiring", tech: "yes", company_en: "LG Energy Solution", company_zh: "LG新能源", site_en: "Standalone cylindrical & LFP ESS battery complex", site_zh: "独立圆柱电芯与磷酸铁锂储能电池综合体", city_en: "Queen Creek, AZ", city_zh: "皇后溪,亚利桑那州", note_en: "Hiring underway ahead of 2026 mass production.", note_zh: "为2026年量产招聘正在进行。", tech_en: "Engineer, MES Process Innovation; Engineer II, IT Planning", tech_zh: "MES流程创新工程师、IT规划工程师II", updated: "2026-10-11", url: "https://www.lgensol.com/en/careers" },
+  { id: 6, x: 522.5, y: 310.6, status: "hiring", tech: "yes", company_en: "Panasonic Energy", company_zh: "松下能源", site_en: "EV battery gigafactory", site_zh: "电动车电池超级工厂", city_en: "De Soto, KS", city_zh: "迪索托,堪萨斯州", note_en: "~1,400 employed; hosting hiring events for several hundred more entry-level machine technicians.", note_zh: "现有员工约1400人;正举办招聘活动,计划再招募数百名入门级机械技术员。", tech_en: "Systems Engineer I, Software Engineer III", tech_zh: "系统工程师I、软件工程师III", updated: "2026-10-11", url: "https://careers.na.panasonic.com/energy" },
+  { id: 7, x: 668.0, y: 215.0, status: "hiring", tech: "yes", company_en: "LG Energy Solution", company_zh: "LG新能源", site_en: "LFP / ESS battery plant", site_zh: "磷酸铁锂储能电池工厂", city_en: "Holland, MI", city_zh: "霍兰,密歇根州", note_en: "Hiring engineering technicians, electricians, and production supervisors.", note_zh: "正招聘工程技术员、电工及生产主管等岗位。", tech_en: "Sr. Specialist, IT Process", tech_zh: "IT流程高级专员", updated: "2026-10-11", url: "https://www.lgensol.com/en/careers" },
+  { id: 8, x: 691.5, y: 213.7, status: "hiring", tech: "yes", company_en: "Ultium Cells (GM / LG Energy Solution JV)", company_zh: "Ultium Cells(通用汽车与LG新能源合资)", site_en: "EV battery cell plant", site_zh: "电动车电芯工厂", city_en: "Delta Township (Lansing), MI", city_zh: "兰辛(特尔塔镇),密歇根州", note_en: "Part of 50+ open roles across Ultium's three US plants.", note_zh: "Ultium美国三座工厂合计在招岗位超50个。", tech_en: "Smart Factory Engineer (Lansing)", tech_zh: "智能工厂工程师(兰辛)", updated: "2026-10-11", url: "https://ultiumcell.com/careers" },
+  { id: 9, x: 760.4, y: 238.5, status: "hiring", tech: "yes", company_en: "Ultium Cells (GM / LG Energy Solution JV)", company_zh: "Ultium Cells(通用汽车与LG新能源合资)", site_en: "EV battery cell plant", site_zh: "电动车电芯工厂", city_en: "Warren, OH", city_zh: "沃伦,俄亥俄州", note_en: "Cell production restarted in August 2026 after a ~7-month idling; most laid-off workers recalled, site headcount ~1,400.", note_zh: "停产约7个月后于2026年8月恢复电芯生产,多数休假员工已召回,厂区员工约1400人。", tech_en: "IT Engineer, Smart Factory Engineer (Warren)", tech_zh: "IT工程师、智能工厂工程师(沃伦)", updated: "2026-10-11", url: "https://ultiumcell.com/careers" },
+  { id: 10, x: 767.3, y: 256.3, status: "hiring", tech: "yes", company_en: "Form Energy", company_zh: "Form Energy", site_en: "Iron-air battery factory (Form Factory 1)", site_zh: "铁空气电池工厂(Form Factory 1)", city_en: "Weirton, WV", city_zh: "韦尔顿,西弗吉尼亚州", note_en: "199 open roles company-wide; scaling toward 750+ jobs as the former steel-mill site converts to multi-day storage cell production.", note_zh: "公司全线在招岗位199个;原钢厂旧址正改造为多日储能电芯生产基地,招聘将扩大至750人以上。", tech_en: "Senior Software Engineer MES, MES Technician", tech_zh: "MES高级软件工程师、MES技术员", updated: "2026-10-11", url: "https://formenergy.com/careers/" },
+  { id: 11, x: 669.8, y: 376.7, status: "hiring", tech: "yes", company_en: "Ultium Cells (GM / LG Energy Solution JV)", company_zh: "Ultium Cells(通用汽车与LG新能源合资)", site_en: "EV battery plant, converting to prismatic LMR cells by 2028", site_zh: "电动车电芯工厂,2028年前改造为棱柱形LMR电芯产线", city_en: "Spring Hill, TN", city_zh: "斯普林希尔,田纳西州", note_en: "Began LFP cell production for energy storage in mid-2026; a ~$1B LMR-cell conversion (completing 2028) is expected to add ~500 jobs.", note_zh: "2026年年中起生产储能用磷酸铁锂电芯;约10亿美元的LMR电芯改造(2028年完成)预计新增约500个岗位。", tech_en: "Part of Ultium's IT Engineer / Smart Factory Engineer roles", tech_zh: "属于Ultium公司IT工程师/智能工厂工程师岗位体系", updated: "2026-10-11", url: "https://ultiumcell.com/careers" },
+  { id: 12, x: 625.6, y: 386.8, status: "soon", tech: "yes", company_en: "BlueOval SK (Ford / SK On JV)", company_zh: "BlueOval SK(福特与SK On合资)", site_en: "EV battery plant at BlueOval City", site_zh: "BlueOval City电动车电池工厂", city_en: "Stanton, TN", city_zh: "斯坦顿,田纳西州", note_en: "Commercial production targeted for 2026; hiring ramps ahead of startup.", note_zh: "商业化生产目标为2026年,招聘正随投产临近逐步展开。", tech_en: "MES Process Design Engineer, ERP Systems Specialist", tech_zh: "MES流程设计工程师、ERP系统专员", updated: "2026-10-11", url: "https://www.blueovalsk.com/careers" },
+  { id: 13, x: 683.8, y: 332.7, status: "soon", tech: "yes", company_en: "Ford Motor Company", company_zh: "福特汽车", site_en: "BlueOval Battery Park (former BlueOval SK plant, pivoting to storage)", site_zh: "BlueOval电池园区(原BlueOval SK工厂,转型储能生产)", city_en: "Glendale, KY", city_zh: "格伦代尔,肯塔基州", note_en: "Original JV plant paused; Ford hiring salaried staff from early 2026, hourly operators from 2027.", note_zh: "原合资工厂已暂停;福特将于2026年初招聘受薪员工,2027年起招聘时薪操作员。", tech_en: "IT Engineer (BlueOval City)", tech_zh: "IT工程师(BlueOval City)", updated: "2026-10-11", url: "https://www.careers.ford.com/search-jobs/United%20States?orgIds=48560&alp=6252001&alt=2" },
+  { id: 14, x: 675.2, y: 348.2, status: "hiring", tech: "yes", company_en: "Envision AESC", company_zh: "远景AESC", site_en: "EV battery gigafactory", site_zh: "电动车电池超级工厂", city_en: "Bowling Green, KY", city_zh: "鲍灵格林,肯塔基州", note_en: "Building toward ~2,000 jobs; $2B gigafactory under construction.", note_zh: "20亿美元超级工厂建设中,目标创造约2000个就业岗位。", tech_en: "IT Support (multi-site), Systems Engineer", tech_zh: "IT支持(多厂区)、系统工程师", updated: "2026-10-11", url: "https://www.envision-aesc.com/careers" },
+  { id: 15, x: 663.9, y: 240.3, status: "unclear", tech: "yes", company_en: "Samsung SDI", company_zh: "三星SDI", site_en: "EV battery cell plant (formerly a GM joint venture)", site_zh: "电动车电芯工厂(原通用汽车合资项目)", city_en: "New Carlisle, IN", city_zh: "新卡莱尔,印第安纳州", note_en: "Construction paused since May 2026 amid weaker EV demand; Samsung SDI bought out GM's stake (Aug 2026) and plans an ESS line. No public hiring timeline yet.", note_zh: "受电动车需求疲软影响,工程自2026年5月起暂停;三星SDI于2026年8月收购通用汽车股权,并计划设置储能产线。尚无公开招聘时间表。", tech_en: "IT Support Specialist (Kokomo)", tech_zh: "IT支持专员(科科莫)", updated: "2026-10-11", url: "https://www.samsungcareers.com/" },
+  { id: 16, x: 673.0, y: 267.4, status: "hiring", tech: "yes", company_en: "Samsung SDI / Stellantis JV (StarPlus Energy)", company_zh: "三星SDI与Stellantis合资(StarPlus Energy)", site_en: "Two EV / LFP battery plants", site_zh: "两座电动车及磷酸铁锂电池工厂", city_en: "Kokomo, IN", city_zh: "科科莫,印第安纳州", note_en: "LFP line starts September 2026; second plant ramps toward 2027.", note_zh: "磷酸铁锂产线将于2026年9月投产,第二座工厂预计2027年逐步达产。", tech_en: "MES Systems Engineer", tech_zh: "MES系统工程师", updated: "2026-10-11", url: "https://starplusenergyus.com/careers" },
+  { id: 17, x: 737.3, y: 404.6, status: "hiring", tech: "yes", company_en: "SK On (SK Battery America)", company_zh: "SK On(SK电池美国)", site_en: "EV battery plant", site_zh: "电动车电池工厂", city_en: "Commerce, GA", city_zh: "康默斯,佐治亚州", note_en: "Still hiring production, quality, and logistics roles despite 2026 layoffs amid EV demand slowdown.", note_zh: "尽管2026年因电动车需求放缓而裁员,仍在招聘生产、质量及物流等岗位。", tech_en: "SK Battery America IT hub in Roswell (MES dev/ops, data analysts)", tech_zh: "SK电池美国罗斯威尔IT中心(MES开发运维、数据分析师)", updated: "2026-10-11", url: "https://www.skbatteryamerica.com/" },
+  { id: 18, x: 780.8, y: 446.4, status: "hiring", tech: "unclear", company_en: "Hyundai Motor Group / LG Energy Solution JV (HL-GA)", company_zh: "现代汽车集团与LG新能源合资(HL-GA)", site_en: "EV battery plant", site_zh: "电动车电池工厂", city_en: "Bryan County, GA", city_zh: "布莱恩县,佐治亚州", note_en: "Production started early 2026; hiring continues toward 8,500 jobs over 8 years.", note_zh: "已于2026年初投产,招聘将持续推进,未来8年目标创造8500个岗位。", tech_en: "No IT/MES-specific listings found yet", tech_zh: "目前未见明确的IT/MES岗位", updated: "2026-10-11", url: "https://www.lgensol.com/en/careers" },
+  { id: 19, x: 802.5, y: 356.6, status: "hiring", tech: "yes", company_en: "Toyota", company_zh: "丰田", site_en: "Toyota Battery Manufacturing, North Carolina (TBMNC)", site_zh: "丰田电池制造北卡罗来纳工厂(TBMNC)", city_en: "Liberty, NC", city_zh: "利伯蒂,北卡罗来纳州", note_en: "900+ employed already; hundreds more hired yearly toward 5,100 jobs.", note_zh: "现有员工已超900人,未来每年还将新增数百个岗位,目标达5100人。", tech_en: "MES Principal Engineer, OpCenter Engineer, Systems Engineer", tech_zh: "MES首席工程师、OpCenter工程师、系统工程师", updated: "2026-10-11", url: "https://careers.toyota.com/us/en/toyota-nc-operations-program" },
+  { id: 20, x: 815.9, y: 354.7, status: "hiring", tech: "yes", company_en: "Forge Nano / Forge Battery", company_zh: "Forge Nano / Forge Battery", site_en: "\"America's Battery Gigafactory\" expansion", site_zh: "“美国电池超级工厂”扩建项目", city_en: "Morrisville, NC", city_zh: "莫里斯维尔,北卡罗来纳州", note_en: "$100M DOE-backed expansion broke ground August 2026; Samsung SDI signed as an offtake customer.", note_zh: "获美国能源部1亿美元资助的扩建项目已于2026年8月动工;三星SDI已签约成为采购客户。", tech_en: "Systems Engineer, Controls Engineer (mainly HQ, Thornton CO)", tech_zh: "系统工程师、控制工程师(主要在科罗拉多州桑顿总部)", updated: "2026-10-11", url: "https://forge-nano.breezy.hr/" },
+  { id: 22, x: 805.5, y: 394.4, status: "hiring", tech: "yes", company_en: "Envision AESC", company_zh: "远景AESC", site_en: "EV battery cell plant (BMW supplier)", site_zh: "电动车电芯工厂(宝马供应商)", city_en: "Florence, SC", city_zh: "弗洛伦斯,南卡罗来纳州", note_en: "Building toward 1,620 jobs as 2026 production start approaches.", note_zh: "随着2026年投产临近,招聘将扩大至1620个岗位。", tech_en: "MES Engineer 2 (Florence)", tech_zh: "MES工程师2级(弗洛伦斯)", updated: "2026-10-11", url: "https://www.envision-aesc.com/careers" },
+  { id: 23, x: 799.6, y: 421.0, status: "soon", tech: "yes", company_en: "Redwood Materials", company_zh: "Redwood Materials", site_en: "Cathode & anode materials campus", site_zh: "正极与负极材料园区", city_en: "Ridgeville, SC", city_zh: "里奇维尔,南卡罗来纳州", note_en: "Future-roles hiring underway ahead of ~1,500 planned jobs.", note_zh: "面向约1500个规划岗位的“未来职位”招聘已启动。", tech_en: "Company-wide IT/OT Support team", tech_zh: "公司级IT/OT支持团队", updated: "2026-10-11", url: "https://job-boards.greenhouse.io/redwoodmaterials" },
+  { id: 24, x: 676.8, y: 370.8, status: "hiring", tech: "unclear", company_en: "FIXX Energy", company_zh: "FIXX Energy", site_en: "Battery plant (former Nissan/AESC site), pivoting to energy storage", site_zh: "电池工厂(原日产/AESC工厂),转型生产储能电池", city_en: "Smyrna, TN", city_zh: "士麦那,田纳西州", note_en: "Acquired from AESC in April 2026; hiring process engineers, QA technologists, and manufacturing technicians at the former Nissan Leaf battery plant.", note_zh: "2026年4月从AESC收购;正在原日产聆风电池工厂招聘工艺工程师、质量检测技术员及生产技术员等岗位。", tech_en: "No IT/MES-specific listings found yet", tech_zh: "目前未见明确的IT/MES岗位", updated: "2026-10-11", url: "https://fixxenergy.com/" },
+  { id: 25, x: 642.5, y: 252.8, status: "hiring", tech: "yes", company_en: "Gotion", company_zh: "国轩高科", site_en: "Battery & energy storage system plant (five production lines)", site_zh: "电池及储能系统工厂(五条产线)", city_en: "Manteno, IL", city_zh: "曼特诺,伊利诺伊州", note_en: "Ramping from ~300 to 450 employees by end of 2025, targeting 1,400 in 2026 and up to 2,600 long term.", note_zh: "员工数量将从约300人增至2025年底的450人,2026年目标达1400人,长期规划最高2600人。", tech_en: "MES Engineer, Systems Engineer (MES & Data)", tech_zh: "MES工程师、系统工程师(MES与数据)", updated: "2026-10-11", url: "https://job-boards.greenhouse.io/gotion?offices%5B%5D=4057589002" },
+  { id: 26, x: 83.2, y: 106.5, status: "hiring", tech: "unclear", company_en: "ESS Inc", company_zh: "ESS Inc", site_en: "Iron flow battery factory (headquarters)", site_zh: "铁液流电池工厂(总部)", city_en: "Wilsonville, OR", city_zh: "威尔逊维尔,俄勒冈州", note_en: "Tripling production capacity with US Export-Import Bank backing; hiring engineering technicians and production roles.", note_zh: "在美国进出口银行支持下将产能提升至三倍;正在招聘工程技术员及生产相关岗位。", tech_en: "Engineering roles found, no IT/MES-specific listing yet", tech_zh: "已有工程岗位,但未见明确IT/MES岗位", updated: "2026-10-11", url: "https://essinc.com/careers/" },
+  { id: 27, x: 780.3, y: 254.7, status: "hiring", tech: "yes", company_en: "Eos Energy Enterprises", company_zh: "Eos Energy Enterprises", site_en: "Znyth zinc battery factory", site_zh: "Znyth锌电池工厂", city_en: "Turtle Creek, PA", city_zh: "特特尔克里克,宾夕法尼亚州", note_en: "Hiring manufacturing engineers, electrical technicians, and machine operators for zinc battery energy storage production.", note_zh: "正在为锌电池储能生产招聘制造工程师、电气技术员及设备操作员等岗位。", tech_en: "IT Specialist, Project Systems Engineer", tech_zh: "IT专员、项目系统工程师", updated: "2026-10-11", url: "https://eose.com/careers/" },
+  { id: 28, x: 688.2, y: 224.7, status: "hiring", tech: "unclear", company_en: "Ford Motor Company", company_zh: "福特汽车", site_en: "BlueOval Battery Park Michigan (LFP cell plant)", site_zh: "BlueOval电池园区密歇根工厂(磷酸铁锂电芯)", city_en: "Marshall, MI", city_zh: "马歇尔,密歇根州", note_en: "In production validation (June 2026) with 500+ staff, targeting ~800 by end of 2026 and ~1,700 long term; 11,500+ applications received.", note_zh: "2026年6月处于量产验证阶段,现有员工500余人,目标2026年底约800人、长期约1700人;已收到逾11500份申请。", tech_en: "No IT/MES-specific listings verified yet", tech_zh: "尚未核实到明确的IT/MES岗位", updated: "2026-10-11", url: "https://www.careers.ford.com/search-jobs/United%20States?orgIds=48560&alp=6252001&alt=2" }
 ];
