@@ -173,6 +173,11 @@
         <p class="usmap-card__status"><i class="dot dot--${f.status}"></i><span>${s.en} <span class="zh">${s.zh}</span></span></p>
         <p class="usmap-card__tech"><span class="tech-badge tech-badge--${f.tech}">${techBadgeText}</span><span>${t.en}: ${f.tech_en}<span class="zh">${t.zh}:${f.tech_zh}</span></span></p>
         <p class="usmap-card__updated">Info checked: ${f.updated} <span class="zh">· 信息核对日期:${f.updated}</span></p>
+        ${f.job ? `<div class="usmap-card__job">
+          <p class="usmap-card__job-title">${f.job.title_en}<span class="zh">${f.job.title_zh}</span></p>
+          <ul class="usmap-card__job-reqs">${f.job.req_en.map((r, i) => `<li>${r}<span class="zh">${f.job.req_zh[i] || ""}</span></li>`).join("")}</ul>
+          <a class="usmap-card__job-link" href="${f.job.link}" target="_blank" rel="noopener noreferrer">View this posting on official site <span class="zh">查看官网岗位详情</span> ↗</a>
+        </div>` : ""}
         <p class="usmap-card__note">${f.note_en}<span class="zh">${f.note_zh}</span></p>
         <a class="usmap-card__link" href="${f.url}" target="_blank" rel="noopener noreferrer">Company site / careers <span class="zh">公司官网/招聘</span> ↗</a>
       </article>
