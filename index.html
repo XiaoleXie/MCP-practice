@@ -21,14 +21,22 @@
       </div>
     </header>
 
-    <nav class="filter-strip" aria-label="Filter by country">
-      <p class="filter-label">Filter by country · 按国家筛选</p>
-      <div class="chips" id="country-chips"></div>
+    <nav class="tabs" role="tablist" aria-label="Site sections">
+      <button class="tab-btn" id="tab-btn-news" role="tab" type="button" aria-selected="true" aria-controls="tab-panel-news">News<span class="zh">电芯新闻</span></button>
+      <button class="tab-btn" id="tab-btn-jobs" role="tab" type="button" aria-selected="false" aria-controls="tab-panel-jobs">Battery Industry IT Jobs<span class="zh">电池行业IT招聘</span></button>
     </nav>
-    <p class="result-count" id="result-count"></p>
 
-    <main class="grid" id="news-grid"></main>
+    <section id="tab-panel-news" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-news">
+      <nav class="filter-strip" aria-label="Filter by country">
+        <p class="filter-label">Filter by country · 按国家筛选</p>
+        <div class="chips" id="country-chips"></div>
+      </nav>
+      <p class="result-count" id="result-count"></p>
 
+      <main class="grid" id="news-grid"></main>
+    </section>
+
+    <section id="tab-panel-jobs" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-jobs" hidden>
     <section class="usmap-section" aria-labelledby="usmap-heading">
       <p class="filter-label" id="usmap-heading">US battery manufacturing map · 美国电池工厂地图</p>
       <p class="usmap-note">Every type of next-generation battery factory sited in the US — lithium-ion, LFP, sodium-ion, iron-air — with the company, plant, and city, plus a link to the company site and today's hiring status. Hover or tap a pin for a quick label, or browse the full list below.<span class="zh">涵盖美国境内各类新能源电池工厂——锂离子、磷酸铁锂、钠离子、铁空气电池等——标注公司、工厂与所在城市,并附公司官网链接及当前招聘状态。将鼠标悬停或点击图钉可查看简要标签,完整列表见下方。</span></p>
@@ -171,6 +179,7 @@
       </div>
 
       <div class="usmap-list" id="usmap-list"></div>
+    </section>
     </section>
 
     <footer class="site-footer">

@@ -100,6 +100,35 @@
     }
   } catch (e) {}
 
+  // ---------- Tabs ----------
+  const tabButtons = Array.from(document.querySelectorAll(".tab-btn"));
+  const tabPanels = {
+    "tab-btn-news": document.getElementById("tab-panel-news"),
+    "tab-btn-jobs": document.getElementById("tab-panel-jobs")
+  };
+
+  function setActiveTab(id) {
+    tabButtons.forEach((btn) => {
+      const active = btn.id === id;
+      btn.setAttribute("aria-selected", active ? "true" : "false");
+      tabPanels[btn.id].hidden = !active;
+    });
+    try { localStorage.setItem("activeTab", id); } catch (e) {}
+  }
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => setActiveTab(btn.id));
+  });
+
+  (function initTab() {
+    let initial = "tab-btn-news";
+    try {
+      const saved = localStorage.getItem("activeTab");
+      if (saved && tabPanels[saved]) initial = saved;
+    } catch (e) {}
+    setActiveTab(initial);
+  })();
+
   render();
 
   // ---------- US battery factory map ----------
