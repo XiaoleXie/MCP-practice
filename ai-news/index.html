@@ -256,6 +256,56 @@ select:disabled { opacity: .45; cursor: default; }
 .note p { margin: 0; }
 .note em { font-family: var(--font-en); }
 
+/* ---------- model ranking tab ---------- */
+.bench { display: grid; gap: 14px; }
+.bench-head { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; display: grid; gap: 14px; box-shadow: var(--shadow); }
+.bench-head h2 { margin: 0; font-size: 20px; line-height: 1.35; text-wrap: balance; }
+.bench-head h2 small { display: block; font-family: var(--font-en); font-weight: 400; font-style: italic; font-size: 14px; color: var(--muted); }
+.bench-head p { margin: 0; font-size: 13.5px; color: var(--muted); max-width: 80ch; }
+.bench-ctl { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.sorts { display: flex; flex-wrap: wrap; gap: 6px; }
+.sorts button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 13px; font-size: 13px; cursor: pointer; display: inline-flex; gap: 6px; align-items: baseline; }
+.sorts button small { font-family: var(--font-en); font-style: italic; color: var(--muted); }
+.sorts button:hover { border-color: var(--faint); }
+.sorts button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.sorts button[aria-pressed="true"] small { color: inherit; opacity: .7; }
+.only-open { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--muted); cursor: pointer; }
+.only-open input { accent-color: var(--accent); width: 16px; height: 16px; }
+.board { display: grid; gap: 10px; }
+.mrow { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; display: grid; grid-template-columns: 40px minmax(0, 1.15fr) minmax(0, 2fr); gap: 12px 18px; align-items: center; transition: box-shadow .2s, border-color .2s; }
+.mrow:hover { box-shadow: var(--shadow-hi); border-color: color-mix(in srgb, var(--fg) 14%, var(--line)); }
+.rank-no { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-size: 16px; background: var(--surface-2); color: var(--muted); font-variant-numeric: tabular-nums; }
+.mrow.r1 .rank-no { background: var(--accent); color: var(--surface); }
+.mrow.r2 .rank-no, .mrow.r3 .rank-no { background: var(--accent-soft); color: var(--accent); }
+.m-id { display: flex; gap: 12px; align-items: center; min-width: 0; }
+.m-id > div { min-width: 0; display: grid; gap: 4px; }
+.m-id h3 { margin: 0; font-size: 16.5px; line-height: 1.3; }
+.m-note { margin: 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+.m-note i { font-family: var(--font-en); }
+.cells { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.cell { border-radius: 10px; padding: 8px 10px; background: var(--surface-2); display: grid; gap: 3px; min-width: 0; }
+.cell.on { background: var(--accent-soft); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent); }
+.cell span { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cell b { font-family: var(--font-display); font-weight: 700; font-size: 17px; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.cell b small { font-size: 11px; font-weight: 500; color: var(--muted); margin-left: 1px; }
+.cell.on b { color: var(--accent); font-size: 20px; }
+.cell b.na { color: var(--faint); font-weight: 500; }
+.cell i { display: block; height: 3px; border-radius: 3px; background: color-mix(in srgb, var(--fg) 8%, transparent); overflow: hidden; }
+.cell i::after { content: ""; display: block; height: 100%; width: var(--w, 0%); background: var(--c, var(--accent)); border-radius: 3px; }
+.method { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; display: grid; gap: 12px; font-size: 13.5px; }
+.method h3 { margin: 0; font-size: 15px; }
+.method ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.method li { background: var(--surface-2); border-radius: 12px; padding: 12px 14px; display: grid; gap: 4px; }
+.method li b { font-size: 13.5px; }
+.method li span, .method p { color: var(--muted); margin: 0; }
+.method li em, .method p em { font-family: var(--font-en); }
+.method a { font-weight: 600; text-decoration: none; }
+@media (max-width: 900px) {
+  .mrow { grid-template-columns: 40px minmax(0, 1fr); }
+  .cells { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) { .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); } .mrow { padding: 14px; } }
+
 /* battery view */
 #battery-frame { display: block; width: calc(100% + 2 * max(16px, env(safe-area-inset-left, 0px))); border: 0; min-height: 80vh; background: var(--bg); padding: 0; }
 .frame-msg { text-align: center; color: var(--muted); padding: 48px 16px; margin: 0; }
@@ -334,6 +384,21 @@ select:disabled { opacity: .45; cursor: default; }
       </aside>
     </div>
 
+    <section class="bench" id="bench" role="tabpanel" aria-labelledby="tab-bench" hidden>
+      <div class="bench-head">
+        <div>
+          <h2>全球 AI 模型能力排行<small>Global AI model leaderboard</small></h2>
+          <p id="bench-sub"></p>
+        </div>
+        <div class="bench-ctl">
+          <div class="sorts" id="bench-sorts" role="group" aria-label="排序 Sort by"></div>
+          <label class="only-open"><input type="checkbox" id="bench-open">只看开源 Open weights only</label>
+        </div>
+      </div>
+      <div class="board" id="board"></div>
+      <div class="method" id="method"></div>
+    </section>
+
     <footer class="note">
       <p>内容由网络搜索收集，每天自动补充。X 帖子均为公开原帖链接；Instagram 需要登录，相关条目是引用其内容的报道。部分条目来自聚合站或维基百科，日期偶有出入；只知道月份的条目按「日」筛选时不会出现。基准分数多为厂商自报，重要决策请以官方公告为准。</p>
       <p><em>Collected via web search and topped up daily. X items link to public posts; Instagram items are coverage citing it. Some items rely on aggregators, and benchmarks are mostly vendor-reported.</em></p>
@@ -378,13 +443,15 @@ const ICON = {
   model: '<svg viewBox="0 0 24 24"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg>',
   layoff: '<svg viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 17h6v-6"/></svg>',
   other: '<svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3z"/></svg>',
+  bench: '<svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>',
   all: '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>'
 };
 const TABS = [
   { k: "model", zh: "大模型推出", en: "Model launches", cats: ["model"] },
   { k: "layoff", zh: "裁员", en: "Layoffs", cats: ["layoff"] },
   { k: "other", zh: "安全与行业", en: "Safety & industry", cats: ["safety", "biz"] },
-  { k: "all", zh: "全部", en: "Everything", cats: null }
+  { k: "all", zh: "全部", en: "Everything", cats: null },
+  { k: "bench", zh: "模型排行", en: "Model ranking", cats: [] }
 ];
 const EN_M = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const CHEVRON = '<svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>';
@@ -484,9 +551,9 @@ function openStory(n) {
 
 /* ---- controls ---- */
 function buildTabs() {
-  const icons = { model: ICON.model, layoff: ICON.layoff, other: ICON.other, all: ICON.all };
+  const icons = { model: ICON.model, layoff: ICON.layoff, other: ICON.other, all: ICON.all, bench: ICON.bench };
   $("#tabs").innerHTML = TABS.map(t => `<button type="button" role="tab" data-tab="${t.k}" id="tab-${t.k}">
-    <span class="ico">${icons[t.k]}</span><span class="t"><b>${t.zh}</b><span>${t.en}</span></span><span class="n">${NEWS.filter(n => inTab(n, t.k)).length}</span></button>`).join("");
+    <span class="ico">${icons[t.k]}</span><span class="t"><b>${t.zh}</b><span>${t.en}</span></span><span class="n">${t.k === "bench" ? BENCH.models.length : NEWS.filter(n => inTab(n, t.k)).length}</span></button>`).join("");
   $("#tabs").querySelectorAll("button").forEach(b => b.onclick = () => selectTab(b.dataset.tab));
 }
 function selectTab(k) {
@@ -494,8 +561,55 @@ function selectTab(k) {
   store.set("ai-news-tab", k);
   document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === k));
   $("#feed").setAttribute("aria-labelledby", "tab-" + k);
+  const isBench = k === "bench";
+  $(".toolbar").hidden = isBench;
+  $(".grid").hidden = isBench;
+  $("#bench").hidden = !isBench;
+  if (isBench) { $("#active").hidden = true; renderBench(); return; }
   render();
 }
+
+/* ---- model ranking ---- */
+let BENCH = { models: [], metrics: [] };
+const bstate = { sort: "aa", open: false };
+const fmt = (v, m) => v == null ? "—" : (m.unit === "%" ? (Math.round(v * 10) / 10) : Math.round(v * 10) / 10);
+function renderBench() {
+  const M = BENCH.metrics;
+  if (!M.length) { $("#board").innerHTML = `<p class="empty">模型排行数据加载失败，请刷新页面重试。<br>Couldn't load the ranking data. Refresh to try again.</p>`; return; }
+  $("#bench-sub").innerHTML = `收录 ${BENCH.models.length} 个模型，每一项都用公开的第三方测评。按所选能力从高到低排列，查不到的分数显示「—」。数据更新至 ${esc(BENCH.updated)}。<br><em lang="en">${BENCH.models.length} models, each scored by public third-party evaluations; sorted high to low by the chosen skill. Updated ${esc(BENCH.updated)}.</em>`;
+  $("#bench-sorts").innerHTML = M.map(m => `<button type="button" data-k="${m.k}" aria-pressed="${bstate.sort === m.k}">${m.zh}<small>${m.en}</small></button>`).join("");
+  $("#bench-sorts").querySelectorAll("button").forEach(b => b.onclick = () => { bstate.sort = b.dataset.k; renderBench(); });
+  const best = Object.fromEntries(M.map(m => [m.k, Math.max(...BENCH.models.map(x => x[m.k] ?? -Infinity))]));
+  const list = BENCH.models.filter(x => !bstate.open || x.open).slice().sort((a, b) => {
+    const s = bstate.sort, av = a[s], bv = b[s];
+    if (av == null && bv == null) return (b.aa ?? 0) - (a.aa ?? 0);
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    return bv - av || (b.aa ?? 0) - (a.aa ?? 0);
+  });
+  let rank = 0;
+  $("#board").innerHTML = list.map(x => {
+    const has = x[bstate.sort] != null;
+    if (has) rank++;
+    const c = coInfo(x);
+    const tags = `<span class="tags"><span class="tag reg">${esc(regionLabel(x.r))}</span><span class="tag prod" style="--c:${c.color}">${esc(c.name)}</span>${x.open ? `<span class="tag reg">开源 Open</span>` : ""}</span>`;
+    const cells = M.map(m => {
+      const v = x[m.k];
+      const w = v == null ? 0 : m.unit === "%" ? v : (v / best[m.k]) * 100;
+      const val = v == null ? `<b class="na">—</b>` : `<b>${fmt(v, m)}${m.unit ? `<small>${m.unit}</small>` : ""}</b>`;
+      return `<div class="cell${m.k === bstate.sort ? " on" : ""}" title="${esc(m.en)} · ${esc(m.bench)}"><span>${m.zh}</span>${val}<i style="--w:${Math.max(0, Math.min(100, w))}%;--c:${c.color}"></i></div>`;
+    }).join("");
+    return `<article class="mrow${has && rank <= 3 ? " r" + rank : ""}">
+      <span class="rank-no" aria-label="排名 Rank">${has ? rank : "—"}</span>
+      <div class="m-id">${monoHTML(c, true)}<div><h3>${esc(x.name)}</h3>${tags}<p class="m-note">${esc(x.zn)} <i lang="en">${esc(x.en)}</i></p></div></div>
+      <div class="cells">${cells}</div>
+    </article>`;
+  }).join("") || `<p class="empty">没有符合条件的模型。No models match.</p>`;
+  $("#method").innerHTML = `<h3>评分方法 · How the scores work</h3>
+    <ul>${M.map(m => `<li><b>${m.zh} · ${m.en}</b><span>${esc(m.zd)}</span><span><em lang="en">${esc(m.ed)}</em></span><span>测评 Benchmark：${esc(m.bench)} · <a href="${esc(m.u)}" target="_blank" rel="noopener">${esc(m.src)} ↗</a></span></li>`).join("")}</ul>
+    <p>说明：各家测评用的框架和日期不同，分数只适合在同一列里比较。部分数字来自整理这些测评的第三方网站，可能与官方页面略有出入；厂商自己公布的分数没有收录。文心 ERNIE 5.1、豆包 Seed 2.1、混元 Hy4、MiniMax M3.1 等模型暂无可比的第三方数据，所以没有列出。<br><em lang="en">Each benchmark uses its own harness and date, so compare within a column only. Some figures come via third-party aggregators and may differ slightly from the official pages; vendor self-reported scores are excluded. ERNIE 5.1, Doubao Seed 2.1, Hunyuan Hy4 and MiniMax M3.1 lack comparable third-party data, so they are not listed.</em></p>`;
+}
+$("#bench-open").addEventListener("change", e => { bstate.open = e.target.checked; renderBench(); });
 
 let CO_ENTRIES = [], R_ENTRIES = [];
 function renderRank(el, key, entries) {
@@ -660,8 +774,8 @@ function init(data) {
   const savedTab = store.get("ai-news-tab");
   selectTab(TABS.some(t => t.k === hashTab) ? hashTab : (TABS.some(t => t.k === savedTab) ? savedTab : "model"));
 }
-fetch("news.json", { cache: "no-cache" })
-  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(init)
+const getJSON = u => fetch(u, { cache: "no-cache" }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+Promise.all([getJSON("news.json"), getJSON("models.json").catch(() => null)])
+  .then(([news, models]) => { if (models) BENCH = models; init(news); })
   .catch(() => { $("#feed").innerHTML = `<p class="empty">新闻数据加载失败，请刷新页面重试。<br>Couldn't load the news data. Refresh the page to try again.</p>`; });
 </script>
