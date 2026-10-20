@@ -36,6 +36,10 @@ normal day.
    Humanity's Last Exam, AA-LCR, LMArena WebDev) or a major new model gets scored, update
    or add that model and set its `updated`. Never use vendor self-reported numbers; leave
    a metric out when no third-party score exists.
+   Conferences (`ai-news/conferences.json`, the AI 会议 tab): when official dates, venues or
+   registration fees are announced, update the entry (drop `tentative`/`approx`, fill `e`,
+   replace "待公布" fees; set `feeReported: true` for fees from media or resellers). After a
+   conference ends, replace it with its next edition once that is announced.
 8. Refresh the battery desk. The site also shows the Cell Dispatch battery page
    (https://claude.ai/artifact/QWbnzmKHMjPhUvjStq9mXE, kept up to date by its own daily
    tasks; never edit or republish that artifact). Call Artifact `action: "read"` on it,
@@ -45,7 +49,7 @@ normal day.
 9. Commit (`AI news: daily update YYYY-MM-DD`) and `git push -u origin ccr-9268cd2a-a3i3mk`.
 10. Republish the page: first Artifact `action: "read"` on the AI page URL above, then
    Artifact publish with `url` set to that URL, `file_path: ai-news/index.html`, and
-   `files: {"news.json": "ai-news/news.json", "models.json": "ai-news/models.json", "battery.html": "ai-news/battery.html"}`.
+   `files: {"news.json": "ai-news/news.json", "models.json": "ai-news/models.json", "conferences.json": "ai-news/conferences.json", "battery.html": "ai-news/battery.html"}`.
 
 ## Item schema
 

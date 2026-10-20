@@ -306,6 +306,41 @@ select:disabled { opacity: .45; cursor: default; }
 }
 @media (max-width: 480px) { .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); } .mrow { padding: 14px; } }
 
+/* ---------- conferences tab ---------- */
+.conf { display: grid; gap: 14px; }
+.cboard { display: grid; gap: 12px; }
+.ccard { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; display: grid; grid-template-columns: 92px minmax(0, 1fr) auto; gap: 14px 18px; align-items: start; transition: box-shadow .2s, border-color .2s; }
+.ccard:hover { box-shadow: var(--shadow-hi); border-color: color-mix(in srgb, var(--fg) 14%, var(--line)); }
+.cdate { border-radius: 12px; background: var(--surface-2); padding: 10px 8px; text-align: center; display: grid; gap: 1px; font-variant-numeric: tabular-nums; }
+.cdate b { font-family: var(--font-display); font-weight: 800; font-size: 20px; line-height: 1.15; letter-spacing: -.02em; }
+.cdate span { font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--muted); }
+.cdate small { font-family: var(--font-mono); font-size: 11px; color: var(--faint); }
+.ccard.academic .cdate { background: var(--accent-soft); }
+.ccard.academic .cdate b { color: var(--accent); }
+.ccard.industry .cdate { background: var(--biz-soft); }
+.ccard.industry .cdate b { color: var(--biz); }
+.cbody { min-width: 0; display: grid; gap: 8px; }
+.cbody h3 { margin: 0; font-size: 18px; line-height: 1.35; }
+.cbody h3 small { font-size: 14px; font-weight: 500; color: var(--muted); margin-left: 8px; }
+.tag.ty-academic { background: var(--accent-soft); color: var(--accent); }
+.tag.ty-industry { background: var(--biz-soft); color: var(--biz); }
+.tag.tbc { background: var(--warn-soft); color: var(--warn); }
+.tag.soon { background: var(--safe-soft); color: var(--safe); }
+.cfacts { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.cfacts div { background: var(--surface-2); border-radius: 10px; padding: 8px 12px; min-width: 0; }
+.cfacts dt { font-size: 11px; color: var(--faint); font-family: var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
+.cfacts dd { margin: 2px 0 0; font-size: 13.5px; line-height: 1.5; overflow-wrap: anywhere; }
+.cfacts dd small { display: block; color: var(--muted); font-size: 12px; }
+.cfacts dd small i { font-family: var(--font-en); }
+.cgo { align-self: center; white-space: nowrap; text-decoration: none; font-weight: 700; font-size: 13px; padding: 9px 14px; border-radius: 10px; background: var(--fg); color: var(--bg); }
+.cgo:hover { background: var(--accent); color: var(--surface); }
+@media (max-width: 900px) {
+  .ccard { grid-template-columns: 80px minmax(0, 1fr); }
+  .cgo { grid-column: 2; justify-self: start; }
+  .cfacts { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) { .ccard { grid-template-columns: 1fr; } .cgo { grid-column: 1; } .cdate { display: flex; gap: 8px; align-items: baseline; justify-content: flex-start; text-align: left; } }
+
 /* battery view */
 #battery-frame { display: block; width: calc(100% + 2 * max(16px, env(safe-area-inset-left, 0px))); border: 0; min-height: 80vh; background: var(--bg); padding: 0; }
 .frame-msg { text-align: center; color: var(--muted); padding: 48px 16px; margin: 0; }
@@ -399,6 +434,17 @@ select:disabled { opacity: .45; cursor: default; }
       <div class="method" id="method"></div>
     </section>
 
+    <section class="conf" id="conf" role="tabpanel" aria-labelledby="tab-conf" hidden>
+      <div class="bench-head">
+        <div>
+          <h2>全球知名 AI 会议<small>Major AI conferences worldwide</small></h2>
+          <p id="conf-sub"></p>
+        </div>
+        <div class="bench-ctl"><div class="sorts" id="conf-types" role="group" aria-label="会议类型 Type"></div></div>
+      </div>
+      <div class="cboard" id="cboard"></div>
+    </section>
+
     <footer class="note">
       <p>内容由网络搜索收集，每天自动补充。X 帖子均为公开原帖链接；Instagram 需要登录，相关条目是引用其内容的报道。部分条目来自聚合站或维基百科，日期偶有出入；只知道月份的条目按「日」筛选时不会出现。基准分数多为厂商自报，重要决策请以官方公告为准。</p>
       <p><em>Collected via web search and topped up daily. X items link to public posts; Instagram items are coverage citing it. Some items rely on aggregators, and benchmarks are mostly vendor-reported.</em></p>
@@ -443,12 +489,14 @@ const ICON = {
   model: '<svg viewBox="0 0 24 24"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg>',
   layoff: '<svg viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 17h6v-6"/></svg>',
   other: '<svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3z"/></svg>',
+  conf: '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3v3H8z"/></svg>',
   bench: '<svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>',
   all: '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>'
 };
 const TABS = [
   { k: "model", zh: "大模型推出", en: "Model launches", cats: ["model"] },
   { k: "layoff", zh: "裁员", en: "Layoffs", cats: ["layoff"] },
+  { k: "conf", zh: "AI 会议", en: "Conferences", cats: [] },
   { k: "other", zh: "安全与行业", en: "Safety & industry", cats: ["safety", "biz"] },
   { k: "all", zh: "全部", en: "Everything", cats: null },
   { k: "bench", zh: "模型排行", en: "Model ranking", cats: [] }
@@ -551,9 +599,9 @@ function openStory(n) {
 
 /* ---- controls ---- */
 function buildTabs() {
-  const icons = { model: ICON.model, layoff: ICON.layoff, other: ICON.other, all: ICON.all, bench: ICON.bench };
+  const icons = { model: ICON.model, layoff: ICON.layoff, other: ICON.other, all: ICON.all, bench: ICON.bench, conf: ICON.conf };
   $("#tabs").innerHTML = TABS.map(t => `<button type="button" role="tab" data-tab="${t.k}" id="tab-${t.k}">
-    <span class="ico">${icons[t.k]}</span><span class="t"><b>${t.zh}</b><span>${t.en}</span></span><span class="n">${t.k === "bench" ? BENCH.models.length : NEWS.filter(n => inTab(n, t.k)).length}</span></button>`).join("");
+    <span class="ico">${icons[t.k]}</span><span class="t"><b>${t.zh}</b><span>${t.en}</span></span><span class="n">${t.k === "bench" ? BENCH.models.length : t.k === "conf" ? CONF.items.length : NEWS.filter(n => inTab(n, t.k)).length}</span></button>`).join("");
   $("#tabs").querySelectorAll("button").forEach(b => b.onclick = () => selectTab(b.dataset.tab));
 }
 function selectTab(k) {
@@ -561,12 +609,61 @@ function selectTab(k) {
   store.set("ai-news-tab", k);
   document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === k));
   $("#feed").setAttribute("aria-labelledby", "tab-" + k);
-  const isBench = k === "bench";
-  $(".toolbar").hidden = isBench;
-  $(".grid").hidden = isBench;
-  $("#bench").hidden = !isBench;
-  if (isBench) { $("#active").hidden = true; renderBench(); return; }
+  const panel = k === "bench" || k === "conf";
+  $(".toolbar").hidden = panel;
+  $(".grid").hidden = panel;
+  $("#bench").hidden = k !== "bench";
+  $("#conf").hidden = k !== "conf";
+  if (panel) { $("#active").hidden = true; k === "bench" ? renderBench() : renderConf(); return; }
   render();
+}
+
+/* ---- conferences ---- */
+let CONF = { items: [] };
+const cstate = { type: "all" };
+const CTYPE = { academic: ["学术会议", "Academic"], industry: ["产业大会", "Industry"] };
+function dayDiff(iso) { const t = new Date(); t.setHours(0, 0, 0, 0); return Math.round((new Date(iso + "T00:00:00") - t) / 864e5); }
+function renderConf() {
+  const all = CONF.items;
+  if (!all.length) { $("#cboard").innerHTML = `<p class="empty">会议数据加载失败，请刷新页面重试。<br>Couldn't load the conference list. Refresh to try again.</p>`; return; }
+  const nA = all.filter(c => c.type === "academic").length;
+  $("#conf-sub").innerHTML = `收录 ${all.length} 场业界知名的 AI 会议：${nA} 场学术顶会、${all.length - nA} 场产业大会，按举办时间排列。报名费以官网为准，标「第三方报道」的价格来自媒体或售票网站。更新至 ${esc(CONF.updated)}。<br><em lang="en">${all.length} well-known AI conferences in date order. Fees are as published or reported; always confirm on the official site.</em>`;
+  const types = [["all", "全部", "All", all.length], ...Object.entries(CTYPE).map(([k, v]) => [k, v[0], v[1], all.filter(c => c.type === k).length])];
+  $("#conf-types").innerHTML = types.map(([k, zh, en, n]) => `<button type="button" data-k="${k}" aria-pressed="${cstate.type === k}">${zh} ${n}<small>${en}</small></button>`).join("");
+  $("#conf-types").querySelectorAll("button").forEach(b => b.onclick = () => { cstate.type = b.dataset.k; renderConf(); });
+  const list = all.filter(c => cstate.type === "all" || c.type === cstate.type).slice().sort((a, b) => a.s.localeCompare(b.s));
+  const groups = {};
+  list.forEach(c => { const k = c.s.slice(0, 7); (groups[k] = groups[k] || []).push(c); });
+  $("#cboard").innerHTML = Object.entries(groups).map(([k, arr]) => {
+    const [y, mo] = k.split("-");
+    return `<div class="month"><h2>${y} 年 ${+mo} 月</h2><span>${EN_M[mo - 1]} ${y} · ${arr.length} 场</span></div>` + arr.map(confCard).join("");
+  }).join("");
+}
+function confCard(c) {
+  const [y, m, d] = c.s.split("-");
+  const e = c.e ? c.e.split("-") : null;
+  const sameMonth = e && e[1] === m;
+  const date = c.approx
+    ? `<b>${+m} 月</b><span>日期待定</span><small>${y}</small>`
+    : `<b>${m}/${d}</b><span>– ${e ? (sameMonth ? e[2] : e[1] + "/" + e[2]) : ""}</span><small>${y}</small>`;
+  const when = c.approx ? `预计 ${y} 年 ${+m} 月，具体日期待公布<small><i lang="en">Expected ${EN_M[m - 1]} ${y}; exact dates TBA</i></small>`
+    : `${y}-${m}-${d} 至 ${c.e ? c.e.slice(5) : ""}<small><i lang="en">${EN_M[m - 1]} ${+d}${e ? " – " + (sameMonth ? "" : EN_M[e[1] - 1] + " ") + +e[2] : ""}, ${y}</i></small>`;
+  const left = dayDiff(c.s), end = c.e ? dayDiff(c.e) : left;
+  const status = c.approx ? "" : left > 0 ? `<span class="tag soon">还有 ${left} 天</span>` : end >= 0 ? `<span class="tag soon">进行中 Live</span>` : `<span class="tag reg">已结束 Ended</span>`;
+  return `<article class="ccard ${c.type}">
+    <div class="cdate">${date}</div>
+    <div class="cbody">
+      <span class="tags"><span class="tag ty-${c.type}">${CTYPE[c.type].join(" ")}</span><span class="tag reg">${esc(c.cc)}</span>${status}${c.tentative ? `<span class="tag tbc">待官方确认 Unconfirmed</span>` : ""}</span>
+      <h3>${esc(c.name)}<small>${esc(c.zn)}</small></h3>
+      <dl class="cfacts">
+        <div><dt>地点 Where</dt><dd>${esc(c.city)} · ${esc(c.cc)}${c.venue ? `<small>${esc(c.venue)}</small>` : ""}</dd></div>
+        <div><dt>时间 When</dt><dd>${when}</dd></div>
+        <div><dt>报名费 Fee</dt><dd>${esc(c.fee)}${c.feeReported ? "（第三方报道）" : ""}<small><i lang="en">${esc(c.feeEn)}</i></small></dd></div>
+      </dl>
+      <p class="m-note">${esc(c.note)} <i lang="en">${esc(c.noteEn)}</i></p>
+    </div>
+    <a class="cgo" href="${esc(c.u)}" target="_blank" rel="noopener">官网 Official site ↗</a>
+  </article>`;
 }
 
 /* ---- model ranking ---- */
@@ -775,7 +872,7 @@ function init(data) {
   selectTab(TABS.some(t => t.k === hashTab) ? hashTab : (TABS.some(t => t.k === savedTab) ? savedTab : "model"));
 }
 const getJSON = u => fetch(u, { cache: "no-cache" }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
-Promise.all([getJSON("news.json"), getJSON("models.json").catch(() => null)])
-  .then(([news, models]) => { if (models) BENCH = models; init(news); })
+Promise.all([getJSON("news.json"), getJSON("models.json").catch(() => null), getJSON("conferences.json").catch(() => null)])
+  .then(([news, models, conf]) => { if (models) BENCH = models; if (conf) CONF = conf; init(news); })
   .catch(() => { $("#feed").innerHTML = `<p class="empty">新闻数据加载失败，请刷新页面重试。<br>Couldn't load the news data. Refresh the page to try again.</p>`; });
 </script>
