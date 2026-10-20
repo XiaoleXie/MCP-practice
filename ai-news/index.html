@@ -219,9 +219,14 @@ select:disabled { opacity: .45; cursor: default; }
 .card:hover { box-shadow: var(--shadow-hi); border-color: color-mix(in srgb, var(--fg) 14%, var(--line)); }
 .card.flash { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .card-h { display: flex; align-items: center; gap: 12px; }
-.who { display: grid; line-height: 1.3; min-width: 0; }
-.who b { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.who span { font-size: 12px; color: var(--muted); }
+.card-h time { align-self: flex-start; }
+.who { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; line-height: 1.3; min-width: 0; }
+.who b { font-size: 15px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font: inherit; font-size: 12px; font-weight: 600; line-height: 1.5; padding: 1px 9px; border-radius: 7px; border: 1px solid transparent; white-space: nowrap; }
+.tag.reg { background: var(--surface-2); color: var(--muted); border-color: var(--line); font-weight: 500; }
+.tag.prod { --c: var(--c-other); cursor: pointer; background: color-mix(in srgb, var(--c) 12%, transparent); color: color-mix(in srgb, var(--c) 82%, var(--fg)); border-color: color-mix(in srgb, var(--c) 22%, transparent); }
+.tag.prod:hover { background: color-mix(in srgb, var(--c) 20%, transparent); }
 .card-h time { margin-left: auto; text-align: right; display: grid; line-height: 1.25; font-weight: 600; font-size: 13px; font-variant-numeric: tabular-nums; flex-shrink: 0; }
 .card-h time small { font-family: var(--font-mono); font-weight: 400; font-size: 11px; color: var(--faint); }
 .cat { justify-self: start; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
@@ -349,12 +354,12 @@ const CO = {
   google: { name: "Google", mono: "G", color: "var(--c-google)" },
   meta: { name: "Meta", mono: "M", color: "var(--c-meta)" },
   deepseek: { name: "DeepSeek", mono: "DS", color: "var(--c-deepseek)" },
-  alibaba: { name: "阿里 千问 Qwen", mono: "阿", color: "var(--c-alibaba)" },
+  alibaba: { name: "阿里巴巴 Alibaba", mono: "阿", color: "var(--c-alibaba)" },
   tencent: { name: "腾讯 Tencent", mono: "腾", color: "var(--c-tencent)" },
-  bytedance: { name: "字节 ByteDance", mono: "字", color: "var(--c-bytedance)" },
+  bytedance: { name: "字节跳动 ByteDance", mono: "字", color: "var(--c-bytedance)" },
   baidu: { name: "百度 Baidu", mono: "百", color: "var(--c-baidu)" },
-  moonshot: { name: "月之暗面 Kimi", mono: "K", color: "var(--c-other)" },
-  zhipu: { name: "智谱 GLM", mono: "智", color: "var(--c-other)" },
+  moonshot: { name: "月之暗面 Moonshot", mono: "K", color: "var(--c-other)" },
+  zhipu: { name: "智谱 Zhipu", mono: "智", color: "var(--c-other)" },
   minimax: { name: "MiniMax", mono: "MM", color: "var(--c-other)" },
   xai: { name: "xAI", mono: "x", color: "var(--c-other)" },
   microsoft: { name: "Microsoft", mono: "MS", color: "var(--c-other)" },
@@ -430,7 +435,7 @@ function matchDate(n) {
   if (state.day && (n.approx || d !== state.day)) return false;
   return true;
 }
-const matchText = (n, q) => !q || [n.zt, n.et, n.zs, n.es, n.zd.join(""), n.ed.join(""), n.src, coInfo(n).name, regionLabel(n.r)].join(" ").toLowerCase().includes(q);
+const matchText = (n, q) => !q || [(n.tags || []).join(" "), n.zt, n.et, n.zs, n.es, n.zd.join(""), n.ed.join(""), n.src, coInfo(n).name, regionLabel(n.r)].join(" ").toLowerCase().includes(q);
 // pool for counts: everything except the dimension being counted
 function pool(skip) {
   const q = state.q.trim().toLowerCase();
@@ -547,7 +552,7 @@ function cardHTML(n) {
   const [y, m, d] = n.d.split("-");
   const when = n.approx ? `${+m} 月<small>${EN_M[m - 1]} ${y}</small>` : `${+m} 月 ${+d} 日<small>${EN_M[m - 1]} ${+d}, ${y}</small>`;
   return `<article class="card" id="${n.id}">
-    <header class="card-h">${monoHTML(c, true)}<div class="who"><b>${esc(c.name)}</b><span>${esc(regionLabel(n.r))}</span></div><time datetime="${n.d}">${when}</time></header>
+    <header class="card-h">${monoHTML(c, true)}<div class="who"><b>${esc(c.name)}</b><span class="tags"><span class="tag reg">${esc(regionLabel(n.r))}</span>${(n.tags || []).map(t => `<button type="button" class="tag prod" style="--c:${c.color}" data-tag="${esc(t)}" title="搜索 ${esc(t)}">${esc(t)}</button>`).join("")}</span></div><time datetime="${n.d}">${when}</time></header>
     <span class="cat ${n.cat}">${CAT[n.cat] || esc(n.cat)}</span>
     <h3>${esc(n.zt)}</h3>
     <p class="et" lang="en">${esc(n.et)}</p>
@@ -585,6 +590,12 @@ $("#expand").addEventListener("click", () => {
   document.querySelectorAll("#feed details").forEach(d => d.open = allOpen);
 });
 $("#q").addEventListener("input", e => { state.q = e.target.value; render(); });
+$("#feed").addEventListener("click", e => {
+  const t = e.target.closest(".tag.prod");
+  if (!t) return;
+  state.q = t.dataset.tag; $("#q").value = state.q; render();
+  $(".toolbar").scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+});
 $("#fy").addEventListener("change", e => { state.y = e.target.value; state.m = ""; state.day = ""; render(); });
 $("#fm").addEventListener("change", e => { state.m = e.target.value; state.day = ""; render(); });
 $("#fd").addEventListener("change", e => { state.day = e.target.value; render(); });
@@ -594,7 +605,7 @@ const views = { ai: $("#ai-view"), battery: $("#battery-view") };
 let batteryLoaded = false;
 function batteryTheme() {
   const f = $("#battery-frame"), doc = f && f.contentDocument;
-  if (doc && doc.documentElement) doc.documentElement.setAttribute("data-theme", currentMode() === "night" ? "dark" : "light");
+  if (doc && doc.documentElement) { doc.documentElement.setAttribute("data-theme", currentMode() === "night" ? "dark" : "light"); doc.documentElement.setAttribute("data-mode", currentMode()); }
 }
 function fitBattery() {
   const f = $("#battery-frame"), doc = f.contentDocument;

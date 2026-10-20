@@ -35,7 +35,8 @@ normal day.
    (https://claude.ai/artifact/QWbnzmKHMjPhUvjStq9mXE, kept up to date by its own daily
    tasks; never edit or republish that artifact). Call Artifact `action: "read"` on it,
    then run `node ai-news/sync-battery.js <path of the saved HTML file>`; it must print
-   `OK`. If the read fails, keep the existing `ai-news/battery.html`.
+   `OK` (it also applies `ai-news/battery-skin.css`, the AI-desk look). If the read fails,
+   keep the existing `ai-news/battery.html`.
 9. Commit (`AI news: daily update YYYY-MM-DD`) and `git push -u origin ccr-9268cd2a-a3i3mk`.
 10. Republish the page: first Artifact `action: "read"` on the AI page URL above, then
    Artifact publish with `url` set to that URL, `file_path: ai-news/index.html`, and
@@ -52,6 +53,7 @@ normal day.
   "lead": true,                // optional: the one story featured as 今日焦点
   "r": "cn",                   // region: us | cn | eu | kr | jp | in | me | global
   "cat": "model",              // model | layoff | safety | biz
+  "tags": ["Qwen", "Qwen 4", "X"], // optional: product/model names, topics, and "X"/"CNN" for those sources
   "zt": "中文标题", "et": "English title",
   "zs": "一句中文摘要", "es": "One-sentence English summary",
   "zd": ["中文详情段落 1", "段落 2", "段落 3"],
@@ -63,6 +65,10 @@ normal day.
 Company keys the page knows: openai, anthropic, google, meta, deepseek, alibaba, tencent,
 bytedance, baidu, moonshot, zhipu, minimax, xai, microsoft, amazon, nvidia, oracle,
 salesforce, mistral, softbank, sarvam, other.
+
+Give each item 1–3 `tags`: the product or model family (Qwen, Claude, Gemini 4 Argon,
+WorkBuddy, ...), a key topic when there is no product (IPO, Instagram, AI 安全 Safety), and
+"X" or "CNN" when the source is an X post or CNN. Reuse existing tag spellings.
 
 Details need 2–4 paragraphs in each language covering what happened, the key numbers
 and the context. Chinese and English must say the same thing.

@@ -1,5 +1,5 @@
 // Copies the latest Cell Dispatch battery page into ai-news/battery.html so the
-// merged site can show it. Usage: node ai-news/sync-battery.js <saved-artifact.html>
+// merged site can show it, restyled with battery-skin.css. Usage: node ai-news/sync-battery.js <saved-artifact.html>
 // The input is the file the Artifact tool's "read" action saves for
 // https://claude.ai/artifact/QWbnzmKHMjPhUvjStq9mXE (it may include the publish skeleton).
 const fs = require("fs");
@@ -21,6 +21,11 @@ if (!/<title>/i.test(html)) throw new Error("battery page has no <title>; is thi
 
 // Links inside the embedded page must open outside the frame.
 if (!/<base\s/i.test(html)) html = html.replace(/<head>/i, '<head>\n  <base target="_blank">');
+
+// Restyle it like the AI desk: fonts plus battery-skin.css, last in <head> so it wins.
+const skin = fs.readFileSync(path.join(__dirname, "battery-skin.css"), "utf8");
+const fonts = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap">';
+html = html.replace(/<\/head>/i, () => `  ${fonts}\n  <style id="ai-desk-skin">\n${skin}\n  </style>\n</head>`);
 
 const out = path.join(__dirname, "battery.html");
 fs.writeFileSync(out, html);

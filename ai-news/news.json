@@ -6,6 +6,9 @@
       "co": "google",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Gemini 2.5"
+      ],
       "zt": "Gemini 2.5 Pro / Flash / Flash-Lite 今日正式退役",
       "et": "Gemini 2.5 Pro, Flash and Flash-Lite retire today",
       "zs": "Google 按计划于 10 月 20 日停用 Gemini 2.5 系列，开发者需迁移到更新的模型。",
@@ -28,6 +31,11 @@
       "co": "other",
       "r": "global",
       "cat": "layoff",
+      "tags": [
+        "裁员追踪 Tracker",
+        "HubSpot",
+        "FICO"
+      ],
       "zt": "2026 年 AI 相关裁员已超 18 万人",
       "et": "AI-linked layoffs top 180,000 in 2026",
       "zs": "追踪站统计 1 至 10 月共有 52 家公司、183,278 人受 AI 相关裁员影响，已超过 2025 年全年。",
@@ -50,6 +58,9 @@
       "co": "microsoft",
       "r": "global",
       "cat": "layoff",
+      "tags": [
+        "肯尼亚 Kenya"
+      ],
       "zt": "评论：裁员对 AI 生意是好事吗？微软关闭内罗毕研发中心",
       "et": "Are layoffs good for AI's business? Microsoft shuts its Nairobi centre",
       "zs": "TechCabal 分析科技公司以 AI 为由裁员的趋势，并提到微软关闭非洲开发中心、影响 400 多名工程师。",
@@ -72,6 +83,9 @@
       "co": "minimax",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "MiniMax M3.1 Flash"
+      ],
       "zt": "MiniMax 更新 M3.1 Flash：推理快近三倍，成本降 70%",
       "et": "MiniMax updates M3.1 Flash: nearly 3x faster inference, 70% cheaper",
       "zs": "上海 AI 公司 MiniMax 更新旗舰高速模型 M3.1 Flash，在线推理速度约为前代三倍。",
@@ -94,6 +108,10 @@
       "co": "other",
       "r": "us",
       "cat": "biz",
+      "tags": [
+        "LinkedIn",
+        "CNN"
+      ],
       "zt": "连 LinkedIn 也受不了 AI 写的帖子了",
       "et": "Even LinkedIn is getting tired of your AI-written posts",
       "zs": "CNN 报道 LinkedIn 整治平台上大量低质量的 AI 生成内容，推出举报按钮并下线自家 AI 改写工具。",
@@ -116,6 +134,9 @@
       "co": "deepseek",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "DeepSeek V4.1-Flash"
+      ],
       "zt": "DeepSeek 更新 V4.1-Flash：更快、更精简",
       "et": "DeepSeek pushes an updated V4.1-Flash it says is faster and leaner",
       "zs": "刷新版 V4.1-Flash 完成任务更快、回答更短，API 价格不变。",
@@ -138,6 +159,10 @@
       "co": "openai",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "ChatGPT",
+        "GPT-6 Pro"
+      ],
       "zt": "ChatGPT 上线 Slides，GPT-6 Pro 提速并支持并行智能体",
       "et": "ChatGPT launches Slides; GPT-6 Pro gets faster with parallel agents",
       "zs": "ChatGPT 可以直接生成演示文稿；GPT-6 Pro 响应更快，并能同时运行多个智能体。",
@@ -160,6 +185,10 @@
       "co": "other",
       "r": "global",
       "cat": "safety",
+      "tags": [
+        "AI 智能体 Agents",
+        "CNN"
+      ],
       "zt": "如果 AI 智能体开始说自己的语言，会发生什么？",
       "et": "What happens if AI agents start speaking their own language?",
       "zs": "CNN 探讨智能体之间形成人类看不懂的沟通方式所带来的监管难题。",
@@ -182,6 +211,9 @@
       "co": "anthropic",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Claude Code"
+      ],
       "zt": "Claude Code Review 正式可用，Dashboards 与 Motion 进入测试",
       "et": "Claude Code Review goes GA; Dashboards and Motion enter beta",
       "zs": "代码审查功能向 Team 和 Enterprise 客户正式开放，速度约快三倍；Docs、Slides、Design 对所有套餐开放。",
@@ -204,6 +236,10 @@
       "co": "openai",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "ChatGPT",
+        "GPT-Live-1.1"
+      ],
       "zt": "ChatGPT 语音升级为 GPT-Live-1.1",
       "et": "ChatGPT voice upgrades to GPT-Live-1.1",
       "zs": "新的实时语音模型 GPT-Live-1.1 在 ChatGPT 中上线。",
@@ -226,6 +262,10 @@
       "co": "other",
       "r": "us",
       "cat": "biz",
+      "tags": [
+        "芯片 Chips",
+        "CNN"
+      ],
       "zt": "芯片股遭抛售，投资者转向其他股票和债券避险",
       "et": "Chipmaker sell-off sends investors to other stocks and bonds for safety",
       "zs": "10 月中旬 AI 芯片股大跌，费城半导体指数出现 2008 年以来最长连跌。",
@@ -248,6 +288,9 @@
       "co": "nvidia",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Nemotron 3.5"
+      ],
       "zt": "英伟达扩充 Nemotron 3.5：开源 Super VL 与 Bolt 端侧模型",
       "et": "Nvidia expands Nemotron 3.5 with the open Super VL and Bolt edge models",
       "zs": "1200 亿参数的开源多模态模型 Nemotron 3.5 Super VL 面向常驻智能体，另有两款可在本地运行的 Bolt 模型。",
@@ -270,6 +313,9 @@
       "co": "mistral",
       "r": "eu",
       "cat": "model",
+      "tags": [
+        "Timestral"
+      ],
       "zt": "Mistral 发布首个时间序列基础模型家族 Timestral",
       "et": "Mistral releases Timestral, its first time-series foundation models",
       "zs": "Timestral 提供四种规格，面向金融预测、供应链和预测性维护。",
@@ -292,6 +338,10 @@
       "co": "other",
       "r": "eu",
       "cat": "safety",
+      "tags": [
+        "EU AI Act",
+        "CNN"
+      ],
       "zt": "欧洲领跑 AI 立法，为何缺席 AI 安全辩论？",
       "et": "Europe leads the world on AI rules. So why is it missing from the AI safety debate?",
       "zs": "欧盟制定了全球首部全面的 AI 法规，却在高层 AI 安全讨论中几乎缺席。",
@@ -314,6 +364,9 @@
       "co": "other",
       "r": "us",
       "cat": "layoff",
+      "tags": [
+        "Netflix"
+      ],
       "zt": "Netflix 裁员约 1,000 人",
       "et": "Netflix to lay off about 1,000 staff",
       "zs": "约占员工总数 6%，是 2022 年以来最大规模裁员。",
@@ -336,6 +389,10 @@
       "co": "google",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Gemini 4 Argon",
+        "X"
+      ],
       "zt": "Sundar Pichai：「Gemini 4 Argon is here」全球上线",
       "et": "Sundar Pichai: 'Gemini 4 Argon is here', now available globally",
       "zs": "Gemini 4 Argon 面向开发者、企业和付费订阅用户全球开放。",
@@ -359,6 +416,10 @@
       "co": "google",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Gemini 4 Argon",
+        "X"
+      ],
       "zt": "Demis Hassabis 晒 Argon 做的巫师国际象棋游戏",
       "et": "Demis Hassabis shows off a wizard chess game built by Argon",
       "zs": "DeepMind CEO 称 Gemini 4 Argon 非常适合知识工作和编程，并演示其物理理解和 3D 建模能力。",
@@ -381,6 +442,9 @@
       "co": "meta",
       "r": "us",
       "cat": "biz",
+      "tags": [
+        "Muse Wonder"
+      ],
       "zt": "扎克伯格：Meta 在不确定能否成功时就押下 2000 亿美元",
       "et": "Zuckerberg says Meta bet $200 billion on AI without knowing it would pay off",
       "zs": "扎克伯格在播客中承认，Meta 在产品成败未知前就承诺了数千亿美元的 AI 基础设施投入。",
@@ -403,6 +467,9 @@
       "co": "softbank",
       "r": "jp",
       "cat": "model",
+      "tags": [
+        "Sarashina"
+      ],
       "zt": "软银旗下 SB Intuitions 免费开放日本国产大模型 Sarashina",
       "et": "SoftBank's SB Intuitions makes its Japanese model Sarashina free",
       "zs": "Sarashina 提供六个版本，可通过聊天界面和 API 免费使用。",
@@ -425,6 +492,10 @@
       "co": "alibaba",
       "r": "cn",
       "cat": "biz",
+      "tags": [
+        "Qwen",
+        "Qwen Glasses N1"
+      ],
       "zt": "阿里巴巴在杭州发布千问眼镜 Qwen Glasses N1",
       "et": "Alibaba unveils Qwen Glasses N1 smart glasses in Hangzhou",
       "zs": "阿里把千问模型带进智能眼镜，是其 AI 硬件布局的一部分。",
@@ -447,6 +518,9 @@
       "co": "meta",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Muse Wonder"
+      ],
       "zt": "Meta 发布首个前沿模型 Muse Wonder，扎克伯格称已到达「前沿」",
       "et": "Meta releases Muse Wonder, its first frontier model; Zuckerberg says Meta has reached the frontier",
       "zs": "Muse Wonder 通过 Meta Model API 提供，更强的 Muse Wonder Full 只面向 Muse Code 订阅用户。",
@@ -469,6 +543,10 @@
       "co": "anthropic",
       "r": "us",
       "cat": "safety",
+      "tags": [
+        "Claude",
+        "X"
+      ],
       "zt": "Anthropic：显著降低针对 Claude 的蒸馏攻击",
       "et": "Anthropic: significant progress against distillation attacks on Claude",
       "zs": "Anthropic 官方 X 账号发文，介绍如何防御别人通过大量调用 Claude 来「蒸馏」复制其能力。",
@@ -491,6 +569,11 @@
       "co": "alibaba",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "Qwen",
+        "Qwen 4",
+        "X"
+      ],
       "zt": "千问 Qwen 4 预热：「大的还是小的？都要！」",
       "et": "Qwen 4 teaser: 'big or small? let's do both!'",
       "zs": "千问开发者账号在 X 上预热 Qwen 4，但阿里尚未公布发布日期、规格或许可证。",
@@ -513,6 +596,10 @@
       "co": "anthropic",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Claude",
+        "Haiku 5.5"
+      ],
       "zt": "Claude Haiku 5.5 发布：最快、最便宜的小模型，API 降价 90%",
       "et": "Claude Haiku 5.5 launches as Anthropic's fastest, cheapest small model, with a 90% API price cut",
       "zs": "Haiku 5.5 每百万输入 token 只要 0.10 美元，至此 Claude 5.5 家族全部到齐。",
@@ -535,6 +622,11 @@
       "co": "openai",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "ChatGPT",
+        "GPT-6 Instant",
+        "X"
+      ],
       "zt": "Sam Altman：「ChatGPT can now generate a custom UI for you!」",
       "et": "Sam Altman: 'ChatGPT can now generate a custom UI for you!'",
       "zs": "GPT-6 Instant 向付费用户推出，Intelligent UI 面向所有用户上线。",
@@ -557,6 +649,10 @@
       "co": "google",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Nano Banana 2.1",
+        "EmbeddingGemma 2"
+      ],
       "zt": "Google 推出 Nano Banana 2.1 图像模型与 EmbeddingGemma 2",
       "et": "Google ships the Nano Banana 2.1 image model and EmbeddingGemma 2",
       "zs": "新一代图像生成模型 10 月 6 日上线；DeepMind 同月发布开源多模态嵌入模型。",
@@ -579,6 +675,9 @@
       "co": "mistral",
       "r": "eu",
       "cat": "model",
+      "tags": [
+        "Mistral Large 4"
+      ],
       "zt": "Mistral 发布约 1 万亿参数的 Mistral Large 4",
       "et": "Mistral releases Mistral Large 4, a model of about 1 trillion parameters",
       "zs": "绰号「Le Chonk」的多模态大模型支持 100 万 token 上下文，暂未开放权重。",
@@ -601,6 +700,9 @@
       "co": "amazon",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Nova 2.5 Sonic"
+      ],
       "zt": "Amazon Nova 2.5 Sonic 正式可用：实时语音对语音模型",
       "et": "Amazon Nova 2.5 Sonic reaches general availability for real-time speech-to-speech",
       "zs": "面向语音智能体，推理、指令遵循和工具调用更准，延迟更低。",
@@ -645,6 +747,9 @@
       "co": "meta",
       "r": "us",
       "cat": "layoff",
+      "tags": [
+        "AI 安全 Safety"
+      ],
       "zt": "Meta 聘用 AI 安全团队仅数月后解雇其创始人和员工",
       "et": "Meta fires the AI safety team it hired just months ago",
       "zs": "Meta 解雇了从 AI 安全初创公司 Virtue AI 招来的员工，官方称是工作风格冲突。",
@@ -668,6 +773,11 @@
       "co": "openai",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "ChatGPT",
+        "GPT-6 Sol",
+        "GPT-6 Luna"
+      ],
       "zt": "GPT-6 Sol 与 Luna 十月版替换 ChatGPT 中的 5.6 版本",
       "et": "October versions of GPT-6 Sol and Luna replace GPT-5.6 in ChatGPT",
       "zs": "OpenAI 安全中心称十月版在网络安全和生化领域都被评为「高」能力等级。",
@@ -691,6 +801,10 @@
       "co": "anthropic",
       "r": "us",
       "cat": "biz",
+      "tags": [
+        "IPO",
+        "Nscale"
+      ],
       "zt": "Anthropic IPO：估值据报被压至 1.5 万亿美元",
       "et": "Anthropic IPO: valuation reportedly pushed down to $1.5 trillion",
       "zs": "因第三季度增长放缓，IPO 投资者据报将估值从 2 万亿美元下调。",
@@ -714,6 +828,9 @@
       "co": "anthropic",
       "r": "us",
       "cat": "safety",
+      "tags": [
+        "五角大楼 Pentagon"
+      ],
       "zt": "美国国防部完成 Anthropic 产品下线",
       "et": "Pentagon completes phase-out of Anthropic products",
       "zs": "因使用限制争议，特朗普政府要求政府部门停用 Anthropic 产品，国防部于 10 月完成。",
@@ -737,6 +854,9 @@
       "co": "meta",
       "r": "us",
       "cat": "biz",
+      "tags": [
+        "Instagram"
+      ],
       "zt": "Instagram 将对 AI 工具收费，并标注 AI 生成内容",
       "et": "Instagram to charge for AI tools and label AI-generated content",
       "zs": "数字营销周报的标题消息，目前细节不多，需以 Instagram 官方公告为准。",
@@ -759,6 +879,9 @@
       "co": "microsoft",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "MAI-Voice-2.1"
+      ],
       "zt": "微软发布首个流式转写模型及 MAI-Voice-2.1 语音模型",
       "et": "Microsoft debuts its first streaming transcription model and MAI-Voice-2.1",
       "zs": "流式转写模型支持 60 种语言，在 Artificial Analysis 上排名第一。",
@@ -781,6 +904,10 @@
       "co": "google",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Gemini 4 Argon",
+        "X"
+      ],
       "zt": "Hassabis 宣布 Gemini 4 Argon：先开放给政府和网络防御方",
       "et": "Hassabis announces Gemini 4 Argon, first for governments and cyber defenders",
       "zs": "Argon 通过 Fairwind 计划首先向政府和可信网络防御方开放，之后再扩大。",
@@ -803,6 +930,10 @@
       "co": "openai",
       "r": "us",
       "cat": "safety",
+      "tags": [
+        "GPT-6.1 Astra",
+        "CNN"
+      ],
       "zt": "「没达到标准」：OpenAI 因安全问题取消 GPT-6.1 Astra 发布",
       "et": "'Didn't quite meet the bar': OpenAI won't release GPT-6.1 Astra over safety concerns",
       "zs": "OpenAI 称新模型在遵守任务范围和如实汇报方面不达标，内部测试显示较高程度的欺骗行为。",
@@ -825,6 +956,10 @@
       "co": "anthropic",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Claude",
+        "Sonnet 5.5"
+      ],
       "zt": "Claude Sonnet 5.5 发布",
       "et": "Claude Sonnet 5.5 is released",
       "zs": "Opus 5.5 发布六天后推出，定价为每百万输入 2 美元、输出 10 美元。",
@@ -847,6 +982,9 @@
       "co": "xai",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Grok 4.7"
+      ],
       "zt": "xAI 发布 Grok 4.7，Amazon Bedrock 同步上线",
       "et": "xAI ships Grok 4.7, available on Amazon Bedrock",
       "zs": "面向编程与智能体任务的前沿模型，上下文窗口 50 万 token。",
@@ -869,6 +1007,10 @@
       "co": "alibaba",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "Qwen",
+        "Qwen3.8"
+      ],
       "zt": "阿里通义 Qwen3.8 Max Prime 与 Qwen3.8 Omni Flash 上线",
       "et": "Alibaba's Qwen3.8 Max Prime and Qwen3.8 Omni Flash go live",
       "zs": "两款新模型分别于 9 月 23 日和 21 日出现在 OpenRouter。",
@@ -891,6 +1033,10 @@
       "co": "anthropic",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Claude",
+        "Opus 5.5"
+      ],
       "zt": "Claude Opus 5.5 发布：降价并提速",
       "et": "Claude Opus 5.5 launches, cheaper and faster",
       "zs": "主打智能体编程与知识工作，定价降至每百万输入 4 美元、输出 20 美元。",
@@ -913,6 +1059,11 @@
       "co": "openai",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "GPT-6 Sol",
+        "GPT-6 Luna",
+        "X"
+      ],
       "zt": "Altman：GPT-6 Sol 与 Luna 全面超越 5.6，价格减半",
       "et": "Altman: GPT-6 Sol and Luna beat the 5.6 family at half the price",
       "zs": "两款模型在智能、对齐、编程、电脑操作等方面大幅提升，每 token 价格只有前代一半。",
@@ -935,6 +1086,11 @@
       "co": "alibaba",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "Qwen",
+        "Qwen 4",
+        "云栖大会 Apsara"
+      ],
       "zt": "阿里云栖大会：Qwen 4 训练中，路线图指向 10 万亿参数",
       "et": "Alibaba's Apsara Conference: Qwen 4 in training, roadmap toward 10 trillion parameters",
       "zs": "阿里公布从芯片、云到模型和智能体的全栈 AI 路线图，并发布多款千问 3.8 模型和 AI 硬件。",
@@ -980,6 +1136,10 @@
       "co": "deepseek",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "DeepSeek V4.1-Flash",
+        "开源 Open weights"
+      ],
       "zt": "DeepSeek 发布 V4.1-Flash 并下线旗舰 V4-Pro",
       "et": "DeepSeek launches V4.1-Flash and retires its flagship V4-Pro",
       "zs": "V4.1-Flash 以 MIT 许可开源，DeepSeek 称其在性能、成本和速度上都超过 V4-Pro。",
@@ -1025,6 +1185,10 @@
       "co": "openai",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "GPT-6 Astra",
+        "X"
+      ],
       "zt": "Altman：「GPT-6 Astra is here」",
       "et": "Altman: 'GPT-6 Astra is here'",
       "zs": "OpenAI 最强模型 GPT-6 Astra 发布，Altman 称它是电脑操作、编程、科学和网络安全上的全球最佳模型。",
@@ -1070,6 +1234,10 @@
       "co": "tencent",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "混元 Hunyuan",
+        "Hy4"
+      ],
       "zt": "腾讯开源混元 Hy4 预览版",
       "et": "Tencent open-sources the Hunyuan Hy4 preview",
       "zs": "据腾讯资料，Hy4 预览版总参数约 7700 亿、激活 490 亿。",
@@ -1093,6 +1261,9 @@
       "co": "deepseek",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "DeepSeek V4-Pro"
+      ],
       "zt": "DeepSeek V4-Pro 正式发布",
       "et": "DeepSeek officially launches V4-Pro",
       "zs": "结束自 4 月以来的预览，在 App、网页和 API 全面上线，支持 100 万 token 上下文。",
@@ -1115,6 +1286,9 @@
       "co": "zhipu",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "GLM-5.3"
+      ],
       "zt": "智谱发布新旗舰 GLM-5.3",
       "et": "Zhipu releases its new flagship GLM-5.3",
       "zs": "GLM-5.3 成为智谱（Z.ai）当前旗舰；此前 6 月发布的 GLM 5.2 采用 MIT 许可开源。",
@@ -1137,6 +1311,10 @@
       "co": "meta",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Instagram",
+        "个人超级智能"
+      ],
       "zt": "扎克伯格 Instagram 视频：推出「个人超级智能」新模型",
       "et": "Zuckerberg on Instagram: new models for 'personal superintelligence'",
       "zs": "Fox Business 播出引用扎克伯格 Instagram 账号的视频，介绍 Meta 个人超级智能计划的新模型。",
@@ -1159,6 +1337,10 @@
       "co": "other",
       "r": "global",
       "cat": "safety",
+      "tags": [
+        "Hinton",
+        "CNN"
+      ],
       "zt": "「AI 教父」辛顿：准备迎接更多失控的 AI",
       "et": "Godfather of AI: Brace for more rogue AIs",
       "zs": "辛顿对 CNN 表示，AI 越聪明越难控制，未来会有大量恶性网络攻击。",
@@ -1181,6 +1363,11 @@
       "co": "anthropic",
       "r": "us",
       "cat": "safety",
+      "tags": [
+        "Mythos 5",
+        "UK AISI",
+        "CNN"
+      ],
       "zt": "AI 智能体伪造身份、针对真实开发者，英国 AISI 披露新事件",
       "et": "AI agents fake identities and target real people in a new security incident",
       "zs": "英国 AI 安全研究所测试中，一个智能体伪造身份，向真实开源维护者施压，要求合并恶意代码。",
@@ -1203,6 +1390,10 @@
       "co": "other",
       "r": "us",
       "cat": "safety",
+      "tags": [
+        "白宫 White House",
+        "CNN"
+      ],
       "zt": "白宫约见 OpenAI、Anthropic 等公司，启动首次大规模监管",
       "et": "White House meets OpenAI, Anthropic and other top AI companies in first big regulation push",
       "zs": "会议讨论由政府在前沿模型发布前进行审查的新框架。",
@@ -1226,6 +1417,11 @@
       "coName": "韩国主权 AI Korea",
       "r": "kr",
       "cat": "model",
+      "tags": [
+        "K-EXAONE 2.0",
+        "A.X K2",
+        "Solar Open 2"
+      ],
       "zt": "韩国主权 AI 竞赛：SK 电讯、LG、Upstage 三队晋级",
       "et": "Korea's sovereign AI contest narrows to SK Telecom, LG and Upstage",
       "zs": "SK 电讯 A.X K2（6880 亿参数）、LG K-EXAONE 2.0（7500 亿）和 Upstage Solar Open 2（2500 亿）通过第二轮评估。",
@@ -1248,6 +1444,9 @@
       "co": "anthropic",
       "r": "us",
       "cat": "safety",
+      "tags": [
+        "CNN"
+      ],
       "zt": "Anthropic：旗下模型在测试中侵入了其他公司的系统",
       "et": "Anthropic says its AI models hacked into other companies' systems during testing",
       "zs": "三款模型获得了外部机构系统的未授权访问，Anthropic 与 OpenAI 已暂停所有网络安全评测。",
@@ -1270,6 +1469,9 @@
       "co": "sarvam",
       "r": "in",
       "cat": "model",
+      "tags": [
+        "Sarvam"
+      ],
       "zt": "印度 Sarvam AI 宣布研发 1 万亿参数模型",
       "et": "India's Sarvam AI announces a 1-trillion-parameter model",
       "zs": "Sarvam 计划用约六个月追赶全球领先者；2 月已发布 300 亿和 1050 亿参数模型。",
@@ -1292,6 +1494,10 @@
       "co": "other",
       "r": "us",
       "cat": "safety",
+      "tags": [
+        "公开信 Open letter",
+        "CNN"
+      ],
       "zt": "千余名 AI 公司员工联名：美国应准备好放慢 AI 发展",
       "et": "Employees from the biggest AI companies want the US ready to slow AI development",
       "zs": "超过 1,000 名前沿 AI 公司员工签署公开信；Altman 称「我们可能需要控制 AI 发展速度」。",
@@ -1315,6 +1521,9 @@
       "coName": "Monday.com",
       "r": "me",
       "cat": "layoff",
+      "tags": [
+        "Monday.com"
+      ],
       "zt": "Monday.com 以 AI 为由裁员，TechCrunch 列出 20 多家类似公司",
       "et": "Monday.com blames AI for layoffs, joining 20 other companies on TechCrunch's list",
       "zs": "以色列软件公司 Monday.com 成为最新一家把裁员归因于 AI 的科技公司。",
@@ -1337,6 +1546,9 @@
       "co": "moonshot",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "Kimi K3"
+      ],
       "zt": "月之暗面发布 Kimi K3：2.8 万亿参数",
       "et": "Moonshot AI launches Kimi K3 with 2.8 trillion parameters",
       "zs": "Kimi K3 支持 100 万 token 上下文，并于 7 月 27 日开放权重。",
@@ -1360,6 +1572,9 @@
       "co": "amazon",
       "r": "us",
       "cat": "layoff",
+      "tags": [
+        "AGI"
+      ],
       "zt": "Amazon 裁撤部分 AGI 岗位",
       "et": "Amazon cuts some AGI positions",
       "zs": "7 月裁员涉及通用人工智能团队，人数未公开。",
@@ -1384,6 +1599,11 @@
       "coName": "中国科技公司 China tech",
       "r": "cn",
       "cat": "layoff",
+      "tags": [
+        "阿里巴巴 Alibaba",
+        "百度 Baidu",
+        "京东 JD"
+      ],
       "zt": "中国科技巨头 18 个月裁员超 13 万人，阿里员工减少约三分之一",
       "et": "Chinese tech giants cut over 130,000 jobs in 18 months; Alibaba's headcount drops by a third",
       "zs": "公司把裁员归因于 AI 转型，但中国专家认为经济放缓才是主因。",
@@ -1406,6 +1626,10 @@
       "co": "tencent",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "混元 Hunyuan",
+        "Hy3"
+      ],
       "zt": "腾讯混元 Hy3 正式版发布，免费提供 AI 智能体功能",
       "et": "Tencent releases the final Hunyuan Hy3 with a free AI-agent feature",
       "zs": "Hy3 为 2950 亿参数的开放权重 MoE 推理模型，接入腾讯元宝并下调 API 价格。",
@@ -1451,6 +1675,10 @@
       "co": "bytedance",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "豆包 Doubao",
+        "Seed 2.1"
+      ],
       "zt": "字节跳动发布豆包 Seed 2.1（Pro 与 Turbo）",
       "et": "ByteDance launches Doubao Seed 2.1 in Pro and Turbo",
       "zs": "在火山引擎 FORCE 大会上发布，此前几天已在 Arena 编程榜单上预览。",
@@ -1473,6 +1701,9 @@
       "co": "tencent",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "WorkBuddy"
+      ],
       "zt": "腾讯 WorkBuddy 面向全球上线：桌面办公 AI 智能体",
       "et": "Tencent takes WorkBuddy, its desktop work AI agent, global",
       "zs": "WorkBuddy 可通过 Slack、Telegram、Discord、微信远程执行任务，内置 100 多个专家角色。",
@@ -1518,6 +1749,9 @@
       "co": "meta",
       "r": "us",
       "cat": "biz",
+      "tags": [
+        "Instagram Plus"
+      ],
       "zt": "Meta 推出 Instagram Plus 订阅，月费 3.99 美元",
       "et": "Meta launches Instagram Plus at $3.99 a month",
       "zs": "Meta 消费级订阅的一部分；6 月其 Business Agent 扩展到 WhatsApp、Messenger 和 Instagram。",
@@ -1541,6 +1775,10 @@
       "co": "baidu",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "文心 ERNIE 5.1",
+        "X"
+      ],
       "zt": "百度文心 ERNIE 5.1 预览版上线",
       "et": "Baidu's ERNIE 5.1 Preview goes live",
       "zs": "架构更轻、更高效，在 LMArena 文本榜上位列中国模型第一。",
@@ -1563,6 +1801,9 @@
       "co": "deepseek",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "DeepSeek V4"
+      ],
       "zt": "DeepSeek V4 与 V4-Pro 发布预览",
       "et": "DeepSeek releases V4 and V4-Pro in preview",
       "zs": "推迟了原定春节前后的发布；Pro 版 1.6 万亿参数，Flash 版 2840 亿参数。",
@@ -1587,6 +1828,10 @@
       "coName": "TCS",
       "r": "in",
       "cat": "layoff",
+      "tags": [
+        "TCS",
+        "Infosys"
+      ],
       "zt": "印度 IT 业：TCS 2026 财年本土员工减少 2.3 万人",
       "et": "Indian IT: TCS's India headcount falls by 23,000 in FY26",
       "zs": "TCS 完成约 2% 员工的重组，AI 推动 IT 外包向更精简的交付模式转变。",
@@ -1609,6 +1854,10 @@
       "co": "meta",
       "r": "us",
       "cat": "model",
+      "tags": [
+        "Muse Spark",
+        "Instagram"
+      ],
       "zt": "Meta 发布 Muse Spark，将进入 Instagram、Facebook、WhatsApp",
       "et": "Meta debuts Muse Spark, coming to Instagram, Facebook and WhatsApp",
       "zs": "这是 Meta 以 140 亿美元引入 Alexandr Wang 后推出的首个重要模型。",
@@ -1631,6 +1880,9 @@
       "co": "mistral",
       "r": "eu",
       "cat": "model",
+      "tags": [
+        "Voxtral TTS"
+      ],
       "zt": "Mistral 发布 Voxtral TTS 语音合成模型",
       "et": "Mistral releases Voxtral TTS for speech generation",
       "zs": "支持 9 种语言，只需 3 秒参考音频即可克隆声音，约 40 亿参数，面向低延迟语音智能体。",
@@ -1653,6 +1905,10 @@
       "co": "tencent",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "WorkBuddy",
+        "OpenClaw"
+      ],
       "zt": "腾讯发布办公 AI 智能体 WorkBuddy，兼容 OpenClaw",
       "et": "Tencent launches WorkBuddy, an OpenClaw-compatible workplace AI agent",
       "zs": "WorkBuddy 可在本地运行，支持多模型切换和 MCP，一分钟接入企业微信。",
@@ -1675,6 +1931,10 @@
       "co": "bytedance",
       "r": "cn",
       "cat": "model",
+      "tags": [
+        "豆包 Doubao",
+        "Seed 2.0"
+      ],
       "zt": "字节跳动发布豆包大模型 2.0，主攻复杂任务",
       "et": "ByteDance unveils Doubao 2.0 to tackle complex tasks",
       "zs": "Seed 2.0 包括 Pro、Lite、Mini 三款通用智能体模型和一款编程模型。",
@@ -1697,6 +1957,9 @@
       "co": "amazon",
       "r": "us",
       "cat": "layoff",
+      "tags": [
+        "CNN"
+      ],
       "zt": "Amazon 裁员 16,000 人，AI 竞争加剧",
       "et": "Amazon is laying off 16,000 employees as the AI battle intensifies",
       "zs": "继 2025 年 10 月裁员 14,000 人后的第二轮大规模裁员，两轮合计约 3 万人。",
@@ -1719,6 +1982,9 @@
       "co": "baidu",
       "r": "cn",
       "cat": "layoff",
+      "tags": [
+        "文心 ERNIE"
+      ],
       "zt": "百度启动多年来最大规模裁员，重组 AI 业务",
       "et": "Baidu launches its biggest layoffs in years as it overhauls its AI business",
       "zs": "第三季度亏损后，百度多个业务部门裁员，部分团队比例高达 40%，AI 和云业务基本不受影响。",

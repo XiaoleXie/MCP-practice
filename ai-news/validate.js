@@ -21,6 +21,7 @@ const seen = new Set();
   if (!cats.includes(n.cat)) problems.push(`${at}: bad cat "${n.cat}"`);
   for (const k of ["zt", "et", "zs", "es", "src", "u"]) if (typeof n[k] !== "string" || !n[k].trim()) problems.push(`${at}: missing ${k}`);
   for (const k of ["zd", "ed"]) if (!Array.isArray(n[k]) || n[k].length < 2) problems.push(`${at}: ${k} needs 2+ paragraphs`);
+  if (n.tags !== undefined && !(Array.isArray(n.tags) && n.tags.every(t => typeof t === "string" && t.trim()))) problems.push(`${at}: tags must be an array of strings`);
   if (n.u && !/^https:\/\//.test(n.u)) problems.push(`${at}: u must be https`);
   const key = n.u + "|" + n.zt;
   if (seen.has(key)) problems.push(`${at}: duplicate`);
