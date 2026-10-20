@@ -1,7 +1,9 @@
 # AI 情报台 · Daily update procedure
 
-The page `index.html` renders stories from `news.json`. A scheduled task runs this
-procedure once a day. Follow it exactly; only `news.json` changes on a normal day.
+The page `index.html` renders stories from `news.json`, and its 电池情报 switch shows
+`battery.html`, a daily copy of the Cell Dispatch battery page. A scheduled task runs this
+procedure once a day. Follow it exactly; only `news.json` and `battery.html` change on a
+normal day.
 
 - Repository: `xiaolexie/MCP-practice`, branch `ccr-9268cd2a-a3i3mk`
 - Published page: https://claude.ai/artifact/Fw8QZUt2dzEeTN4qZ8SEUY
@@ -26,11 +28,16 @@ procedure once a day. Follow it exactly; only `news.json` changes on a normal da
    Never invent facts, numbers or quotes; write only what the sources say.
 5. Set `updated` to today's date (YYYY-MM-DD). Keep `items` sorted newest first.
 6. Validate: `node ai-news/validate.js` must print `OK`.
-7. Commit (`AI news: daily update YYYY-MM-DD`) and `git push -u origin ccr-9268cd2a-a3i3mk`.
-   If nothing new was found, still bump `updated`, commit and publish.
-8. Republish the page: first Artifact `action: "read"` on the URL above, then Artifact
-   publish with `url` set to that URL, `file_path: ai-news/index.html`, and
-   `files: {"news.json": "ai-news/news.json"}`.
+7. If nothing new was found, still bump `updated`.
+8. Refresh the battery desk. The site also shows the Cell Dispatch battery page
+   (https://claude.ai/artifact/QWbnzmKHMjPhUvjStq9mXE, kept up to date by its own daily
+   tasks; never edit or republish that artifact). Call Artifact `action: "read"` on it,
+   then run `node ai-news/sync-battery.js <path of the saved HTML file>`; it must print
+   `OK`. If the read fails, keep the existing `ai-news/battery.html`.
+9. Commit (`AI news: daily update YYYY-MM-DD`) and `git push -u origin ccr-9268cd2a-a3i3mk`.
+10. Republish the page: first Artifact `action: "read"` on the AI page URL above, then
+   Artifact publish with `url` set to that URL, `file_path: ai-news/index.html`, and
+   `files: {"news.json": "ai-news/news.json", "battery.html": "ai-news/battery.html"}`.
 
 ## Item schema
 

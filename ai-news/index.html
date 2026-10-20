@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>AI 情报台</title>
+<title>AI 与电池情报台</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,6 +74,21 @@
   --warn: #f0b162; --warn-soft: #2e2416;
   color-scheme: dark;
 }
+/* Site switcher shared by both desks */
+.switch { border-bottom: 1px solid var(--line); background: var(--surface); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))) calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
+.switch-in { max-width: 1080px; margin: 0 auto; padding-block: 10px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.switch-in .modes { margin-left: auto; }
+.switch-lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.switch-seg { display: inline-flex; gap: 4px; padding: 3px; border-radius: 10px; background: var(--bg); border: 1px solid var(--line); }
+.switch-seg button { font: inherit; border: 0; background: transparent; color: var(--muted); cursor: pointer; padding: 6px 14px; border-radius: 7px; display: grid; text-align: left; line-height: 1.25; }
+.switch-seg button b { font-size: 15px; }
+.switch-seg button span { font-family: var(--font-en); font-style: italic; font-size: 12px; }
+.switch-seg button[aria-selected="true"] { background: var(--fg); color: var(--bg); }
+.switch-seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+#battery-view { margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))) calc(-1 * max(16px, env(safe-area-inset-right, 0px))); }
+#battery-frame { display: block; width: 100%; border: 0; min-height: 80vh; background: var(--bg); }
+.frame-msg { text-align: center; color: var(--muted); padding: 48px 16px; margin: 0; }
+[hidden] { display: none !important; }
 * { box-sizing: border-box; }
 body {
   background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.65;
@@ -174,15 +189,25 @@ details[open] summary { border-bottom: 1px solid var(--line); }
 @media (prefers-reduced-motion: reduce) { body, .rail { transition: none; } details summary::before { transition: none; } }
 </style>
 
-<div class="wrap">
+<nav class="switch" aria-label="切换网站 Switch site">
+  <div class="switch-in">
+    <span class="switch-lbl">情报台 Intel Desk</span>
+    <div class="switch-seg" role="tablist">
+      <button type="button" role="tab" data-view="ai" id="view-ai"><b>AI 情报</b><span>AI Newsdesk</span></button>
+      <button type="button" role="tab" data-view="battery" id="view-battery"><b>电池情报</b><span>Cell Dispatch</span></button>
+    </div>
+    <div class="modes" role="group" aria-label="显示模式 Display mode">
+      <button type="button" data-mode="day"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>白天</button>
+      <button type="button" data-mode="eye"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>护眼</button>
+      <button type="button" data-mode="night"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>夜晚</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap" id="ai-view" role="tabpanel" aria-labelledby="view-ai">
   <header class="mast">
     <div class="topline">
       <div class="eyebrow"><span class="live" id="updated">更新中</span><span id="updated-en">Loading</span></div>
-      <div class="modes" role="group" aria-label="显示模式 Display mode">
-        <button type="button" data-mode="day"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>白天</button>
-        <button type="button" data-mode="eye"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>护眼</button>
-        <button type="button" data-mode="night"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>夜晚</button>
-      </div>
     </div>
     <h1>AI 情报台<span>AI Newsdesk</span></h1>
     <p class="lede">每天自动汇总全球 AI 大模型发布与裁员消息：美国的 OpenAI、Anthropic Claude、Google、Meta，中国的 DeepSeek、阿里千问、腾讯混元与 WorkBuddy、字节豆包、百度文心，以及欧洲、日本、韩国、印度等地的 AI 公司。来源包括 CNN 等媒体和 X 帖子，每条都有中英双语摘要和详情。<em>A daily digest of AI model launches and layoffs worldwide, from OpenAI, Anthropic, Google and Meta to DeepSeek, Alibaba Qwen, Tencent, ByteDance and Baidu, plus labs in Europe, Japan, Korea and India, with bilingual summaries and details.</em></p>
@@ -213,6 +238,12 @@ details[open] summary { border-bottom: 1px solid var(--line); }
     </ul>
   </aside>
 </div>
+
+
+<section id="battery-view" role="tabpanel" aria-labelledby="view-battery" hidden>
+  <p class="frame-msg" id="battery-msg">正在加载电池情报… Loading Cell Dispatch…</p>
+  <iframe id="battery-frame" title="电池情报 Cell Dispatch" hidden></iframe>
+</section>
 
 <script>
 // Known companies, in chip order. Stories may use other keys; those show coName or the key itself.
@@ -445,6 +476,49 @@ function init(data) {
   const savedTab = store.get("ai-news-tab");
   selectTab(TABS.some(t => t.k === hashTab) ? hashTab : (TABS.some(t => t.k === savedTab) ? savedTab : "model"));
 }
+
+/* ---- site switcher: AI desk vs embedded battery desk ---- */
+const views = { ai: $("#ai-view"), battery: $("#battery-view") };
+let batteryLoaded = false;
+function batteryTheme() {
+  const doc = $("#battery-frame").contentDocument;
+  if (doc && doc.documentElement) doc.documentElement.setAttribute("data-theme", currentMode() === "night" ? "dark" : "light");
+}
+function fitBattery() {
+  const f = $("#battery-frame"), doc = f.contentDocument;
+  if (doc && doc.documentElement) f.style.height = doc.documentElement.scrollHeight + "px";
+}
+function loadBattery() {
+  if (batteryLoaded) return;
+  batteryLoaded = true;
+  fetch("battery.html", { cache: "no-cache" })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(html => {
+      const f = $("#battery-frame");
+      f.addEventListener("load", () => {
+        batteryTheme();
+        fitBattery();
+        const doc = f.contentDocument;
+        try { new ResizeObserver(fitBattery).observe(doc.documentElement); } catch (e) {}
+        doc.addEventListener("click", () => setTimeout(fitBattery, 50));
+        $("#battery-msg").hidden = true;
+        f.hidden = false;
+      }, { once: true });
+      f.srcdoc = html;
+    })
+    .catch(() => { batteryLoaded = false; $("#battery-msg").textContent = "电池情报加载失败，请刷新页面重试。Couldn't load Cell Dispatch; refresh to try again."; });
+}
+function showView(v) {
+  Object.entries(views).forEach(([k, el]) => { el.hidden = k !== v; });
+  document.querySelectorAll(".switch-seg button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === v));
+  store.set("intel-view", v);
+  if (v === "battery") loadBattery();
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll(".switch-seg button").forEach(b => b.addEventListener("click", () => showView(b.dataset.view)));
+modeBtns.forEach(b => b.addEventListener("click", batteryTheme));
+const startHash = location.hash.slice(1);
+showView(startHash === "battery" ? "battery" : startHash === "ai" ? "ai" : (store.get("intel-view") === "battery" ? "battery" : "ai"));
 
 fetch("news.json", { cache: "no-cache" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
