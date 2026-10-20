@@ -28,5 +28,8 @@ const seen = new Set();
   if (i > 0 && n.d > data.items[i - 1].d) problems.push(`${at}: not sorted newest first`);
 });
 
+const leads = (data.items || []).filter(n => n.lead).length;
+if (leads > 1) problems.push(`${leads} items have lead: true; keep exactly one`);
+
 if (problems.length) { console.log(problems.join("\n")); process.exit(1); }
 console.log("OK");

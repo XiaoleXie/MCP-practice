@@ -27,6 +27,8 @@ normal day.
    event = duplicate; update the existing item instead if there is a material new fact).
    Never invent facts, numbers or quotes; write only what the sources say.
 5. Set `updated` to today's date (YYYY-MM-DD). Keep `items` sorted newest first.
+   Move `"lead": true` to the single most important story of the last few days (a major
+   model launch or a large layoff); exactly one item may carry it. It shows as 今日焦点.
 6. Validate: `node ai-news/validate.js` must print `OK`.
 7. If nothing new was found, still bump `updated`.
 8. Refresh the battery desk. The site also shows the Cell Dispatch battery page
@@ -47,6 +49,7 @@ normal day.
   "approx": true,              // optional: only the month is known (use day 01 or 15)
   "co": "alibaba",             // company key, see list below; unknown -> "other" + coName
   "coName": "Monday.com",      // optional display name when co is "other" or a new key
+  "lead": true,                // optional: the one story featured as 今日焦点
   "r": "cn",                   // region: us | cn | eu | kr | jp | in | me | global
   "cat": "model",              // model | layoff | safety | biz
   "zt": "中文标题", "et": "English title",
