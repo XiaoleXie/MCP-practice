@@ -342,7 +342,7 @@ select:disabled { opacity: .45; cursor: default; }
 @media (max-width: 480px) { .ccard { grid-template-columns: 1fr; } .cgo { grid-column: 1; } .cdate { display: flex; gap: 8px; align-items: baseline; justify-content: flex-start; text-align: left; } }
 
 /* battery view */
-#battery-frame { display: block; width: calc(100% + 2 * max(16px, env(safe-area-inset-left, 0px))); border: 0; min-height: 80vh; background: var(--bg); padding: 0; }
+#battery-frame, #immigration-frame { display: block; width: calc(100% + 2 * max(16px, env(safe-area-inset-left, 0px))); border: 0; min-height: 80vh; background: var(--bg); padding: 0; }
 .frame-msg { text-align: center; color: var(--muted); padding: 48px 16px; margin: 0; }
 
 @media (max-width: 960px) {
@@ -370,6 +370,7 @@ select:disabled { opacity: .45; cursor: default; }
     <div class="seg" role="tablist">
       <button type="button" role="tab" data-view="ai" id="view-ai">AI 情报<small>AI Newsdesk</small></button>
       <button type="button" role="tab" data-view="battery" id="view-battery">电池情报<small>Cell Dispatch</small></button>
+      <button type="button" role="tab" data-view="immigration" id="view-immigration">移民政策<small>Immigration</small></button>
     </div>
     <div class="seg modes" role="group" aria-label="显示模式 Display mode">
       <button type="button" data-mode="day"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>白天</button>
@@ -455,6 +456,10 @@ select:disabled { opacity: .45; cursor: default; }
 <section id="battery-view" role="tabpanel" aria-labelledby="view-battery" hidden>
   <p class="frame-msg" id="battery-msg">正在加载电池情报… Loading Cell Dispatch…</p>
   <iframe id="battery-frame" class="bleed" title="电池情报 Cell Dispatch" hidden></iframe>
+</section>
+<section id="immigration-view" role="tabpanel" aria-labelledby="view-immigration" hidden>
+  <p class="frame-msg" id="immigration-msg">正在加载移民政策简报… Loading Immigration Policy Briefing…</p>
+  <iframe id="immigration-frame" class="bleed" title="移民政策 Immigration Policy Briefing" hidden></iframe>
 </section>
 
 <script>
@@ -811,48 +816,57 @@ $("#fy").addEventListener("change", e => { state.y = e.target.value; state.m = "
 $("#fm").addEventListener("change", e => { state.m = e.target.value; state.day = ""; render(); });
 $("#fd").addEventListener("change", e => { state.day = e.target.value; render(); });
 
-/* ---- site switcher: AI desk vs embedded battery desk ---- */
-const views = { ai: $("#ai-view"), battery: $("#battery-view") };
-let batteryLoaded = false;
-function batteryTheme() {
-  const f = $("#battery-frame"), doc = f && f.contentDocument;
-  if (doc && doc.documentElement) { doc.documentElement.setAttribute("data-theme", currentMode() === "night" ? "dark" : "light"); doc.documentElement.setAttribute("data-mode", currentMode()); }
+/* ---- site switcher: AI desk vs embedded battery desk and immigration briefing ---- */
+const views = { ai: $("#ai-view"), battery: $("#battery-view"), immigration: $("#immigration-view") };
+// Each embedded page keeps its own palette; only its theme attribute follows the site mode.
+const FRAMES = {
+  battery: { file: "battery.html", fail: "电池情报加载失败，请刷新页面重试。Couldn't load Cell Dispatch; refresh to try again.",
+    theme(root, m) { root.setAttribute("data-theme", m === "night" ? "dark" : "light"); root.setAttribute("data-mode", m); } },
+  immigration: { file: "immigration.html", fail: "移民政策加载失败，请刷新页面重试。Couldn't load the Immigration Policy Briefing; refresh to try again.",
+    theme(root, m) { const t = { day: "light", eye: "eye", night: "dark" }[m]; root.setAttribute("data-theme", t); store.set("fragomenBriefingTheme", t); } },
+};
+const loaded = {};
+function frameTheme(k) {
+  const f = $(`#${k}-frame`), doc = f && f.contentDocument;
+  if (doc && doc.documentElement && loaded[k]) FRAMES[k].theme(doc.documentElement, currentMode());
 }
-function fitBattery() {
-  const f = $("#battery-frame"), doc = f.contentDocument;
+function batteryTheme() { Object.keys(FRAMES).forEach(frameTheme); }
+function fitFrame(k) {
+  const f = $(`#${k}-frame`), doc = f.contentDocument;
   if (doc && doc.documentElement) f.style.height = doc.documentElement.scrollHeight + "px";
 }
-function loadBattery() {
-  if (batteryLoaded) return;
-  batteryLoaded = true;
-  fetch("battery.html", { cache: "no-cache" })
+function loadFrame(k) {
+  if (loaded[k]) return;
+  loaded[k] = true;
+  fetch(FRAMES[k].file, { cache: "no-cache" })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(html => {
-      const f = $("#battery-frame");
+      const f = $(`#${k}-frame`), fit = () => fitFrame(k);
       f.addEventListener("load", () => {
-        batteryTheme();
-        fitBattery();
+        frameTheme(k);
+        fit();
         const doc = f.contentDocument;
-        try { new ResizeObserver(fitBattery).observe(doc.documentElement); } catch (e) {}
-        doc.addEventListener("click", () => setTimeout(fitBattery, 50));
-        $("#battery-msg").hidden = true;
+        try { new ResizeObserver(fit).observe(doc.documentElement); } catch (e) {}
+        doc.addEventListener("click", () => setTimeout(fit, 50));
+        $(`#${k}-msg`).hidden = true;
         f.hidden = false;
       }, { once: true });
+      if (k === "immigration") store.set("fragomenBriefingTheme", { day: "light", eye: "eye", night: "dark" }[currentMode()]); // it reads this on boot
       f.srcdoc = html;
     })
-    .catch(() => { batteryLoaded = false; $("#battery-msg").textContent = "电池情报加载失败，请刷新页面重试。Couldn't load Cell Dispatch; refresh to try again."; });
+    .catch(() => { loaded[k] = false; $(`#${k}-msg`).textContent = FRAMES[k].fail; });
 }
 function showView(v) {
   Object.entries(views).forEach(([k, el]) => { el.hidden = k !== v; });
   document.querySelectorAll(".switch [data-view]").forEach(b => b.setAttribute("aria-selected", b.dataset.view === v));
   store.set("intel-view", v);
-  if (v === "battery") loadBattery();
+  if (FRAMES[v]) loadFrame(v);
   window.scrollTo(0, 0);
 }
 document.querySelectorAll(".switch [data-view]").forEach(b => b.addEventListener("click", () => showView(b.dataset.view)));
 paintModeButtons();
 const startHash = location.hash.slice(1);
-showView(startHash === "battery" ? "battery" : startHash === "ai" ? "ai" : (store.get("intel-view") === "battery" ? "battery" : "ai"));
+showView(views[startHash] ? startHash : (views[store.get("intel-view")] ? store.get("intel-view") : "ai"));
 
 /* ---- boot ---- */
 function init(data) {

@@ -1,9 +1,10 @@
 # AI 情报台 · Daily update procedure
 
-The page `index.html` renders stories from `news.json`, and its 电池情报 switch shows
-`battery.html`, a daily copy of the Cell Dispatch battery page. A scheduled task runs this
-procedure once a day. Follow it exactly; only `news.json` and `battery.html` change on a
-normal day.
+The page `index.html` renders stories from `news.json`; its 电池情报 switch shows
+`battery.html`, a daily copy of the Cell Dispatch battery page, and its 移民政策 switch shows
+`immigration.html`, a daily copy of the Immigration Policy Briefing. A scheduled task runs
+this procedure once a day. Follow it exactly; only `news.json`, `battery.html` and
+`immigration.html` change on a normal day.
 
 - Repository: `xiaolexie/MCP-practice`, branch `ccr-9268cd2a-a3i3mk`
 - Published page: https://claude.ai/artifact/Fw8QZUt2dzEeTN4qZ8SEUY
@@ -46,10 +47,15 @@ normal day.
    then run `node ai-news/sync-battery.js <path of the saved HTML file>`; it must print
    `OK` (it also applies `ai-news/battery-skin.css`, the AI-desk look). If the read fails,
    keep the existing `ai-news/battery.html`.
+   Then refresh the immigration tab the same way: Artifact `action: "read"` on
+   https://claude.ai/artifact/LnUGC3HFJ5ruKbSt1kNVGH (kept up to date by its own daily task;
+   never edit or republish it), then `node ai-news/sync-immigration.js <saved HTML path>`; it
+   must print `OK`. It keeps that page's colors and layout unchanged. If the read fails, keep
+   the existing `ai-news/immigration.html`.
 9. Commit (`AI news: daily update YYYY-MM-DD`) and `git push -u origin ccr-9268cd2a-a3i3mk`.
 10. Republish the page: first Artifact `action: "read"` on the AI page URL above, then
    Artifact publish with `url` set to that URL, `file_path: ai-news/index.html`, and
-   `files: {"news.json": "ai-news/news.json", "models.json": "ai-news/models.json", "conferences.json": "ai-news/conferences.json", "battery.html": "ai-news/battery.html"}`.
+   `files: {"news.json": "ai-news/news.json", "models.json": "ai-news/models.json", "conferences.json": "ai-news/conferences.json", "battery.html": "ai-news/battery.html", "immigration.html": "ai-news/immigration.html"}`.
 
 ## Item schema
 
