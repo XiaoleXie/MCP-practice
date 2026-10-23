@@ -1,6 +1,33 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-22",
   "items": [
+    {
+      "d": "2026-10-21",
+      "co": "nvidia",
+      "r": "eu",
+      "cat": "biz",
+      "tags": [
+        "GTC Berlin",
+        "Isaac",
+        "机器人 Robotics"
+      ],
+      "zt": "英伟达柏林 GTC：扩展 Isaac 机器人平台，发布参考人形机器人与自动驾驶工具",
+      "et": "Nvidia at GTC Berlin: expanded Isaac robotics platform with a reference humanoid and new driving tools",
+      "zs": "英伟达在柏林 GTC 上扩展 Isaac 通用机器人平台，并发布面向欧洲车企的自动驾驶工具。",
+      "es": "At GTC Berlin Nvidia expanded its Isaac general-purpose robotics platform and announced autonomous-driving tools for European carmakers.",
+      "zd": [
+        "据 GlobeNewswire 发布的英伟达新闻稿，英伟达在 10 月 21 日的柏林 GTC 上宣布扩展 Isaac 通用机器人平台，包括新的参考人形机器人、框架、仿真管线和数据。聚合媒体称其中的人形机器人为 Agile ONE SN。",
+        "同日另一份新闻稿称，欧洲出行企业正基于英伟达 Hyperion 平台构建安全车辆和 Robotaxi 车队；聚合媒体还提到 Halos SAFE 与 Alpamayo 2 Edge 等自动驾驶工具。",
+        "GTC Berlin 于 10 月 20 日至 22 日举行。聚合媒体称黄仁勋与德国总理默茨同台，并表示「下一波 AI 是物理 AI」；该说法仅来自聚合来源，本条未能取得完整原文。"
+      ],
+      "ed": [
+        "According to Nvidia press releases distributed via GlobeNewswire, Nvidia announced on October 21 at GTC Berlin an expanded Isaac platform for general-purpose robotics, with a new reference humanoid, frameworks, simulation pipelines and data. Aggregators name the humanoid Agile ONE SN.",
+        "A second release the same day says European mobility companies are building safe vehicles and robotaxi fleets on Nvidia Hyperion; aggregators also mention driving tools such as Halos SAFE and Alpamayo 2 Edge.",
+        "GTC Berlin runs October 20-22. Aggregators say Jensen Huang appeared with German Chancellor Merz and said 'the next wave of AI is physical'; that quote comes only from an aggregator and we could not retrieve the full original."
+      ],
+      "src": "Manila Times / GlobeNewswire (Nvidia)",
+      "u": "https://www.manilatimes.net/2026/10/21/tmt-newswire/globenewswire/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data/2450595"
+    },
     {
       "d": "2026-10-20",
       "co": "google",
@@ -131,6 +158,32 @@
     },
     {
       "d": "2026-10-17",
+      "co": "anthropic",
+      "r": "us",
+      "cat": "safety",
+      "tags": [
+        "Claude",
+        "AI 监管 Regulation"
+      ],
+      "zt": "Anthropic 向国会议员递交联邦 AI 安全法案草案：风险超 10 亿美元才可叫停模型",
+      "et": "Anthropic circulates a draft federal AI safety bill: models could be halted only above a $1 billion risk bar",
+      "zs": "据报道，Anthropic 私下散发联邦法案草案，设定政府叫停前沿模型的高门槛，并需法院批准。",
+      "es": "Anthropic reportedly circulated a draft federal bill that sets a high bar for halting a frontier model and requires a court order.",
+      "zd": [
+        "据 Politico 首先获得并经多家媒体转述，Anthropic 向立法者散发一份联邦法案草案：只有当存在可预见且迫在眉睫的风险——超过 10 亿美元损失，或致死/重伤超过 50 人——才可干预。",
+        "风险须来自三类之一：生物武器、模型逃脱开发者控制，或网络攻击。商务部不能自行暂停模型，只能申请，由华盛顿特区联邦地区法院裁定。",
+        "草案还包括在商务部注册的独立评估机构定期审查前沿开发商（须在 72 小时内上报迫在眉睫的风险）、安全测试、透明度报告和举报人保护。这只是立法提案，尚无时间表；报道称其出台背景是 Anthropic 两款模型被施加联邦出口管制。"
+      ],
+      "ed": [
+        "Politico first obtained the draft, as relayed by several outlets: Anthropic has circulated to lawmakers a federal bill under which government could intervene only on a foreseeable, imminent risk of more than $1 billion in damage or more than 50 deaths or serious injuries.",
+        "The risk must come from one of three categories: biological weapons, a model escaping its developer's control, or a cyberattack. Commerce could not suspend a model itself; it would seek an order from the US District Court for D.C.",
+        "The draft also has independent evaluators registered with Commerce examining frontier developers periodically (reporting imminent risks within 72 hours), safety testing, transparency reports and whistleblower protections. It is only a proposal with no timetable; reports say it follows federal export controls placed on two Anthropic models."
+      ],
+      "src": "Business Today (citing Politico)",
+      "u": "https://www.businesstoday.in/technology/artificial-intelligence/story/anthropic-ai-safety-bill-one-billion-risk-threshold-judicial-approval-562236-2026-10-17"
+    },
+    {
+      "d": "2026-10-17",
       "co": "deepseek",
       "r": "cn",
       "cat": "model",
@@ -153,6 +206,33 @@
       ],
       "src": "Yahoo Finance / Bloomberg",
       "u": "https://finance.yahoo.com/technology/ai/articles/deepseek-pushes-updated-ai-model-134714989.html"
+    },
+    {
+      "d": "2026-10-16",
+      "co": "other",
+      "coName": "IFM / Inception42",
+      "r": "me",
+      "cat": "model",
+      "tags": [
+        "Jais 3",
+        "阿拉伯语 Arabic"
+      ],
+      "zt": "Jais 3 发布：六款开放阿拉伯语模型，上下文 51.2 万 token",
+      "et": "Jais 3 released: six open Arabic models with a 512K-token context",
+      "zs": "基础模型研究院（IFM）与 Inception42 发布 Jais 3 与 Jais Speech 阿拉伯语语音识别模型。",
+      "es": "The Institute of Foundation Models (IFM) and Inception42 released Jais 3 and the Jais Speech Arabic speech-recognition model.",
+      "zd": [
+        "据 HPCwire 等报道，MBZUAI 旗下基础模型研究院（IFM）与 Inception42 于 10 月 15–16 日（来源日期略有出入）发布 Jais 3，共六款开放模型，参数规模从 9 亿到 3750 亿，并附带阿拉伯语语音识别模型 Jais Speech。",
+        "Jais 3 是 IFM 9 月发布的六款开放模型 K2 Horizon 首次适配到新语言；上下文长度 51.2 万 token，IFM 称为阿拉伯语原生模型中最长。Jais Speech 支持现代标准阿拉伯语、各地方言以及与英语、法语的语码转换。",
+        "IFM 自报 7B 模型在阿拉伯语评测中得分 79.6，基础 K2 Horizon 为 56.4——均为厂商自报数据。模型已上线 Hugging Face，支持 vLLM 和 SGLang，IFM 还将公开经审计的基准和训练检查点。本条主要依据二手报道。"
+      ],
+      "ed": [
+        "HPCwire and other outlets report that MBZUAI's Institute of Foundation Models (IFM) and Inception42 released Jais 3 on October 15-16 (sources differ slightly): six open models from 900 million to 375 billion parameters, plus the Jais Speech Arabic speech-recognition model.",
+        "Jais 3 is the first adaptation of K2 Horizon, the six open models IFM released in September, to a new language. It offers a 512,000-token context, which IFM says is the longest of any Arabic-native model. Jais Speech handles Modern Standard Arabic, regional dialects and code-switching into English or French.",
+        "IFM reports a score of 79.6 for the 7B model on an Arabic evaluation versus 56.4 for base K2 Horizon; both are vendor-reported. The models are on Hugging Face with vLLM and SGLang support, and IFM is releasing audited benchmarks and training checkpoints. This item relies mainly on secondary coverage."
+      ],
+      "src": "HPCwire",
+      "u": "https://www.hpcwire.com/aiwire/2026/10/16/mbzuai-and-inception42-introduce-jais-3-and-arabic-speech-recognition-model/"
     },
     {
       "d": "2026-10-16",
@@ -332,6 +412,31 @@
       ],
       "src": "Releasebot",
       "u": "https://releasebot.io/updates/mistral"
+    },
+    {
+      "d": "2026-10-14",
+      "co": "xai",
+      "r": "us",
+      "cat": "model",
+      "tags": [
+        "Grok Voice 3.0"
+      ],
+      "zt": "xAI 发布 Grok Voice 3.0 语音到语音模型，价格不变每分钟 0.08 美元",
+      "et": "xAI launches Grok Voice 3.0 speech-to-speech model at an unchanged $0.08 per minute",
+      "zs": "xAI 推出第三代实时语音智能体模型 Grok Voice 3.0，通过 Voice Agent API 提供。",
+      "es": "xAI launched Grok Voice 3.0, its third-generation real-time voice-agent model, through the Voice Agent API.",
+      "zd": [
+        "xAI 于 10 月 14 日发布 Grok Voice 3.0，这是其第三代语音到语音模型，直接处理并输出音频，而非串联语音识别、语言模型和语音合成。",
+        "模型通过 Voice Agent API 提供，模型 ID 为 grok-voice-3.0，并在 grok-voice-latest 别名下取代 Grok Voice 2.0，价格不变，为每分钟 0.08 美元；接口采用 WebSocket，形态与 OpenAI Realtime API 相近。",
+        "xAI 称延迟低于一秒，已用于特斯拉车辆和 Starlink 呼叫中心（每天约 2 万通客服电话），并自报在 Artificial Analysis 语音到语音指数上得 86.9 分。目前未见 Artificial Analysis 独立页面，该分数应视为厂商自报。"
+      ],
+      "ed": [
+        "xAI released Grok Voice 3.0 on October 14, its third-generation speech-to-speech model, which processes and responds in audio directly rather than chaining speech recognition, a language model and speech synthesis.",
+        "It is offered through the Voice Agent API as grok-voice-3.0 and replaces Grok Voice 2.0 behind the grok-voice-latest alias at the same $0.08 per minute. Developers connect over WebSocket, in a shape similar to OpenAI's Realtime API.",
+        "xAI says latency is under one second and that it runs in Tesla vehicles and Starlink call centers (about 20,000 customer calls a day), and reports 86.9 on Artificial Analysis's Speech-to-Speech Index. No independent Artificial Analysis page has been found, so treat the score as vendor-reported."
+      ],
+      "src": "DevX",
+      "u": "https://www.devx.com/artificial-intelligence/what-is-grok-voice-3-0-xai-speech-to-speech-model/"
     },
     {
       "d": "2026-10-14",
