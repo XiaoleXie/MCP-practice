@@ -13,7 +13,12 @@ this procedure once a day. Follow it exactly; only `news.json`, `battery.html` a
 
 1. Check out the branch and pull the latest commit:
    `git fetch origin ccr-9268cd2a-a3i3mk && git checkout ccr-9268cd2a-a3i3mk && git pull origin ccr-9268cd2a-a3i3mk`
-2. Read `ai-news/news.json`. Note `updated` and the URLs/titles already present.
+   (A read-only clone of the public repo is fine; see step 9.)
+2. The published page is the source of truth: a run may have published without pushing.
+   Call Artifact `action: "read"` on the AI page URL above with
+   `paths: ["news.json", "models.json", "conferences.json"]`, then copy each saved file over
+   `ai-news/<name>` before editing. Read `ai-news/news.json`. Note `updated` and the
+   URLs/titles already present.
 3. Search the web for news published since `updated` (use today's date in queries). Cover:
    - Model launches and major model updates from any country: OpenAI, Anthropic Claude,
      Google Gemini, Meta, xAI, Microsoft, Amazon, Apple, NVIDIA; DeepSeek, Alibaba Qwen
@@ -53,9 +58,14 @@ this procedure once a day. Follow it exactly; only `news.json`, `battery.html` a
    must print `OK`. It keeps that page's colors and layout unchanged. If the read fails, keep
    the existing `ai-news/immigration.html`.
 9. Commit (`AI news: daily update YYYY-MM-DD`) and `git push -u origin ccr-9268cd2a-a3i3mk`.
+   If the push is refused (scheduled sessions may lack write access to the repo), go on and
+   publish anyway, and say so in the summary; the next run picks the data up from the page.
 10. Republish the page: first Artifact `action: "read"` on the AI page URL above, then
    Artifact publish with `url` set to that URL, `file_path: ai-news/index.html`, and
    `files: {"news.json": "ai-news/news.json", "models.json": "ai-news/models.json", "conferences.json": "ai-news/conferences.json", "battery.html": "ai-news/battery.html", "immigration.html": "ai-news/immigration.html"}`.
+   Always publish every day, even with no new stories: the top bar shows each tab's update
+   date as `MM/DD/YYYY 已更新` (AI from `updated`, battery and immigration from the date
+   the sync scripts stamp), and an amber stamp means that day's run did not finish.
 
 ## Item schema
 

@@ -111,6 +111,10 @@ button { font: inherit; color: inherit; }
 .seg button { border: 0; background: transparent; cursor: pointer; padding: 6px 14px; border-radius: 8px; color: var(--muted); display: inline-flex; align-items: baseline; gap: 7px; font-size: 14px; font-weight: 700; white-space: nowrap; }
 .seg button small { font-family: var(--font-en); font-style: italic; font-weight: 400; font-size: 12px; }
 .seg button[aria-selected="true"], .seg button[aria-pressed="true"] { background: var(--surface); color: var(--fg); box-shadow: var(--shadow); }
+.stamp { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; background: var(--safe-soft); color: var(--safe); font-size: 13px; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.stamp::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.stamp small { font-family: var(--font-en); font-style: italic; font-weight: 400; font-size: 12px; }
+.stamp.stale { background: var(--warn-soft); color: var(--warn); }
 .modes { margin-left: auto; }
 .modes button { font-weight: 500; font-size: 13px; padding: 6px 11px; align-items: center; }
 .modes svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -372,6 +376,7 @@ select:disabled { opacity: .45; cursor: default; }
       <button type="button" role="tab" data-view="battery" id="view-battery">电池情报<small>Cell Dispatch</small></button>
       <button type="button" role="tab" data-view="immigration" id="view-immigration">移民政策<small>Immigration</small></button>
     </div>
+    <span class="stamp" id="stamp" hidden></span>
     <div class="seg modes" role="group" aria-label="显示模式 Display mode">
       <button type="button" data-mode="day"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>白天</button>
       <button type="button" data-mode="eye"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>护眼</button>
@@ -826,6 +831,19 @@ const FRAMES = {
     theme(root, m) { const t = { day: "light", eye: "eye", night: "dark" }[m]; root.setAttribute("data-theme", t); store.set("fragomenBriefingTheme", t); } },
 };
 const loaded = {};
+// Last update date per view, shown in the top bar as MM/DD/YYYY. Embedded pages carry it in <meta name="ai-desk-synced">.
+const STAMP = { ai: null, battery: null, immigration: null };
+let view = "ai";
+const usDate = iso => { const [y, m, d] = iso.split("-"); return `${m}/${d}/${y}`; };
+function todayISO() { const t = new Date(); return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, "0")}-${String(t.getDate()).padStart(2, "0")}`; }
+function paintStamp() {
+  const el = $("#stamp"), d = STAMP[view];
+  el.hidden = !d;
+  if (!d) return;
+  el.classList.toggle("stale", d < todayISO());
+  el.innerHTML = `${usDate(d)} 已更新<small>Updated</small>`;
+  el.title = d < todayISO() ? "今天的更新尚未完成 Today's update hasn't run yet" : "今天已更新 Updated today";
+}
 function frameTheme(k) {
   const f = $(`#${k}-frame`), doc = f && f.contentDocument;
   if (doc && doc.documentElement && loaded[k]) FRAMES[k].theme(doc.documentElement, currentMode());
@@ -841,6 +859,8 @@ function loadFrame(k) {
   fetch(FRAMES[k].file, { cache: "no-cache" })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(html => {
+      const m = html.match(/<meta name="ai-desk-synced" content="(\d{4}-\d{2}-\d{2})">/);
+      if (m) { STAMP[k] = m[1]; paintStamp(); }
       const f = $(`#${k}-frame`), fit = () => fitFrame(k);
       f.addEventListener("load", () => {
         frameTheme(k);
@@ -860,6 +880,8 @@ function showView(v) {
   Object.entries(views).forEach(([k, el]) => { el.hidden = k !== v; });
   document.querySelectorAll(".switch [data-view]").forEach(b => b.setAttribute("aria-selected", b.dataset.view === v));
   store.set("intel-view", v);
+  view = v;
+  paintStamp();
   if (FRAMES[v]) loadFrame(v);
   window.scrollTo(0, 0);
 }
@@ -871,8 +893,10 @@ showView(views[startHash] ? startHash : (views[store.get("intel-view")] ? store.
 /* ---- boot ---- */
 function init(data) {
   NEWS = data.items.slice().sort((a, b) => b.d.localeCompare(a.d)).map((n, i) => ({ ...n, id: "story-" + i }));
-  $("#updated").textContent = `更新至 ${data.updated}`;
-  $("#updated-en").textContent = `Updated ${data.updated} · 每日自动更新 Daily`;
+  $("#updated").textContent = `${usDate(data.updated)} 已更新`;
+  $("#updated-en").textContent = `Updated ${usDate(data.updated)} · 每日自动更新 Daily`;
+  STAMP.ai = data.updated;
+  paintStamp();
   tally();
   lead();
   const present = new Set(NEWS.map(coKey));

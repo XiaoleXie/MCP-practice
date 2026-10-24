@@ -35,6 +35,10 @@ const fix = `<script id="ai-desk-frame-fix">
 const at = html.search(/<\/body>(?![\s\S]*<\/body>)/i);
 html = at >= 0 ? html.slice(0, at) + fix + html.slice(at) : html + fix;
 
+// Stamp the sync date (US Central, like the daily task) so the site can show "MM/DD/YYYY 已更新".
+const synced = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
+html = html.replace(/<head>/i, m => `${m}<meta name="ai-desk-synced" content="${synced}">`);
+
 const out = path.join(__dirname, "immigration.html");
 fs.writeFileSync(out, html);
 console.log(`OK immigration.html ${html.length} bytes`);

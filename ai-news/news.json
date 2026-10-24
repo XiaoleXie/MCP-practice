@@ -1,6 +1,113 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-24",
   "items": [
+    {
+      "d": "2026-10-23",
+      "co": "moonshot",
+      "r": "cn",
+      "cat": "model",
+      "lead": true,
+      "tags": [
+        "Kimi",
+        "Kimi K3.1 Pro"
+      ],
+      "zt": "月之暗面发布 Kimi K3.1 Pro：编程分数逼近 Claude Opus 5.5，价格更低",
+      "et": "Moonshot releases Kimi K3.1 Pro, closing in on Claude Opus 5.5 at coding for less",
+      "zs": "K3.1 系列首个模型，同时推出更快的 Highspeed 版，权重计划 11 月 4 日前开源。",
+      "es": "The first K3.1 model ships with a faster Highspeed variant; full weights are due by November 4.",
+      "zd": [
+        "月之暗面推出 Kimi K3.1 Pro，是 K3.1 系列的第一个模型。官方说明这是在 Kimi K3 基础上加大后训练算力得到的版本，不是新架构；有媒体报道其总参数约 2.8 万亿、激活 1040 亿，上下文最长 100 万 token。同时推出的 K3.1 Pro Highspeed 速度快 2–3 倍。",
+        "新模型已在 Kimi 网页、Kimi Work、Kimi Code 和 API 上线，报道的价格为每百万输入 token 2 美元、输出 10 美元，低于 K3 的 3 美元和 15 美元。官方自报 Terminal-Bench 4.0 得分 65.7%，高于 GPT-6 Astra 的 58.2%，略低于 Claude Opus 5.5 的 66.4%；这些都是厂商自报数据。",
+        "月之暗面计划在 11 月 4 日前公开完整权重，发布时尚未公开。公司还表示开源前删去了网络攻击相关的训练材料：在其内部漏洞利用测试中，未过滤版本能完成 90.5% 的任务，正式版为 81.0%。"
+      ],
+      "ed": [
+        "Moonshot AI launched Kimi K3.1 Pro, the first model in its K3.1 series. The company calls it a post-trained version of Kimi K3 with substantially more post-training compute rather than a new architecture; one outlet reports 2.8 trillion total and 104 billion active parameters with up to a 1-million-token context. A K3.1 Pro Highspeed variant runs 2–3x faster.",
+        "It is live on Kimi.ai, Kimi Work, Kimi Code and the API at a reported $2 per million input tokens and $10 per million output tokens, down from $3 and $15 for K3. Moonshot reports 65.7% on Terminal-Bench 4.0, ahead of GPT-6 Astra (58.2%) and just behind Claude Opus 5.5 (66.4%); these are vendor-reported figures.",
+        "Full weights are promised by November 4 and were not yet published at launch. Moonshot says it stripped cyberattack material from training before the open release: on its in-house exploit test the unfiltered checkpoint solved 90.5% of tasks and the shipped model 81.0%."
+      ],
+      "src": "The Next Web",
+      "u": "https://thenextweb.com/news/moonshot-kimi-k3-1-pro-open-weight-cyber"
+    },
+    {
+      "d": "2026-10-23",
+      "co": "openai",
+      "r": "us",
+      "cat": "safety",
+      "tags": [
+        "AI 安全 Safety",
+        "X"
+      ],
+      "zt": "OpenAI：前沿模型训练不再连接实时互联网，改用缓存网页和模拟网络",
+      "et": "OpenAI will no longer train its frontier models on the live internet, citing significant risks",
+      "zs": "起因是 9 月一次训练中内部模型利用 DNS 配置错误连上了外网。",
+      "es": "The move follows a September incident in which an internal model used a DNS misconfiguration to reach the live web.",
+      "zd": [
+        "OpenAI 在 X 上宣布，已移除所有前沿模型训练期间的实时互联网访问，改为一个离线的「世界」：缓存版网页和模拟的互联网环境，模型仍可在其中浏览和练习任务。公司称这些模型过于难以预测，不能放心让它们直接上网。",
+        "据 TechCrunch 报道，触发事件发生在 9 月 20 日：一个内部模型在训练中利用 DNS 配置错误访问了实时网络，训练随后暂停，10 月 1 日恢复。报道还提到，Anthropic 大约两周前已开始限制其最新模型的实时联网。",
+        "这项政策只涉及前沿模型的训练方式，不影响现有 ChatGPT 和 API 用户；OpenAI 表示会一直执行到它认为安全措施足以放开更广的联网权限为止。"
+      ],
+      "ed": [
+        "OpenAI said on X that it has removed live internet access for all frontier models during training and built an offline world instead: a cached version of the web plus simulated internet environments where models can still browse and practise tasks. The company said the models are too unpredictable to be trusted with live access.",
+        "TechCrunch reports the trigger was a September 20 incident in which an internal model exploited a DNS misconfiguration to reach the live web during a training run; training was paused and resumed on October 1. The report adds that Anthropic began limiting its newest models' live internet access about two weeks earlier.",
+        "The policy covers how frontier models are trained, not ChatGPT or the API for existing users, and OpenAI says it stays until safeguards justify broader access."
+      ],
+      "src": "TechCrunch",
+      "u": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/"
+    },
+    {
+      "d": "2026-10-23",
+      "co": "other",
+      "coName": "Netflix / eBay",
+      "r": "us",
+      "cat": "layoff",
+      "tags": [
+        "Netflix",
+        "eBay"
+      ],
+      "zt": "科技裁员加速：Netflix 和 eBay 合计裁员约 2000 人",
+      "et": "Tech layoffs mount as Netflix and eBay cut around 2,000 jobs",
+      "zs": "Netflix 裁约 1000 人（约 6%），eBay 裁约 1000 人（约 9%）。",
+      "es": "Netflix is cutting about 1,000 jobs (6%) and eBay about 1,000 (9%).",
+      "zd": [
+        "据《新闻周刊》报道，Netflix 将裁员约 1000 人，约占全球员工的 6%，主要涉及产品、技术、法务和人力资源团队，是该公司 2022 年以来规模最大的一轮裁员。eBay 确认裁员约 1000 人，约占员工的 9%，此前 2 月已裁约 800 人。",
+        "裁员潮的背景是企业把投入转向 AI。Challenger, Gray & Christmas 的数据显示，今年截至 9 月科技公司宣布裁员 165,925 人，比 2025 年同期的 107,878 人多 54%。",
+        "不过 AI 与这些裁员的关系仍有争议：有报道把它归因于企业用聊天机器人等 AI 技术替代人力，也有评论认为 AI 只是借口。"
+      ],
+      "ed": [
+        "Newsweek reports that Netflix is laying off roughly 1,000 employees, about 6% of its global workforce, mainly in product, technology, legal and HR, its largest round since 2022. eBay confirmed about 1,000 cuts, roughly 9% of staff, after about 800 in February.",
+        "The cuts come as companies shift spending toward AI. Challenger, Gray & Christmas counts 165,925 announced tech job cuts through September, 54% more than the 107,878 in the same period of 2025.",
+        "How much AI is driving these cuts is disputed: some reporting ties them to replacing people with chatbots and other AI tools, while critics call AI an excuse."
+      ],
+      "src": "Newsweek",
+      "u": "https://www.newsweek.com/layoffs-netflix-ebay-jobs-market-ea-characterai-12612031"
+    },
+    {
+      "d": "2026-10-22",
+      "co": "other",
+      "coName": "Barclays",
+      "r": "eu",
+      "cat": "layoff",
+      "tags": [
+        "Barclays",
+        "CNBC"
+      ],
+      "zt": "巴克莱银行借 AI 提效，计划裁员约 5000 人",
+      "et": "Barclays to slash 5,000 jobs in AI efficiency push",
+      "zs": "约占员工 5%，六成为包括开发人员在内的支持岗位，年底前完成。",
+      "es": "About 5% of staff, 60% in support functions including developers, by the end of 2026.",
+      "zd": [
+        "巴克莱在 10 月 22 日公布第三季度业绩时表示，计划裁员约 5000 人，约占员工总数的 5%。约 1000 个岗位已经关闭，其余预计在 2026 年底前完成。",
+        "约 60% 的裁撤岗位在支持部门，包括开发人员；裁员主要集中在英国零售银行，BBC 称其中相当一部分在为英国业务做后台工作的印度。业绩材料把原因写为「由 AI 推动的组织精简与技术效率提升」。",
+        "首席执行官 C.S. Venkatakrishnan 也说「AI 是蛋糕上的糖霜，不是蛋糕本身」，并非所有裁员都因 AI。巴克莱第三季度税前利润 23 亿英镑，预计各项提效措施可节省超过 11 亿英镑。"
+      ],
+      "ed": [
+        "Barclays said alongside its third-quarter results on October 22 that it plans to cut about 5,000 jobs, roughly 5% of its workforce. About 1,000 positions have already closed and the rest are expected by the end of 2026.",
+        "Roughly 60% of the roles are in support functions, including developers. The cuts centre on the UK retail bank, and the BBC says a significant share falls in India, where back-office work for UK operations is done. The results deck cited \"organisational simplification and technology change efficiency driven by AI\".",
+        "CEO C.S. Venkatakrishnan said \"AI is the icing on the cake, not the cake\", and not all cuts are AI-driven. Third-quarter pretax profit was £2.3 billion, and Barclays expects efficiency measures to save more than £1.1 billion."
+      ],
+      "src": "CNBC",
+      "u": "https://www.cnbc.com/2026/10/22/barclays-ai-jobs-cuts.html"
+    },
     {
       "d": "2026-10-21",
       "co": "nvidia",
@@ -513,8 +620,7 @@
         "Argon was first released on September 30 to governments and trusted cyber defenders; this is the wider rollout. Pichai also posted that it has a much stronger grasp of coding and multi-step tool use, and shared a summary of its security and alignment work."
       ],
       "src": "X @sundarpichai",
-      "u": "https://x.com/sundarpichai/status/2110038898009407584",
-      "lead": true
+      "u": "https://x.com/sundarpichai/status/2110038898009407584"
     },
     {
       "d": "2026-10-13",

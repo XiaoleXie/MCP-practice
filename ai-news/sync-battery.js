@@ -27,6 +27,10 @@ const skin = fs.readFileSync(path.join(__dirname, "battery-skin.css"), "utf8");
 const fonts = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap">';
 html = html.replace(/<\/head>/i, () => `  ${fonts}\n  <style id="ai-desk-skin">\n${skin}\n  </style>\n</head>`);
 
+// Stamp the sync date (US Central, like the daily task) so the site can show "MM/DD/YYYY 已更新".
+const synced = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
+html = html.replace(/<head>/i, m => `${m}\n  <meta name="ai-desk-synced" content="${synced}">`);
+
 const out = path.join(__dirname, "battery.html");
 fs.writeFileSync(out, html);
 console.log(`OK battery.html ${html.length} bytes`);
